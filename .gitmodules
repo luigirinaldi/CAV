@@ -1,0 +1,6 @@
+[submodule "parabit"]
+	path = parabit
+	url = git@github.com:luigirinaldi/fyp.git
+[submodule "benchmarks"]
+	path = benchmarks
+	url = git@github.com:luigirinaldi/parametric-bitvector-benchmarks.git
