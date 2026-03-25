@@ -103,11 +103,11 @@ def run_docker_mirabelle_theory(thy_dir: Path, theory_name: str, sledgehammer_ti
     result = subprocess.run(
         [
             "docker", "run",
-            "-v", f"{thy_dir.absolute()}:/build_dir/",
+            "-v", f"{thy_dir.parent.absolute()}:/build_dir/",
             ISABELLE_DOCKER_IMAGE,
             "mirabelle",
-            "-d", "/build_dir/",
-            "-O", f"/build_dir/{out_subdir}",
+            "-d", "/build_dir/thy",
+            "-O", f"/build_dir/logs/{out_subdir}",
             "-A", "try0",
             "-A", f"sledgehammer[timeout={sledgehammer_timeout}, max_proofs=1]",
             "-T", theory_name,
@@ -120,7 +120,7 @@ def run_docker_mirabelle_theory(thy_dir: Path, theory_name: str, sledgehammer_ti
             f"    Warning: mirabelle exited with code {result.returncode} for {theory_name}",
             file=sys.stderr,
         )
-    return thy_dir / out_subdir / "mirabelle.log"
+    return thy_dir.parent / "logs" / out_subdir / "mirabelle.log"
 
 
 def process_variant(
