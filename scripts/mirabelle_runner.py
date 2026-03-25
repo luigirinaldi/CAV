@@ -21,7 +21,7 @@ from parse_mirabelle import parse_log_file
 
 PARABIT_BIN = os.environ.get("PARABIT_PATH", "../parabit/target/release/parabit")
 ISABELLE_DOCKER_IMAGE = "isabelle-docker:latest"
-SLEDGEHAMMER_TIMEOUT = 120  # seconds per theorem goal
+SLEDGEHAMMER_TIMEOUT = 300  # seconds per theorem goal
 THREADS = 4               # CPU cores available to each mirabelle Docker container
 MEMORY = "8g"            # Memory limit per mirabelle Docker container (e.g. "8g", "16g")
 JOBS = 3                  # Number of theories to run in parallel per variant
@@ -42,9 +42,9 @@ PROOF_HELPER_STEMS = {
 LEMMA_IMPORTS = ["arith_lemmas", "bitwise_lemmas", "mixed_lemmas", "signed_lemmas"]
 
 BENCHMARK_DIRS = [
-    # Path("benchmarks/Alive/bwlang"),
-    # Path("benchmarks/Cadence/bwlang"),
-    # Path("benchmarks/Hydra/bwlang"),
+    Path("../benchmarks/Alive/bwlang"),
+    Path("../benchmarks/Cadence/bwlang"),
+    Path("../benchmarks/Hydra/bwlang"),
     Path("../benchmarks/ROVER/bwlang"),
 ]
 
