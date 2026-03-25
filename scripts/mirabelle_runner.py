@@ -7,8 +7,10 @@ with and without axiom lemmas.
 import json
 import os
 import shutil
+import signal
 import subprocess
 import sys
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -44,6 +46,27 @@ BENCHMARK_DIRS = [
     # Path("benchmarks/Hydra/bwlang"),
     Path("../benchmarks/ROVER/bwlang"),
 ]
+
+
+# --- Process registry for clean shutdown ---
+
+_running_procs: list[subprocess.Popen] = []
+_procs_lock = threading.Lock()
+
+
+def _kill_all():
+    with _procs_lock:
+        for proc in _running_procs:
+            try:
+                proc.kill()
+            except Exception:
+                pass
+
+
+def _signal_handler(signum, frame):
+    print("\nInterrupt received — killing all running containers ...", file=sys.stderr)
+    _kill_all()
+    sys.exit(1)
 
 
 # --- Helpers ---
@@ -110,9 +133,9 @@ def run_docker_mirabelle_theory(
     """
     out_subdir = f"mirabelle_out_{theory_name}"
     print(f"    mirabelle [{theory_name}] ...")
-    result = subprocess.run(
+    proc = subprocess.Popen(
         [
-            "docker", "run",
+            "docker", "run", "--rm",
             "--cpus", str(threads),
             "--memory", memory,
             "-v", f"{thy_dir.parent.absolute()}:/build_dir/",
@@ -128,9 +151,16 @@ def run_docker_mirabelle_theory(
         ],
         text=True,
     )
-    if result.returncode != 0:
+    with _procs_lock:
+        _running_procs.append(proc)
+    try:
+        proc.wait()
+    finally:
+        with _procs_lock:
+            _running_procs.remove(proc)
+    if proc.returncode != 0:
         print(
-            f"    Warning: mirabelle exited with code {result.returncode} for {theory_name}",
+            f"    Warning: mirabelle exited with code {proc.returncode} for {theory_name}",
             file=sys.stderr,
         )
     return thy_dir.parent / "logs" / out_subdir / "mirabelle.log"
@@ -228,6 +258,9 @@ def run_mirabelle_benchmarks(
         lemma/{benchmark}/parsed.json     ← combined parsed results
         nolemma/{benchmark}/...
     """
+    signal.signal(signal.SIGINT, _signal_handler)
+    signal.signal(signal.SIGTERM, _signal_handler)
+
     if not Path(PARABIT_BIN).exists():
         print(f"Error: parabit binary not found at '{PARABIT_BIN}'", file=sys.stderr)
         print("Set the PARABIT_PATH environment variable to the binary location.")
