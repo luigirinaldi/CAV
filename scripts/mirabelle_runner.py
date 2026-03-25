@@ -53,9 +53,12 @@ BENCHMARK_DIRS = [
 
 _running_containers: list[tuple[subprocess.Popen, str]] = []  # (proc, container_name)
 _procs_lock = threading.Lock()
+_shutting_down = False
 
 
 def _kill_all():
+    global _shutting_down
+    _shutting_down = True
     with _procs_lock:
         for proc, container_name in _running_containers:
             # Kill the container directly — proc.kill() only kills the docker client,
@@ -162,7 +165,7 @@ def run_docker_mirabelle_theory(
     finally:
         with _procs_lock:
             _running_containers.remove((proc, container_name))
-    if proc.returncode != 0:
+    if proc.returncode != 0 and not _shutting_down:
         tqdm.write(
             f"Warning: mirabelle exited with code {proc.returncode} for {theory_name}",
         )
@@ -231,7 +234,8 @@ def process_variant(
                 theory = futures[future]
                 log_src = future.result()
                 if not log_src.exists():
-                    tqdm.write(f"Warning: no log produced for {theory}")
+                    if not _shutting_down:
+                        tqdm.write(f"Warning: no log produced for {theory}")
                 else:
                     log_dst = logs_dir / f"{theory}.log"
                     shutil.copy(log_src, log_dst)
@@ -248,7 +252,6 @@ def process_variant(
         tqdm.write("\nInterrupt received — killing all running containers ...")
         _kill_all()
         executor.shutdown(wait=False, cancel_futures=True)
-        raise
     else:
         executor.shutdown(wait=False)
 
@@ -302,6 +305,8 @@ def run_mirabelle_benchmarks(
             memory=memory,
             jobs=jobs,
         )
+        if _shutting_down:
+            break
         process_variant(
             benchmark_name, bwlang_dir, results_base,
             mode="nolemma",
@@ -310,9 +315,14 @@ def run_mirabelle_benchmarks(
             memory=memory,
             jobs=jobs,
         )
+        if _shutting_down:
+            break
 
     print("\nDone.")
 
 
 if __name__ == "__main__":
-    run_mirabelle_benchmarks()
+    try:
+        run_mirabelle_benchmarks()
+    except KeyboardInterrupt:
+        sys.exit(1)
