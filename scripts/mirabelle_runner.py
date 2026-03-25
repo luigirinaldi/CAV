@@ -93,9 +93,13 @@ def setup_root_file(thy_dir: Path):
     return theory_stems
 
 
-def run_docker_mirabelle(thy_dir: Path, sledgehammer_timeout: int):
-    """Run Isabelle mirabelle via Docker, mounting thy_dir as /build_dir/."""
-    print(f"  Running mirabelle via Docker on {thy_dir} ...")
+def run_docker_mirabelle_theory(thy_dir: Path, theory_name: str, sledgehammer_timeout: int) -> Path:
+    """Run Isabelle mirabelle for a single theory via Docker.
+
+    Returns the path to the mirabelle.log produced by this run.
+    """
+    out_subdir = f"mirabelle_out_{theory_name}"
+    print(f"    mirabelle [{theory_name}] ...")
     result = subprocess.run(
         [
             "docker", "run",
@@ -103,18 +107,20 @@ def run_docker_mirabelle(thy_dir: Path, sledgehammer_timeout: int):
             ISABELLE_DOCKER_IMAGE,
             "mirabelle",
             "-d", "/build_dir/",
-            "-O", "/build_dir/mirabelle_out",
+            "-O", f"/build_dir/{out_subdir}",
             "-A", "try0",
             "-A", f"sledgehammer[timeout={sledgehammer_timeout}, max_proofs=1]",
+            "-T", theory_name,
             "LemmaSledge",
         ],
         text=True,
     )
     if result.returncode != 0:
         print(
-            f"  Warning: mirabelle exited with code {result.returncode}",
+            f"    Warning: mirabelle exited with code {result.returncode} for {theory_name}",
             file=sys.stderr,
         )
+    return thy_dir / out_subdir / "mirabelle.log"
 
 
 def process_variant(
@@ -143,33 +149,35 @@ def process_variant(
     for helper in PROOFS_DIR.glob("*.thy"):
         shutil.copy(helper, thy_dir / helper.name)
 
-    # 4. Create ROOT file
+    # 4. Create ROOT file (lists all theories; mirabelle still needs it for the session)
     theory_stems = setup_root_file(thy_dir)
     if not theory_stems:
         print(f"  No benchmark theories found in {thy_dir}, skipping mirabelle.")
         return
 
-    # 5. Run mirabelle
-    run_docker_mirabelle(thy_dir, sledgehammer_timeout)
+    # 5. Run mirabelle per-theory, saving an independent log for each
+    logs_dir = out_dir / "logs"
+    logs_dir.mkdir(parents=True, exist_ok=True)
+    print(f"  Running mirabelle on {len(theory_stems)} theories ({mode}) ...")
 
-    # 6. Copy log and parse results
-    log_src = thy_dir / "mirabelle_out" / "mirabelle.log"
-    if not log_src.exists():
-        print(f"  Warning: mirabelle.log not found at {log_src}", file=sys.stderr)
-        return
+    all_parsed = {}
+    for theory in theory_stems:
+        log_src = run_docker_mirabelle_theory(thy_dir, theory, sledgehammer_timeout)
+        if not log_src.exists():
+            print(f"    Warning: no log produced for {theory}", file=sys.stderr)
+            continue
+        log_dst = logs_dir / f"{theory}.log"
+        shutil.copy(log_src, log_dst)
+        all_parsed.update(parse_log_file(str(log_dst)))
 
-    log_dst = out_dir / "mirabelle.log"
-    shutil.copy(log_src, log_dst)
-
-    parsed = parse_log_file(str(log_dst))
-    timeouts = [k for k, v in parsed.items() if v[0]["method"] == "timeout"]
+    # 6. Write combined parsed results
+    timeouts = [k for k, v in all_parsed.items() if v[0]["method"] == "timeout"]
     print(
-        f"  Parsed {len(parsed)} theorems, {len(timeouts)} timeouts "
+        f"  Parsed {len(all_parsed)} theorems, {len(timeouts)} timeouts "
         f"({mode}/{benchmark_name})"
     )
-
     with open(out_dir / "parsed.json", "w") as f:
-        json.dump(parsed, f, indent=2)
+        json.dump(all_parsed, f, indent=2)
 
 
 # --- Main ---
@@ -187,9 +195,9 @@ def run_mirabelle_benchmarks(
 
     Output structure:
       results/mirabelle/
-        lemma/{benchmark}/thy/        ← generated .thy + proof helpers + ROOT
-        lemma/{benchmark}/mirabelle.log
-        lemma/{benchmark}/parsed.json
+        lemma/{benchmark}/thy/            ← generated .thy + proof helpers + ROOT
+        lemma/{benchmark}/logs/{t}.log    ← one log per theory
+        lemma/{benchmark}/parsed.json     ← combined parsed results
         nolemma/{benchmark}/...
     """
     if not Path(PARABIT_BIN).exists():
