@@ -31,17 +31,20 @@ PROOF_HELPER_STEMS = {
     "signed_lemmas",
 }
 
+# Extra imports added to .thy files in the lemma variant
+LEMMA_IMPORTS = ["arith_lemmas", "bitwise_lemmas", "mixed_lemmas", "signed_lemmas"]
+
 BENCHMARK_DIRS = [
     # Path("benchmarks/Alive/bwlang"),
     # Path("benchmarks/Cadence/bwlang"),
     # Path("benchmarks/Hydra/bwlang"),
-    Path("benchmarks/ROVER/bwlang"),
+    Path("../benchmarks/ROVER/bwlang"),
 ]
 
 
 # --- Helpers ---
 
-def generate_theorems(bwlang_file: Path, thy_dir: Path, def_only: bool):
+def generate_theorems(bwlang_file: Path, thy_dir: Path):
     """Run parabit get-proof --make-template to generate an empty theorem file."""
     cmd = [
         PARABIT_BIN,
@@ -50,15 +53,27 @@ def generate_theorems(bwlang_file: Path, thy_dir: Path, def_only: bool):
         "--make-template",
         "--theorem-path", str(thy_dir),
     ]
-    if def_only:
-        cmd.append("--def-only")
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         print(
-            f"  Warning: parabit failed for {bwlang_file.name} "
-            f"({'nolemma' if def_only else 'lemma'}):\n  {result.stderr.strip()}",
+            f"  Warning: parabit failed for {bwlang_file.name}:\n  {result.stderr.strip()}",
             file=sys.stderr,
         )
+
+
+def add_lemma_imports(thy_dir: Path):
+    """Patch generated .thy files to import the helper lemma theories."""
+    extra = " ".join(LEMMA_IMPORTS)
+    for thy_file in thy_dir.glob("*.thy"):
+        if thy_file.stem in PROOF_HELPER_STEMS:
+            continue
+        content = thy_file.read_text()
+        patched = content.replace(
+            "imports rewrite_defs",
+            f"imports rewrite_defs {extra}",
+            1,
+        )
+        thy_file.write_text(patched)
 
 
 def setup_root_file(thy_dir: Path):
@@ -107,7 +122,6 @@ def process_variant(
     bwlang_dir: Path,
     results_base: Path,
     mode: str,
-    def_only: bool,
     sledgehammer_timeout: int,
 ):
     """Generate theorems, run mirabelle, and parse results for one variant."""
@@ -119,22 +133,26 @@ def process_variant(
     bwlang_files = sorted(bwlang_dir.glob("*.bwlang"))
     print(f"  Generating {len(bwlang_files)} theorems ({mode}) ...")
     for f in bwlang_files:
-        generate_theorems(f, thy_dir, def_only=def_only)
+        generate_theorems(f, thy_dir)
 
-    # 2. Copy proof helper .thy files
+    # 2. Patch imports for lemma variant
+    if mode == "lemma":
+        add_lemma_imports(thy_dir)
+
+    # 3. Copy proof helper .thy files
     for helper in PROOFS_DIR.glob("*.thy"):
         shutil.copy(helper, thy_dir / helper.name)
 
-    # 3. Create ROOT file
+    # 4. Create ROOT file
     theory_stems = setup_root_file(thy_dir)
     if not theory_stems:
         print(f"  No benchmark theories found in {thy_dir}, skipping mirabelle.")
         return
 
-    # 4. Run mirabelle
+    # 5. Run mirabelle
     run_docker_mirabelle(thy_dir, sledgehammer_timeout)
 
-    # 5. Copy log and parse results
+    # 6. Copy log and parse results
     log_src = thy_dir / "mirabelle_out" / "mirabelle.log"
     if not log_src.exists():
         print(f"  Warning: mirabelle.log not found at {log_src}", file=sys.stderr)
@@ -190,12 +208,12 @@ def run_mirabelle_benchmarks(
 
         process_variant(
             benchmark_name, bwlang_dir, results_base,
-            mode="lemma", def_only=False,
+            mode="lemma",
             sledgehammer_timeout=sledgehammer_timeout,
         )
         process_variant(
             benchmark_name, bwlang_dir, results_base,
-            mode="nolemma", def_only=True,
+            mode="nolemma",
             sledgehammer_timeout=sledgehammer_timeout,
         )
 
