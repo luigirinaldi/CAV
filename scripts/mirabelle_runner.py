@@ -18,6 +18,8 @@ from parse_mirabelle import parse_log_file
 PARABIT_BIN = os.environ.get("PARABIT_PATH", "../parabit/target/release/parabit")
 ISABELLE_DOCKER_IMAGE = "isabelle-docker:latest"
 SLEDGEHAMMER_TIMEOUT = 60  # seconds per theorem goal
+THREADS = 4               # CPU cores available to each mirabelle Docker container
+MEMORY = "12g"            # Memory limit per mirabelle Docker container (e.g. "8g", "16g")
 
 # Proof helper .thy files to copy alongside generated theorems
 PROOFS_DIR = Path(PARABIT_BIN).resolve().parent.parent.parent / "proofs"
@@ -93,7 +95,13 @@ def setup_root_file(thy_dir: Path):
     return theory_stems
 
 
-def run_docker_mirabelle_theory(thy_dir: Path, theory_name: str, sledgehammer_timeout: int) -> Path:
+def run_docker_mirabelle_theory(
+    thy_dir: Path,
+    theory_name: str,
+    sledgehammer_timeout: int,
+    threads: int,
+    memory: str,
+) -> Path:
     """Run Isabelle mirabelle for a single theory via Docker.
 
     Returns the path to the mirabelle.log produced by this run.
@@ -103,11 +111,14 @@ def run_docker_mirabelle_theory(thy_dir: Path, theory_name: str, sledgehammer_ti
     result = subprocess.run(
         [
             "docker", "run",
+            "--cpus", str(threads),
+            "--memory", memory,
             "-v", f"{thy_dir.parent.absolute()}:/build_dir/",
             ISABELLE_DOCKER_IMAGE,
             "mirabelle",
             "-d", "/build_dir/thy",
             "-O", f"/build_dir/logs/{out_subdir}",
+            "-o", f"threads={threads}",
             "-A", "try0",
             "-A", f"sledgehammer[timeout={sledgehammer_timeout}, max_proofs=1]",
             "-T", theory_name,
@@ -129,6 +140,8 @@ def process_variant(
     results_base: Path,
     mode: str,
     sledgehammer_timeout: int,
+    threads: int,
+    memory: str,
 ):
     """Generate theorems, run mirabelle, and parse results for one variant."""
     out_dir = results_base / mode / benchmark_name
@@ -162,7 +175,7 @@ def process_variant(
 
     all_parsed = {}
     for theory in theory_stems:
-        log_src = run_docker_mirabelle_theory(thy_dir, theory, sledgehammer_timeout)
+        log_src = run_docker_mirabelle_theory(thy_dir, theory, sledgehammer_timeout, threads, memory)
         if not log_src.exists():
             print(f"    Warning: no log produced for {theory}", file=sys.stderr)
             continue
@@ -184,8 +197,10 @@ def process_variant(
 
 def run_mirabelle_benchmarks(
     benchmark_dirs: list = BENCHMARK_DIRS,
-    results_base: Path = Path("./results/mirabelle"),
+    results_base: Path = Path("../results/mirabelle"),
     sledgehammer_timeout: int = SLEDGEHAMMER_TIMEOUT,
+    threads: int = THREADS,
+    memory: str = MEMORY,
 ):
     """
     For each benchmark directory:
@@ -218,11 +233,15 @@ def run_mirabelle_benchmarks(
             benchmark_name, bwlang_dir, results_base,
             mode="lemma",
             sledgehammer_timeout=sledgehammer_timeout,
+            threads=threads,
+            memory=memory,
         )
         process_variant(
             benchmark_name, bwlang_dir, results_base,
             mode="nolemma",
             sledgehammer_timeout=sledgehammer_timeout,
+            threads=threads,
+            memory=memory,
         )
 
     print("\nDone.")
