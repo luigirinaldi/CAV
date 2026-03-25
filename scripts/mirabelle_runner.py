@@ -9,6 +9,7 @@ import os
 import shutil
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from parse_mirabelle import parse_log_file
@@ -19,7 +20,8 @@ PARABIT_BIN = os.environ.get("PARABIT_PATH", "../parabit/target/release/parabit"
 ISABELLE_DOCKER_IMAGE = "isabelle-docker:latest"
 SLEDGEHAMMER_TIMEOUT = 60  # seconds per theorem goal
 THREADS = 4               # CPU cores available to each mirabelle Docker container
-MEMORY = "12g"            # Memory limit per mirabelle Docker container (e.g. "8g", "16g")
+MEMORY = "8g"            # Memory limit per mirabelle Docker container (e.g. "8g", "16g")
+JOBS = 3                  # Number of theories to run in parallel per variant
 
 # Proof helper .thy files to copy alongside generated theorems
 PROOFS_DIR = Path(PARABIT_BIN).resolve().parent.parent.parent / "proofs"
@@ -142,6 +144,7 @@ def process_variant(
     sledgehammer_timeout: int,
     threads: int,
     memory: str,
+    jobs: int,
 ):
     """Generate theorems, run mirabelle, and parse results for one variant."""
     out_dir = results_base / mode / benchmark_name
@@ -168,20 +171,29 @@ def process_variant(
         print(f"  No benchmark theories found in {thy_dir}, skipping mirabelle.")
         return
 
-    # 5. Run mirabelle per-theory, saving an independent log for each
+    # 5. Run mirabelle per-theory in parallel, saving an independent log for each
     logs_dir = out_dir / "logs"
     logs_dir.mkdir(parents=True, exist_ok=True)
-    print(f"  Running mirabelle on {len(theory_stems)} theories ({mode}) ...")
+    print(f"  Running mirabelle on {len(theory_stems)} theories ({mode}, {jobs} parallel) ...")
 
     all_parsed = {}
-    for theory in theory_stems:
-        log_src = run_docker_mirabelle_theory(thy_dir, theory, sledgehammer_timeout, threads, memory)
-        if not log_src.exists():
-            print(f"    Warning: no log produced for {theory}", file=sys.stderr)
-            continue
-        log_dst = logs_dir / f"{theory}.log"
-        shutil.copy(log_src, log_dst)
-        all_parsed.update(parse_log_file(str(log_dst)))
+    with ThreadPoolExecutor(max_workers=jobs) as executor:
+        futures = {
+            executor.submit(
+                run_docker_mirabelle_theory,
+                thy_dir, theory, sledgehammer_timeout, threads, memory,
+            ): theory
+            for theory in theory_stems
+        }
+        for future in as_completed(futures):
+            theory = futures[future]
+            log_src = future.result()
+            if not log_src.exists():
+                print(f"    Warning: no log produced for {theory}", file=sys.stderr)
+                continue
+            log_dst = logs_dir / f"{theory}.log"
+            shutil.copy(log_src, log_dst)
+            all_parsed.update(parse_log_file(str(log_dst)))
 
     # 6. Write combined parsed results
     timeouts = [k for k, v in all_parsed.items() if v[0]["method"] == "timeout"]
@@ -201,6 +213,7 @@ def run_mirabelle_benchmarks(
     sledgehammer_timeout: int = SLEDGEHAMMER_TIMEOUT,
     threads: int = THREADS,
     memory: str = MEMORY,
+    jobs: int = JOBS,
 ):
     """
     For each benchmark directory:
@@ -235,6 +248,7 @@ def run_mirabelle_benchmarks(
             sledgehammer_timeout=sledgehammer_timeout,
             threads=threads,
             memory=memory,
+            jobs=jobs,
         )
         process_variant(
             benchmark_name, bwlang_dir, results_base,
@@ -242,6 +256,7 @@ def run_mirabelle_benchmarks(
             sledgehammer_timeout=sledgehammer_timeout,
             threads=threads,
             memory=memory,
+            jobs=jobs,
         )
 
     print("\nDone.")
