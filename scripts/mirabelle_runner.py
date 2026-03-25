@@ -7,7 +7,6 @@ with and without axiom lemmas.
 import json
 import os
 import shutil
-import signal
 import subprocess
 import sys
 import threading
@@ -52,23 +51,20 @@ BENCHMARK_DIRS = [
 
 # --- Process registry for clean shutdown ---
 
-_running_procs: list[subprocess.Popen] = []
+_running_containers: list[tuple[subprocess.Popen, str]] = []  # (proc, container_name)
 _procs_lock = threading.Lock()
 
 
 def _kill_all():
     with _procs_lock:
-        for proc in _running_procs:
+        for proc, container_name in _running_containers:
+            # Kill the container directly — proc.kill() only kills the docker client,
+            # the container itself keeps running until told otherwise.
+            subprocess.run(["docker", "kill", container_name], capture_output=True)
             try:
                 proc.kill()
             except Exception:
                 pass
-
-
-def _signal_handler(signum, frame):
-    print("\nInterrupt received — killing all running containers ...", file=sys.stderr)
-    _kill_all()
-    sys.exit(1)
 
 
 # --- Helpers ---
@@ -134,10 +130,12 @@ def run_docker_mirabelle_theory(
     Returns the path to the mirabelle.log produced by this run.
     """
     out_subdir = f"mirabelle_out_{theory_name}"
+    container_name = f"mirabelle_{os.getpid()}_{theory_name}"
     print(f"    mirabelle [{theory_name}] ...")
     proc = subprocess.Popen(
         [
             "docker", "run", "--rm",
+            "--name", container_name,
             "--cpus", str(threads),
             "--memory", memory,
             "-v", f"{thy_dir.parent.absolute()}:/build_dir/",
@@ -156,14 +154,14 @@ def run_docker_mirabelle_theory(
         text=True,
     )
     with _procs_lock:
-        _running_procs.append(proc)
+        _running_containers.append((proc, container_name))
     try:
         for line in proc.stdout:
             tqdm.write(f"[{theory_name}] {line}", end="")
         proc.wait()
     finally:
         with _procs_lock:
-            _running_procs.remove(proc)
+            _running_containers.remove((proc, container_name))
     if proc.returncode != 0:
         tqdm.write(
             f"Warning: mirabelle exited with code {proc.returncode} for {theory_name}",
@@ -214,14 +212,15 @@ def process_variant(
     all_parsed = {}
     solved = 0
     timeouts = 0
-    with ThreadPoolExecutor(max_workers=jobs) as executor:
-        futures = {
-            executor.submit(
-                run_docker_mirabelle_theory,
-                thy_dir, theory, sledgehammer_timeout, threads, memory,
-            ): theory
-            for theory in theory_stems
-        }
+    executor = ThreadPoolExecutor(max_workers=jobs)
+    futures = {
+        executor.submit(
+            run_docker_mirabelle_theory,
+            thy_dir, theory, sledgehammer_timeout, threads, memory,
+        ): theory
+        for theory in theory_stems
+    }
+    try:
         with tqdm(
             total=len(theory_stems),
             desc=f"{benchmark_name}/{mode}",
@@ -245,6 +244,13 @@ def process_variant(
                             solved += 1
                     pbar.set_postfix({"solved": solved, "timeout": timeouts})
                 pbar.update(1)
+    except KeyboardInterrupt:
+        tqdm.write("\nInterrupt received — killing all running containers ...")
+        _kill_all()
+        executor.shutdown(wait=False, cancel_futures=True)
+        raise
+    else:
+        executor.shutdown(wait=False)
 
     # 6. Write combined parsed results
     with open(out_dir / "parsed.json", "w") as f:
@@ -274,9 +280,6 @@ def run_mirabelle_benchmarks(
         lemma/{benchmark}/parsed.json     ← combined parsed results
         nolemma/{benchmark}/...
     """
-    signal.signal(signal.SIGINT, _signal_handler)
-    signal.signal(signal.SIGTERM, _signal_handler)
-
     if not Path(PARABIT_BIN).exists():
         print(f"Error: parabit binary not found at '{PARABIT_BIN}'", file=sys.stderr)
         print("Set the PARABIT_PATH environment variable to the binary location.")
