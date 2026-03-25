@@ -14,13 +14,15 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from tqdm import tqdm
+
 from parse_mirabelle import parse_log_file
 
 # --- Configuration ---
 
 PARABIT_BIN = os.environ.get("PARABIT_PATH", "../parabit/target/release/parabit")
 ISABELLE_DOCKER_IMAGE = "isabelle-docker:latest"
-SLEDGEHAMMER_TIMEOUT = 60  # seconds per theorem goal
+SLEDGEHAMMER_TIMEOUT = 120  # seconds per theorem goal
 THREADS = 4               # CPU cores available to each mirabelle Docker container
 MEMORY = "8g"            # Memory limit per mirabelle Docker container (e.g. "8g", "16g")
 JOBS = 3                  # Number of theories to run in parallel per variant
@@ -149,19 +151,22 @@ def run_docker_mirabelle_theory(
             "-T", theory_name,
             "LemmaSledge",
         ],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
         text=True,
     )
     with _procs_lock:
         _running_procs.append(proc)
     try:
+        for line in proc.stdout:
+            tqdm.write(f"[{theory_name}] {line}", end="")
         proc.wait()
     finally:
         with _procs_lock:
             _running_procs.remove(proc)
     if proc.returncode != 0:
-        print(
-            f"    Warning: mirabelle exited with code {proc.returncode} for {theory_name}",
-            file=sys.stderr,
+        tqdm.write(
+            f"Warning: mirabelle exited with code {proc.returncode} for {theory_name}",
         )
     return thy_dir.parent / "logs" / out_subdir / "mirabelle.log"
 
@@ -207,6 +212,8 @@ def process_variant(
     print(f"  Running mirabelle on {len(theory_stems)} theories ({mode}, {jobs} parallel) ...")
 
     all_parsed = {}
+    solved = 0
+    timeouts = 0
     with ThreadPoolExecutor(max_workers=jobs) as executor:
         futures = {
             executor.submit(
@@ -215,22 +222,31 @@ def process_variant(
             ): theory
             for theory in theory_stems
         }
-        for future in as_completed(futures):
-            theory = futures[future]
-            log_src = future.result()
-            if not log_src.exists():
-                print(f"    Warning: no log produced for {theory}", file=sys.stderr)
-                continue
-            log_dst = logs_dir / f"{theory}.log"
-            shutil.copy(log_src, log_dst)
-            all_parsed.update(parse_log_file(str(log_dst)))
+        with tqdm(
+            total=len(theory_stems),
+            desc=f"{benchmark_name}/{mode}",
+            unit="thm",
+            postfix={"solved": 0, "timeout": 0},
+        ) as pbar:
+            for future in as_completed(futures):
+                theory = futures[future]
+                log_src = future.result()
+                if not log_src.exists():
+                    tqdm.write(f"Warning: no log produced for {theory}")
+                else:
+                    log_dst = logs_dir / f"{theory}.log"
+                    shutil.copy(log_src, log_dst)
+                    parsed = parse_log_file(str(log_dst))
+                    all_parsed.update(parsed)
+                    for entry in parsed.values():
+                        if entry[0]["method"] == "timeout":
+                            timeouts += 1
+                        else:
+                            solved += 1
+                    pbar.set_postfix({"solved": solved, "timeout": timeouts})
+                pbar.update(1)
 
     # 6. Write combined parsed results
-    timeouts = [k for k, v in all_parsed.items() if v[0]["method"] == "timeout"]
-    print(
-        f"  Parsed {len(all_parsed)} theorems, {len(timeouts)} timeouts "
-        f"({mode}/{benchmark_name})"
-    )
     with open(out_dir / "parsed.json", "w") as f:
         json.dump(all_parsed, f, indent=2)
 
@@ -239,7 +255,7 @@ def process_variant(
 
 def run_mirabelle_benchmarks(
     benchmark_dirs: list = BENCHMARK_DIRS,
-    results_base: Path = Path("../results/mirabelle"),
+    results_base: Path = Path("../results2/mirabelle"),
     sledgehammer_timeout: int = SLEDGEHAMMER_TIMEOUT,
     threads: int = THREADS,
     memory: str = MEMORY,
