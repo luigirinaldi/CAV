@@ -134,6 +134,8 @@ def run_docker_mirabelle_theory(
     """
     out_subdir = f"mirabelle_out_{theory_name}"
     container_name = f"mirabelle_{os.getpid()}_{theory_name}"
+    # Pre-create the output directory so Docker doesn't need to mkdir inside the mount
+    (thy_dir.parent / "logs" / out_subdir).mkdir(parents=True, exist_ok=True)
     print(f"    mirabelle [{theory_name}] ...")
     proc = subprocess.Popen(
         [
