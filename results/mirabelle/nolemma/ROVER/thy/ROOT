@@ -1,0 +1,31 @@
+session LemmaSledge = HOL +
+options [quick_and_dirty]
+theories
+  add_assoc_1
+  add_assoc_2
+  add_assoc_3
+  add_assoc_4
+  add_right_shift
+  add_zero
+  commutativity_add
+  commutativity_mult
+  dist_over_add
+  left_shift_add_1
+  left_shift_add_2
+  left_shift_mult
+  merge_left_shift
+  merge_right_shift
+  move_sel_zero
+  mul_one
+  mul_two
+  mult_assoc_1
+  mult_assoc_2
+  mult_assoc_3
+  mult_assoc_4
+  mult_sum_same
+  one_to_two_mult
+  redundant_sel_add
+  sel_add
+  sel_add_zero
+  sub_to_neg
+  sum_same
