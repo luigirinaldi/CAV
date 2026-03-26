@@ -1,182 +1,154 @@
 {
   "add_assoc_2": [
     {
-      "method": "unknown",
       "total_time": 13420,
       "proof": "some (SH 13420ms, ATP 1293ms): Try this: by (simp add: add.commute add.left_commute add_full_prec add_remove_prec_right that(1,2,3)) (4 ms)"
     }
   ],
   "add_assoc_1": [
     {
-      "method": "unknown",
       "total_time": 13311,
       "proof": "some (SH 13310ms, ATP 1244ms): Try this: by (simp add: add.commute add.left_commute add_remove_prec_right that(1,2)) (3 ms)"
     }
   ],
   "add_assoc_3": [
     {
-      "method": "unknown",
       "total_time": 13419,
       "proof": "some (SH 13419ms, ATP 1222ms): Try this: by (simp add: add.commute add.left_commute add_full_prec add_remove_prec_right that(1,2,3)) (7 ms)"
     }
   ],
   "add_zero": [
     {
-      "method": "unknown",
       "total_time": 11946,
       "proof": "some (SH 11946ms, ATP 132ms): Try this: by (metis mod_prop_sum bw_0 verit_sum_simplify) (10 ms)"
     }
   ],
   "add_assoc_4": [
     {
-      "method": "unknown",
       "total_time": 13297,
       "proof": "some (SH 13297ms, ATP 1183ms): Try this: by (simp add: add.commute add.left_commute add_full_prec that(1,2,3,4)) (3 ms)"
     }
   ],
   "add_right_shift": [
     {
-      "method": "timeout",
       "total_time": 20964
     }
   ],
   "commutativity_mult": [
     {
-      "method": "unknown",
       "total_time": 1993,
       "proof": "some (SH 1993ms, ATP 242ms): Try this: by (metis mult.commute) (3 ms)"
     }
   ],
   "commutativity_add": [
     {
-      "method": "unknown",
       "total_time": 10852,
       "proof": "some (SH 10852ms, ATP 204ms): Try this: by (metis add.commute) (3 ms)"
     }
   ],
   "dist_over_add": [
     {
-      "method": "timeout",
       "total_time": 20853
     }
   ],
   "left_shift_add_1": [
     {
-      "method": "timeout",
       "total_time": 20953
     }
   ],
   "left_shift_add_2": [
     {
-      "method": "timeout",
       "total_time": 21394
     }
   ],
   "left_shift_mult": [
     {
-      "method": "timeout",
       "total_time": 21220
     }
   ],
   "merge_left_shift": [
     {
-      "method": "timeout",
       "total_time": 20987
     }
   ],
   "merge_right_shift": [
     {
-      "method": "timeout",
       "total_time": 21299
     }
   ],
   "move_sel_zero": [
     {
-      "method": "timeout",
       "total_time": 20981
     }
   ],
   "mul_one": [
     {
-      "method": "unknown",
       "total_time": 10836,
       "proof": "some (SH 10836ms, ATP 135ms): Try this: by (metis that(1) bw_1 mul_by_bit_eq mult_cancel_left2 less_one) (19 ms)"
     }
   ],
   "mul_two": [
     {
-      "method": "timeout",
       "total_time": 21043
     }
   ],
   "mult_assoc_1": [
     {
-      "method": "timeout",
       "total_time": 21009
     }
   ],
   "mult_assoc_3": [
     {
-      "method": "unknown",
       "total_time": 11169,
       "proof": "some (SH 11169ms, ATP 695ms): Try this: by (simp add: ab_semigroup_mult_class.mult_ac(1) mul_full_prec mul_remove_prec that(1,2)) (14 ms)"
     }
   ],
   "mult_assoc_2": [
     {
-      "method": "unknown",
       "total_time": 43329,
       "proof": "some (SH 43329ms, ATP 1482ms): Try this: by (smt (verit) mul_full_prec mul_remove_prec mult.commute mult.left_commute that(1,2)) (147 ms)"
     }
   ],
   "mult_assoc_4": [
     {
-      "method": "unknown",
       "total_time": 11374,
       "proof": "some (SH 11374ms, ATP 511ms): Try this: by (simp add: ab_semigroup_mult_class.mult_ac(1) mul_full_prec that(1,2)) (5 ms)"
     }
   ],
   "one_to_two_mult": [
     {
-      "method": "timeout",
       "total_time": 21412
     }
   ],
   "redundant_sel_add": [
     {
-      "method": "timeout",
       "total_time": 11739
     }
   ],
   "mult_sum_same": [
     {
-      "method": "unknown",
       "total_time": 44764,
       "proof": "some (SH 44764ms, ATP 1242ms): Try this: by (metis Groups.mult_1 Int.int_distrib(1) add_full_prec bw_1 mul_full_prec that(1,2,3) zero_less_one) (149 ms)"
     }
   ],
   "sel_add": [
     {
-      "method": "timeout",
       "total_time": 21034
     }
   ],
   "sel_add_zero": [
     {
-      "method": "timeout",
       "total_time": 20979
     }
   ],
   "sub_to_neg": [
     {
-      "method": "unknown",
       "total_time": 10851,
       "proof": "some (SH 10851ms, ATP 976ms): Try this: by (metis ab_group_add_class.ab_diff_conv_add_uminus verit_minus_simplify(4) mod_prop_sub_right mod_prop_neg) (15 ms)"
     }
   ],
   "sum_same": [
     {
-      "method": "timeout",
       "total_time": 20702
     }
   ]
