@@ -261,6 +261,41 @@ def process_variant(
     with open(out_dir / "parsed.json", "w") as f:
         json.dump(all_parsed, f, indent=2)
 
+def setup_mount_permissions(host_path_in: Path) -> None:
+    """
+    Sets up ACL permissions on a host directory so that the Isabelle Docker
+    container user and the current host user can both read/write files.
+    """
+    # Get the Isabelle container's UID
+    host_path = str(host_path_in)  # handle PosixPath or Path objects
+    os.makedirs(host_path, exist_ok=True)
+    result = subprocess.run(
+        ["docker", "run", "--rm", "--entrypoint", "/bin/bash",
+         ISABELLE_DOCKER_IMAGE, "-c", "id -u"],
+        capture_output=True, text=True, check=True
+    )
+    isabelle_uid = result.stdout.strip()
+    print(f"Isabelle container UID: {isabelle_uid}")
+
+    # Get the current host username
+    current_user = subprocess.run(
+        ["whoami"], capture_output=True, text=True, check=True
+    ).stdout.strip()
+    print(f"Host user: {current_user}")
+
+    # Set ACL rules
+    acl_rules = [
+        ["setfacl", "-Rm", f"u:{isabelle_uid}:rwX", host_path],
+        ["setfacl", "-Rdm", f"u:{isabelle_uid}:rwX", host_path],
+        ["setfacl", "-Rm", f"u:{current_user}:rwX", host_path],
+        ["setfacl", "-Rdm", f"u:{current_user}:rwX", host_path],
+    ]
+
+    for cmd in acl_rules:
+        subprocess.run(cmd, check=True)
+        print(f"Applied: {' '.join(cmd)}")
+
+    print(f"\nPermissions set up successfully on {host_path}")
 
 # --- Main ---
 
@@ -293,6 +328,8 @@ def run_mirabelle_benchmarks(
     if not PROOFS_DIR.exists():
         print(f"Error: proofs directory not found at '{PROOFS_DIR}'", file=sys.stderr)
         sys.exit(1)
+
+    setup_mount_permissions(results_base)
 
     for bwlang_dir in benchmark_dirs:
         bwlang_dir = Path(bwlang_dir)
