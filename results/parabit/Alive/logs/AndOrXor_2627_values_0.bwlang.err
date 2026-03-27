@@ -1,22 +1,178 @@
-[2026-03-27T11:47:07Z WARN  parabit] Sanitised input expression 0 from:
+[2026-03-27T17:16:52Z WARN  parabit] Sanitised input expression 0 from:
     (bw k (xor (bw k (xor (bw k "%a") (bw k "%c"))) (bw k (or (bw k "%a") (bw k "%b")))))
     to:
     (bw k (xor (bw k (xor (bw k var_a) (bw k var_c))) (bw k (or (bw k var_a) (bw k var_b)))))
-[2026-03-27T11:47:07Z WARN  parabit] Sanitised input expression 0 from:
+[2026-03-27T17:16:52Z WARN  parabit] Sanitised input expression 0 from:
     (bw k (xor (bw k (and (bw k (xor (bw k "%a") (bw k (not (bw k 0))))) (bw k "%b"))) (bw k "%c")))
     to:
     (bw k (xor (bw k (and (bw k (xor (bw k var_a) (bw k (not (bw k 0))))) (bw k var_b))) (bw k var_c)))
-[2026-03-27T11:47:07Z INFO  parabit] Running parabit on file: AndOrXor_2627_values_0
-[2026-03-27T11:47:07Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
-[2026-03-27T11:47:07Z INFO  parabit] Iteration 1: 110 nodes, 57 classes
-[2026-03-27T11:47:07Z INFO  parabit] Iteration 2: 214 nodes, 90 classes
-[2026-03-27T11:47:07Z INFO  parabit] Iteration 3: 436 nodes, 135 classes
-[2026-03-27T11:47:07Z INFO  parabit] Iteration 4: 967 nodes, 253 classes
-[2026-03-27T11:47:07Z INFO  parabit] Iteration 5: 2751 nodes, 472 classes
-[2026-03-27T11:47:07Z INFO  parabit] Iteration 6: 13420 nodes, 1733 classes
-[2026-03-27T11:47:10Z INFO  parabit] Iteration 7: 539972 nodes, 23518 classes
-memory allocation of 12884901888 bytes failed
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-timeout: the monitored command dumped core
-Command terminated by signal 6
-{"elapsed":10.91, "maxrss":6705016}
+[2026-03-27T17:16:52Z INFO  parabit] Running parabit on file: AndOrXor_2627_values_0
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:52Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 1: 117 nodes, 57 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 2: 227 nodes, 92 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 3: 459 nodes, 143 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 4: 1050 nodes, 280 classes
+[2026-03-27T17:16:53Z INFO  parabit] Iteration 5: 3030 nodes, 526 classes
+{"elapsed":1.08, "maxrss":13596}
