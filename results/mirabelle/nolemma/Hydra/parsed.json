@@ -1,422 +1,352 @@
 {
-  "hydra_opt_1099": [
+  "hydra_opt_1003": [
     {
-      "method": "timeout",
-      "total_time": 101413
+      "total_time": 102842
     }
   ],
   "hydra_opt_1097": [
     {
-      "method": "timeout",
       "total_time": 101465
     }
   ],
-  "hydra_opt_1003": [
+  "hydra_opt_1099": [
     {
-      "method": "timeout",
-      "total_time": 102842
-    }
-  ],
-  "hydra_opt_1116": [
-    {
-      "method": "timeout",
-      "total_time": 101347
+      "total_time": 101413
     }
   ],
   "hydra_opt_1106": [
     {
-      "method": "timeout",
       "total_time": 102651
+    }
+  ],
+  "hydra_opt_1116": [
+    {
+      "total_time": 101347
     }
   ],
   "hydra_opt_1150": [
     {
-      "method": "timeout",
       "total_time": 101489
     }
   ],
   "hydra_opt_1232": [
     {
-      "method": "timeout",
       "total_time": 101414
-    }
-  ],
-  "hydra_opt_1295": [
-    {
-      "method": "timeout",
-      "total_time": 101280
     }
   ],
   "hydra_opt_1247": [
     {
-      "method": "timeout",
       "total_time": 102231
+    }
+  ],
+  "hydra_opt_1295": [
+    {
+      "total_time": 101280
     }
   ],
   "hydra_opt_1502": [
     {
-      "method": "timeout",
       "total_time": 51879
     }
   ],
   "hydra_opt_1677": [
     {
-      "method": "timeout",
       "total_time": 53195
     }
   ],
   "hydra_opt_2430": [
     {
-      "method": "timeout",
       "total_time": 101622
-    }
-  ],
-  "hydra_opt_2456": [
-    {
-      "method": "timeout",
-      "total_time": 51836
     }
   ],
   "hydra_opt_2438": [
     {
-      "method": "timeout",
       "total_time": 101419
+    }
+  ],
+  "hydra_opt_2456": [
+    {
+      "total_time": 51836
     }
   ],
   "hydra_opt_250": [
     {
-      "method": "timeout",
       "total_time": 101594
     }
   ],
   "hydra_opt_251": [
     {
-      "method": "timeout",
       "total_time": 101507
     }
   ],
   "hydra_opt_252": [
     {
-      "method": "timeout",
       "total_time": 102766
-    }
-  ],
-  "hydra_opt_2626": [
-    {
-      "method": "timeout",
-      "total_time": 53342
     }
   ],
   "hydra_opt_256": [
     {
-      "method": "timeout",
       "total_time": 101755
     }
   ],
-  "hydra_opt_2695": [
+  "hydra_opt_2626": [
     {
-      "method": "timeout",
-      "total_time": 52642
+      "total_time": 53342
     }
   ],
   "hydra_opt_263": [
     {
-      "method": "timeout",
       "total_time": 101568
+    }
+  ],
+  "hydra_opt_2695": [
+    {
+      "total_time": 52642
     }
   ],
   "hydra_opt_2696": [
     {
-      "method": "timeout",
       "total_time": 51766
     }
   ],
   "hydra_opt_2703": [
     {
-      "method": "timeout",
       "total_time": 101572
     }
   ],
   "hydra_opt_2712": [
     {
-      "method": "timeout",
       "total_time": 101680
     }
   ],
   "hydra_opt_2731": [
     {
-      "method": "timeout",
       "total_time": 101606
     }
   ],
   "hydra_opt_2743": [
     {
-      "method": "timeout",
       "total_time": 53266
     }
   ],
   "hydra_opt_2744": [
     {
-      "method": "timeout",
       "total_time": 53426
     }
   ],
   "hydra_opt_2746": [
     {
-      "method": "timeout",
       "total_time": 52873
     }
   ],
   "hydra_opt_2748": [
     {
-      "method": "timeout",
       "total_time": 51920
     }
   ],
   "hydra_opt_2750": [
     {
-      "method": "timeout",
       "total_time": 101443
     }
   ],
   "hydra_opt_2751": [
     {
-      "method": "timeout",
       "total_time": 101614
     }
   ],
   "hydra_opt_2761": [
     {
-      "method": "timeout",
       "total_time": 101473
     }
   ],
   "hydra_opt_2763": [
     {
-      "method": "timeout",
       "total_time": 101713
     }
   ],
   "hydra_opt_2770": [
     {
-      "method": "timeout",
       "total_time": 101386
     }
   ],
   "hydra_opt_2777": [
     {
-      "method": "timeout",
       "total_time": 101540
     }
   ],
   "hydra_opt_2778": [
     {
-      "method": "timeout",
       "total_time": 101437
     }
   ],
   "hydra_opt_2784": [
     {
-      "method": "timeout",
       "total_time": 101370
     }
   ],
   "hydra_opt_2789": [
     {
-      "method": "timeout",
       "total_time": 101528
     }
   ],
   "hydra_opt_2791": [
     {
-      "method": "timeout",
       "total_time": 101405
     }
   ],
   "hydra_opt_2793": [
     {
-      "method": "timeout",
       "total_time": 101486
     }
   ],
   "hydra_opt_2801": [
     {
-      "method": "timeout",
       "total_time": 101456
     }
   ],
   "hydra_opt_2806": [
     {
-      "method": "timeout",
       "total_time": 51682
     }
   ],
   "hydra_opt_2816": [
     {
-      "method": "timeout",
       "total_time": 53453
-    }
-  ],
-  "hydra_opt_2824": [
-    {
-      "method": "timeout",
-      "total_time": 53610
     }
   ],
   "hydra_opt_2817": [
     {
-      "method": "timeout",
       "total_time": 101582
+    }
+  ],
+  "hydra_opt_2824": [
+    {
+      "total_time": 53610
     }
   ],
   "hydra_opt_2825": [
     {
-      "method": "timeout",
       "total_time": 101710
     }
   ],
   "hydra_opt_2837": [
     {
-      "method": "timeout",
       "total_time": 101412
     }
   ],
   "hydra_opt_2840": [
     {
-      "method": "timeout",
       "total_time": 101334
     }
   ],
   "hydra_opt_2846": [
     {
-      "method": "timeout",
       "total_time": 101480
     }
   ],
   "hydra_opt_2852": [
     {
-      "method": "timeout",
       "total_time": 101732
     }
   ],
   "hydra_opt_2862": [
     {
-      "method": "timeout",
       "total_time": 101350
     }
   ],
   "hydra_opt_2873": [
     {
-      "method": "timeout",
       "total_time": 101415
     }
   ],
   "hydra_opt_288": [
     {
-      "method": "timeout",
       "total_time": 101593
-    }
-  ],
-  "hydra_opt_2895": [
-    {
-      "method": "timeout",
-      "total_time": 53356
     }
   ],
   "hydra_opt_2889": [
     {
-      "method": "timeout",
       "total_time": 101433
+    }
+  ],
+  "hydra_opt_2895": [
+    {
+      "total_time": 53356
     }
   ],
   "hydra_opt_293": [
     {
-      "method": "timeout",
       "total_time": 101526
     }
   ],
   "hydra_opt_30": [
     {
-      "method": "timeout",
       "total_time": 101550
     }
   ],
   "hydra_opt_310": [
     {
-      "method": "timeout",
       "total_time": 101662
     }
   ],
   "hydra_opt_36": [
     {
-      "method": "timeout",
       "total_time": 101391
     }
   ],
   "hydra_opt_37": [
     {
-      "method": "timeout",
       "total_time": 101582
     }
   ],
   "hydra_opt_386": [
     {
-      "method": "timeout",
       "total_time": 101525
     }
   ],
   "hydra_opt_391": [
     {
-      "method": "timeout",
       "total_time": 101467
     }
   ],
   "hydra_opt_392": [
     {
-      "method": "timeout",
       "total_time": 101440
     }
   ],
   "hydra_opt_54": [
     {
-      "method": "timeout",
       "total_time": 101499
     }
   ],
   "hydra_opt_57": [
     {
-      "method": "timeout",
       "total_time": 101536
     }
   ],
   "hydra_opt_625": [
     {
-      "method": "timeout",
       "total_time": 101719
     }
   ],
   "hydra_opt_64": [
     {
-      "method": "timeout",
       "total_time": 101446
-    }
-  ],
-  "hydra_opt_862": [
-    {
-      "method": "timeout",
-      "total_time": 52815
     }
   ],
   "hydra_opt_724": [
     {
-      "method": "timeout",
       "total_time": 102906
     }
   ],
   "hydra_opt_781": [
     {
-      "method": "timeout",
       "total_time": 101418
+    }
+  ],
+  "hydra_opt_862": [
+    {
+      "total_time": 52815
     }
   ]
 }

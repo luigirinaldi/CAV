@@ -1,411 +1,449 @@
 {
-  "AddSub_1164_values_0": [
+  "AddSub_1043_values_0": [
     {
-      "method": "unknown",
-      "total_time": 51356,
-      "proof": "some (SH 51356ms, ATP 1192ms): Try this: by (metis diff_add_eq diff_diff_eq2 mod_prop_sum arith_lemmas.diff_self minus_int_code(1)) (42 ms)"
+      "total_time": 101777
     }
   ],
   "AddSub_1098_values_0": [
     {
-      "method": "timeout",
       "total_time": 101458
     }
   ],
-  "AddSub_1043_values_0": [
+  "AddSub_1164_values_0": [
     {
-      "method": "timeout",
-      "total_time": 101777
-    }
-  ],
-  "AddSub_1176_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 51409,
-      "proof": "some (SH 51409ms, ATP 854ms): Try this: by (metis diff_add_eq diff_diff_eq2 mod_prop_sum arith_lemmas.diff_self minus_int_code(1) bw_0 minus_apply) (120 ms)"
+      "total_time": 51356,
+      "sh_time": 51356,
+      "atp_time": 1192,
+      "proof": "by (metis diff_add_eq diff_diff_eq2 mod_prop_sum arith_lemmas.diff_self minus_int_code(1)) (42 ms)"
     }
   ],
   "AddSub_1165_values_0": [
     {
-      "method": "unknown",
       "total_time": 151555,
-      "proof": "some (SH 151555ms, ATP 8128ms): Try this: by (metis add.assoc group_cancel.add2 group_cancel.add1 add_mono_thms_linordered_semiring(4) ab_semigroup_add_class.add_ac(1) diff_right_commute diff_eq_diff_eq add.group_left_neutral add.comm_neutral comm_monoid_add_class.add_0 eq_iff_diff_eq_0 diff_diff_eq add_implies_diff mem_Collect_eq Collect_mem_eq Collect_cong ext diff_add_eq_diff_diff_swap diff_add_eq diff_diff_eq2 add_diff_eq eq_diff_eq diff_eq_eq group_cancel.sub1 double_eq_0_iff minus_apply mod_prop_sub_right mod_prop_sub_left mod_prop_sum arith_lemmas.diff_self minus_int_code(1) bw_0 add_diff_cancel_left' add_diff_cancel_right add_diff_cancel_right' group_add_class.diff_self diff_add_zero add_diff_cancel) (1.4 s)"
+      "sh_time": 151555,
+      "atp_time": 8128,
+      "proof": "by (metis add.assoc group_cancel.add2 group_cancel.add1 add_mono_thms_linordered_semiring(4) ab_semigroup_add_class.add_ac(1) diff_right_commute diff_eq_diff_eq add.group_left_neutral add.comm_neutral comm_monoid_add_class.add_0 eq_iff_diff_eq_0 diff_diff_eq add_implies_diff mem_Collect_eq Collect_mem_eq Collect_cong ext diff_add_eq_diff_diff_swap diff_add_eq diff_diff_eq2 add_diff_eq eq_diff_eq diff_eq_eq group_cancel.sub1 double_eq_0_iff minus_apply mod_prop_sub_right mod_prop_sub_left mod_prop_sum arith_lemmas.diff_self minus_int_code(1) bw_0 add_diff_cancel_left' add_diff_cancel_right add_diff_cancel_right' group_add_class.diff_self diff_add_zero add_diff_cancel) (1.4 s)"
+    }
+  ],
+  "AddSub_1176_values_0": [
+    {
+      "total_time": 51409,
+      "sh_time": 51409,
+      "atp_time": 854,
+      "proof": "by (metis diff_add_eq diff_diff_eq2 mod_prop_sum arith_lemmas.diff_self minus_int_code(1) bw_0 minus_apply) (120 ms)"
     }
   ],
   "AddSub_1202_values_0": [
     {
-      "method": "timeout",
       "total_time": 101483
+    }
+  ],
+  "AddSub_1295_values_0": [
+    {
+      "total_time": 253307,
+      "sh_time": 253307,
+      "atp_time": 4817,
+      "proof": "by (metis plus_and_or bit.xor_left_self or.left_idem or.right_idem or_self and.left_idem and.right_idem and_self add_left_cancel add_right_cancel mod_prop_xor add_right_imp_eq group_cancel.add1 and.left_commute and.commute or.commute mod_prop_mod disjunctive_xor_eq_or disjunctive_add_eq_xor disjunctive_add_eq_or xor_and_or_help is_num_normalize(1) xor_as_or_and demorg_and demorg_or bit.xor_def2 bit.xor_def Let_0 bit.double_compl bit.compl_eq_compl_iff not_gr_zero add.right_neutral double_zero_sym xor.assoc bit.disj_conj_distrib2 mod_prop_sum bit.conj_xor_distrib2 mod_prop_and mod_prop_or xor_remove that) (812 ms)"
     }
   ],
   "AddSub_1539_2_values_0": [
     {
-      "method": "unknown",
       "total_time": 51303,
-      "proof": "some (SH 51303ms, ATP 267ms): Try this: by (metis ab_group_add_class.ab_diff_conv_add_uminus verit_minus_simplify(4) mod_prop_sub_right mod_prop_neg) (58 ms)"
+      "sh_time": 51303,
+      "atp_time": 267,
+      "proof": "by (metis ab_group_add_class.ab_diff_conv_add_uminus verit_minus_simplify(4) mod_prop_sub_right mod_prop_neg) (58 ms)"
     }
   ],
   "AddSub_1560_values_0": [
     {
-      "method": "unknown",
       "total_time": 101499,
-      "proof": "some (SH 101499ms, ATP 5465ms): Try this: by (metis bit.compl_zero bit.xor_one_left bw_0 minus_diff_commute mod_prop_sub_left mod_prop_xor not_eq_complement xor.commute) (44 ms)"
+      "sh_time": 101499,
+      "atp_time": 5465,
+      "proof": "by (metis bit.compl_zero bit.xor_one_left bw_0 minus_diff_commute mod_prop_sub_left mod_prop_xor not_eq_complement xor.commute) (44 ms)"
     }
   ],
   "AddSub_1564_values_0": [
     {
-      "method": "timeout",
       "total_time": 101309
     }
   ],
   "AddSub_1574_values_0": [
     {
-      "method": "unknown",
       "total_time": 53846,
-      "proof": "some (SH 53846ms, ATP 3427ms): Try this: by (metis add_diff_cancel diff_add_cancel add_diff_cancel_left add_right_cancel mod_prop_sub_left mod_prop_sub_right mod_prop_sum add_right_imp_eq add_left_imp_eq add.commute) (421 ms)"
-    }
-  ],
-  "AddSub_1295_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 253307,
-      "proof": "some (SH 253307ms, ATP 4817ms): Try this: by (metis plus_and_or bit.xor_left_self or.left_idem or.right_idem or_self and.left_idem and.right_idem and_self add_left_cancel add_right_cancel mod_prop_xor add_right_imp_eq group_cancel.add1 and.left_commute and.commute or.commute mod_prop_mod disjunctive_xor_eq_or disjunctive_add_eq_xor disjunctive_add_eq_or xor_and_or_help is_num_normalize(1) xor_as_or_and demorg_and demorg_or bit.xor_def2 bit.xor_def Let_0 bit.double_compl bit.compl_eq_compl_iff not_gr_zero add.right_neutral double_zero_sym xor.assoc bit.disj_conj_distrib2 mod_prop_sum bit.conj_xor_distrib2 mod_prop_and mod_prop_or xor_remove that) (812 ms)"
+      "sh_time": 53846,
+      "atp_time": 3427,
+      "proof": "by (metis add_diff_cancel diff_add_cancel add_diff_cancel_left add_right_cancel mod_prop_sub_left mod_prop_sub_right mod_prop_sum add_right_imp_eq add_left_imp_eq add.commute) (421 ms)"
     }
   ],
   "AddSub_1614_values_0": [
     {
-      "method": "unknown",
       "total_time": 51387,
-      "proof": "some (SH 51386ms, ATP 1034ms): Try this: by (metis diff_add_eq_diff_diff_swap diff_add_eq diff_diff_eq2 mod_prop_sub_right arith_lemmas.diff_self minus_int_code(1)) (102 ms)"
+      "sh_time": 51386,
+      "atp_time": 1034,
+      "proof": "by (metis diff_add_eq_diff_diff_swap diff_add_eq diff_diff_eq2 mod_prop_sub_right arith_lemmas.diff_self minus_int_code(1)) (102 ms)"
     }
   ],
   "AddSub_1619_values_0": [
     {
-      "method": "unknown",
       "total_time": 51682,
-      "proof": "some (SH 51682ms, ATP 381ms): Try this: by (metis mod_prop_sub_left arith_lemmas.diff_self diff_right_commute add_right_cancel) (22 ms)"
+      "sh_time": 51682,
+      "atp_time": 381,
+      "proof": "by (metis mod_prop_sub_left arith_lemmas.diff_self diff_right_commute add_right_cancel) (22 ms)"
     }
   ],
   "AddSub_1624_values_0": [
     {
-      "method": "unknown",
       "total_time": 51264,
-      "proof": "some (SH 51264ms, ATP 185ms): Try this: using xor_as_or_and mod_prop_sub_right mod_prop_sub_left by fastforce (18 ms)"
+      "sh_time": 51264,
+      "atp_time": 185,
+      "proof": "using xor_as_or_and mod_prop_sub_right mod_prop_sub_left by fastforce (18 ms)"
     }
   ],
   "AndOrXor_1207_values_0": [
     {
-      "method": "timeout",
       "total_time": 101508
     }
   ],
   "AndOrXor_1230_values_0": [
     {
-      "method": "unknown",
       "total_time": 101261,
-      "proof": "some (SH 101261ms, ATP 316ms): Try this: using bw_0 demorg_or or_remove xor_allones by auto (7 ms)"
+      "sh_time": 101261,
+      "atp_time": 316,
+      "proof": "using bw_0 demorg_or or_remove xor_allones by auto (7 ms)"
     }
   ],
   "AndOrXor_1241_values_0": [
     {
-      "method": "unknown",
       "total_time": 113365,
-      "proof": "some (SH 113364ms, ATP 309ms): Try this: by (smt (verit, ccfv_threshold) and_allones and_remove bit.conj_one_right bit.conj_xor_distrib bit.de_Morgan_conj bit.xor_def2 bit.xor_one_right bw_0 diff_numeral_simps(1) minus_numeral_eq_not_sub_one numerals(1) of_nat_1 of_nat_numeral or_remove xor_remove) (545 ms)"
-    }
-  ],
-  "AndOrXor_1280_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 101544,
-      "proof": "some (SH 101544ms, ATP 403ms): Try this: by (metis and.commute and_not_self bit.conj_cancel_left bit.conj_disj_distrib2 bit.de_Morgan_conj bit.disj_cancel_left bw_0 or.left_neutral or_remove xor_allones) (188 ms)"
-    }
-  ],
-  "AndOrXor_1253_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 172964,
-      "proof": "some (SH 172964ms, ATP 10020ms): Try this: by (metis xor_remove disjunctive_and_not_eq_xor and_not_self Let_0 mod_prop_xor mod_prop_and mod_prop_not bw_0 xor_and_or and_not_numerals(1) mod_prop_mod zero_integer.rsp xor_and_or_help ext zero_reorient disjunctive_add_eq_xor add_right_cancel add_left_cancel Let_1 or.left_idem or.right_idem or_self not_gr_zero add.right_neutral double_zero_sym add_cancel_left_left add_cancel_left_right add_cancel_right_left add_cancel_right_right add_eq_0_iff_both_eq_0 zero_eq_add_iff_both_eq_0 Groups.add_0 bit.double_compl bit.xor_left_self and_assoc xor.assoc bit.conj_xor_distrib2 bit.conj_xor_distrib and_int_code(1) and_int_code(2) and_remove) (967 ms)"
+      "sh_time": 113364,
+      "atp_time": 309,
+      "proof": "by (smt (verit, ccfv_threshold) and_allones and_remove bit.conj_one_right bit.conj_xor_distrib bit.de_Morgan_conj bit.xor_def2 bit.xor_one_right bw_0 diff_numeral_simps(1) minus_numeral_eq_not_sub_one numerals(1) of_nat_1 of_nat_numeral or_remove xor_remove) (545 ms)"
     }
   ],
   "AndOrXor_1247_values_0": [
     {
-      "method": "unknown",
       "total_time": 179661,
-      "proof": "some (SH 179661ms, ATP 437ms): Try this: by (metis and.commute and_remove bit.conj_cancel_left bit.de_Morgan_conj bit.disj_cancel_left bw_0 demorg_and or_remove xor_allones xor_and_or) (1.7 s)"
+      "sh_time": 179661,
+      "atp_time": 437,
+      "proof": "by (metis and.commute and_remove bit.conj_cancel_left bit.de_Morgan_conj bit.disj_cancel_left bw_0 demorg_and or_remove xor_allones xor_and_or) (1.7 s)"
+    }
+  ],
+  "AndOrXor_1253_values_0": [
+    {
+      "total_time": 172964,
+      "sh_time": 172964,
+      "atp_time": 10020,
+      "proof": "by (metis xor_remove disjunctive_and_not_eq_xor and_not_self Let_0 mod_prop_xor mod_prop_and mod_prop_not bw_0 xor_and_or and_not_numerals(1) mod_prop_mod zero_integer.rsp xor_and_or_help ext zero_reorient disjunctive_add_eq_xor add_right_cancel add_left_cancel Let_1 or.left_idem or.right_idem or_self not_gr_zero add.right_neutral double_zero_sym add_cancel_left_left add_cancel_left_right add_cancel_right_left add_cancel_right_right add_eq_0_iff_both_eq_0 zero_eq_add_iff_both_eq_0 Groups.add_0 bit.double_compl bit.xor_left_self and_assoc xor.assoc bit.conj_xor_distrib2 bit.conj_xor_distrib and_int_code(1) and_int_code(2) and_remove) (967 ms)"
+    }
+  ],
+  "AndOrXor_1280_values_0": [
+    {
+      "total_time": 101544,
+      "sh_time": 101544,
+      "atp_time": 403,
+      "proof": "by (metis and.commute and_not_self bit.conj_cancel_left bit.conj_disj_distrib2 bit.de_Morgan_conj bit.disj_cancel_left bw_0 or.left_neutral or_remove xor_allones) (188 ms)"
     }
   ],
   "AndOrXor_1288_values_0": [
     {
-      "method": "unknown",
       "total_time": 101614,
-      "proof": "some (SH 101614ms, ATP 1243ms): Try this: by (smt (verit, ccfv_threshold) and_allones and_self bit.compl_zero bit.conj_xor_distrib bw_0 xor.commute xor.left_commute xor_remove) (163 ms)"
+      "sh_time": 101614,
+      "atp_time": 1243,
+      "proof": "by (smt (verit, ccfv_threshold) and_allones and_self bit.compl_zero bit.conj_xor_distrib bw_0 xor.commute xor.left_commute xor_remove) (163 ms)"
     }
   ],
   "AndOrXor_1346a_values_0": [
     {
-      "method": "timeout",
       "total_time": 101378
     }
   ],
   "AndOrXor_1346b_values_0": [
     {
-      "method": "unknown",
       "total_time": 51359,
-      "proof": "some (SH 51359ms, ATP 2956ms): Try this: by (metis mod_prop_and and_remove and.commute) (76 ms)"
+      "sh_time": 51359,
+      "atp_time": 2956,
+      "proof": "by (metis mod_prop_and and_remove and.commute) (76 ms)"
     }
   ],
   "AndOrXor_135_values_0": [
     {
-      "method": "unknown",
       "total_time": 51431,
-      "proof": "some (SH 51431ms, ATP 24316ms): Try this: by (metis mod_prop_xor xor_remove and_remove bit.conj_xor_distrib2) (33 ms)"
+      "sh_time": 51431,
+      "atp_time": 24316,
+      "proof": "by (metis mod_prop_xor xor_remove and_remove bit.conj_xor_distrib2) (33 ms)"
     }
   ],
   "AndOrXor_1388_values_0": [
     {
-      "method": "timeout",
       "total_time": 101466
-    }
-  ],
-  "AndOrXor_2052_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 59776,
-      "proof": "some (SH 59776ms, ATP 26240ms): Try this: by (metis or_remove and_remove or.commute bit.disj_conj_distrib2) (43 ms)"
-    }
-  ],
-  "AndOrXor_2113_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 109036,
-      "proof": "some (SH 109036ms, ATP 307ms): Try this: by (smt (verit, ccfv_threshold) and.commute and_allones and_remove bit.disj_conj_distrib bw_0 diff_numeral_simps(1) minus_numeral_eq_not_sub_one numerals(1) of_nat_1 of_nat_numeral or.commute or_not_self or_remove xor_allones) (368 ms)"
     }
   ],
   "AndOrXor_144_values_0": [
     {
-      "method": "unknown",
       "total_time": 305775,
-      "proof": "some (SH 305775ms, ATP 27553ms): Try this: by (metis or.right_idem and.right_idem and_self and_distrib mod_prop_or or_remove and_remove and.left_commute or_eq_not_not_and zero_and_eq bit.conj_zero_left bit.conj_zero_right and_zero or.left_neutral bit.conj_cancel_right add_remove_prec_right) (217 ms)"
+      "sh_time": 305775,
+      "atp_time": 27553,
+      "proof": "by (metis or.right_idem and.right_idem and_self and_distrib mod_prop_or or_remove and_remove and.left_commute or_eq_not_not_and zero_and_eq bit.conj_zero_left bit.conj_zero_right and_zero or.left_neutral bit.conj_cancel_right add_remove_prec_right) (217 ms)"
     }
   ],
-  "AndOrXor_2118_values_0": [
+  "AndOrXor_2052_values_0": [
     {
-      "method": "unknown",
-      "total_time": 101189,
-      "proof": "some (SH 101189ms, ATP 445ms): Try this: by (metis (lifting) ext and.commute and_allones and_remove bit.conj_cancel_left bit.de_Morgan_conj bit.disj_cancel_left bit.disj_conj_distrib2 bw_0 or.commute or_not_self or_remove xor_allones) (2.4 s)"
-    }
-  ],
-  "AndOrXor_2123_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 101665,
-      "proof": "some (SH 101665ms, ATP 429ms): Try this: by (metis (no_types, lifting) and_allones and_remove bit.conj_cancel_left bit.conj_xor_distrib bit.double_compl bit.xor_def bit.xor_one_right or.left_idem xor_remove) (224 ms)"
-    }
-  ],
-  "AndOrXor_2188_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 101512,
-      "proof": "some (SH 101512ms, ATP 591ms): Try this: by (metis and.commute and.left_commute and_allones and_remove bit.conj_cancel_left bit.de_Morgan_conj bit.disj_cancel_left bit.xor_def bit.xor_def2 or_allones xor_remove) (854 ms)"
-    }
-  ],
-  "AndOrXor_2231_values_0": [
-    {
-      "method": "timeout",
-      "total_time": 102426
+      "total_time": 59776,
+      "sh_time": 59776,
+      "atp_time": 26240,
+      "proof": "by (metis or_remove and_remove or.commute bit.disj_conj_distrib2) (43 ms)"
     }
   ],
   "AndOrXor_2063_values_0": [
     {
-      "method": "unknown",
       "total_time": 577511,
-      "proof": "some (SH 577511ms, ATP 32441ms): Try this: by (smt (verit) and.left_neutral and.right_neutral and_allones and_remove bit.conj_cancel_right bit.conj_disj_distrib bit.conj_disj_distrib2 bit.de_Morgan_conj bit.disj_cancel_right bit.disj_conj_distrib bit.disj_conj_distrib2 bit.disj_one_right mod_prop_and mod_prop_or mod_prop_xor or.left_commute or_assoc or_remove or_zero xor_and_or_help xor_as_or_and xor_remove) (> 1.0 s, timed out)"
+      "sh_time": 577511,
+      "atp_time": 32441,
+      "proof": "by (smt (verit) and.left_neutral and.right_neutral and_allones and_remove bit.conj_cancel_right bit.conj_disj_distrib bit.conj_disj_distrib2 bit.de_Morgan_conj bit.disj_cancel_right bit.disj_conj_distrib bit.disj_conj_distrib2 bit.disj_one_right mod_prop_and mod_prop_or mod_prop_xor or.left_commute or_assoc or_remove or_zero xor_and_or_help xor_as_or_and xor_remove) (> 1.0 s, timed out)"
+    }
+  ],
+  "AndOrXor_2113_values_0": [
+    {
+      "total_time": 109036,
+      "sh_time": 109036,
+      "atp_time": 307,
+      "proof": "by (smt (verit, ccfv_threshold) and.commute and_allones and_remove bit.disj_conj_distrib bw_0 diff_numeral_simps(1) minus_numeral_eq_not_sub_one numerals(1) of_nat_1 of_nat_numeral or.commute or_not_self or_remove xor_allones) (368 ms)"
+    }
+  ],
+  "AndOrXor_2118_values_0": [
+    {
+      "total_time": 101189,
+      "sh_time": 101189,
+      "atp_time": 445,
+      "proof": "by (metis (lifting) ext and.commute and_allones and_remove bit.conj_cancel_left bit.de_Morgan_conj bit.disj_cancel_left bit.disj_conj_distrib2 bw_0 or.commute or_not_self or_remove xor_allones) (2.4 s)"
+    }
+  ],
+  "AndOrXor_2123_values_0": [
+    {
+      "total_time": 101665,
+      "sh_time": 101665,
+      "atp_time": 429,
+      "proof": "by (metis (no_types, lifting) and_allones and_remove bit.conj_cancel_left bit.conj_xor_distrib bit.double_compl bit.xor_def bit.xor_one_right or.left_idem xor_remove) (224 ms)"
+    }
+  ],
+  "AndOrXor_2188_values_0": [
+    {
+      "total_time": 101512,
+      "sh_time": 101512,
+      "atp_time": 591,
+      "proof": "by (metis and.commute and.left_commute and_allones and_remove bit.conj_cancel_left bit.de_Morgan_conj bit.disj_cancel_left bit.xor_def bit.xor_def2 or_allones xor_remove) (854 ms)"
+    }
+  ],
+  "AndOrXor_2231_values_0": [
+    {
+      "total_time": 102426
+    }
+  ],
+  "AndOrXor_2243_values_0": [
+    {
+      "total_time": 362921,
+      "sh_time": 362921,
+      "atp_time": 12718,
+      "proof": "by (metis or.right_idem or_self and.left_idem and_distrib mod_prop_or or_remove mod_prop_and and.left_commute or.commute mod_prop_mod bit.conj_disj_distrib2 bit.disj_conj_distrib and_eq_not_not_or bit.conj_zero_left bit.conj_zero_right reduce_mod_bis bit.disj_zero_right) (309 ms)"
     }
   ],
   "AndOrXor_2247_values_0": [
     {
-      "method": "unknown",
       "total_time": 101206,
-      "proof": "some (SH 101206ms, ATP 297ms): Try this: using and_remove bw_0 demorg_and xor_allones by auto (9 ms)"
+      "sh_time": 101206,
+      "atp_time": 297,
+      "proof": "using and_remove bw_0 demorg_and xor_allones by auto (9 ms)"
     }
   ],
   "AndOrXor_2263_values_0": [
     {
-      "method": "timeout",
       "total_time": 102287
     }
   ],
   "AndOrXor_2264_values_0": [
     {
-      "method": "unknown",
       "total_time": 101386,
-      "proof": "some (SH 101386ms, ATP 2319ms): Try this: by (smt (verit) and_self bit.disj_conj_distrib mod_prop_not or.left_commute or_eq_not_not_and or_not_self or_remove or_self xor.left_neutral xor_allones xor_and_or xor_remove) (> 1.0 s, timed out)"
-    }
-  ],
-  "AndOrXor_2243_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 362921,
-      "proof": "some (SH 362921ms, ATP 12718ms): Try this: by (metis or.right_idem or_self and.left_idem and_distrib mod_prop_or or_remove mod_prop_and and.left_commute or.commute mod_prop_mod bit.conj_disj_distrib2 bit.disj_conj_distrib and_eq_not_not_or bit.conj_zero_left bit.conj_zero_right reduce_mod_bis bit.disj_zero_right) (309 ms)"
+      "sh_time": 101386,
+      "atp_time": 2319,
+      "proof": "by (smt (verit) and_self bit.disj_conj_distrib mod_prop_not or.left_commute or_eq_not_not_and or_not_self or_remove or_self xor.left_neutral xor_allones xor_and_or xor_remove) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2265_values_0": [
     {
-      "method": "unknown",
       "total_time": 101564,
-      "proof": "some (SH 101564ms, ATP 3368ms): Try this: by (smt (verit) and.right_neutral and_eq_not_not_or and_remove and_self bit.de_Morgan_conj bit.disj_cancel_right bit.disj_conj_distrib2 or.commute or.left_commute xor_and_or_help xor_remove) (857 ms)"
-    }
-  ],
-  "AndOrXor_2285_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 105613,
-      "proof": "some (SH 105613ms, ATP 5860ms): Try this: by (smt (verit) and.commute bit.conj_cancel_right bit.conj_xor_distrib2 demorg_or not_bw_not or_remove or_self that xor.left_neutral xor.right_neutral xor_and_or xor_and_or_help xor_remove) (> 1.0 s, timed out)"
+      "sh_time": 101564,
+      "atp_time": 3368,
+      "proof": "by (smt (verit) and.right_neutral and_eq_not_not_or and_remove and_self bit.de_Morgan_conj bit.disj_cancel_right bit.disj_conj_distrib2 or.commute or.left_commute xor_and_or_help xor_remove) (857 ms)"
     }
   ],
   "AndOrXor_2284_values_0": [
     {
-      "method": "unknown",
       "total_time": 219196,
-      "proof": "some (SH 219196ms, ATP 1853ms): Try this: by (metis and.commute and_allones and_remove bit.disj_conj_distrib bw_0 demorg_or or_not_self or_remove xor.left_neutral xor_allones) (399 ms)"
+      "sh_time": 219196,
+      "atp_time": 1853,
+      "proof": "by (metis and.commute and_allones and_remove bit.disj_conj_distrib bw_0 demorg_or or_not_self or_remove xor.left_neutral xor_allones) (399 ms)"
+    }
+  ],
+  "AndOrXor_2285_values_0": [
+    {
+      "total_time": 105613,
+      "sh_time": 105613,
+      "atp_time": 5860,
+      "proof": "by (smt (verit) and.commute bit.conj_cancel_right bit.conj_xor_distrib2 demorg_or not_bw_not or_remove or_self that xor.left_neutral xor.right_neutral xor_and_or xor_and_or_help xor_remove) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2297_values_0": [
     {
-      "method": "unknown",
       "total_time": 143167,
-      "proof": "some (SH 143167ms, ATP 8531ms): Try this: by (smt (verit) and.commute and_assoc and_remove and_zero bit.conj_disj_distrib bit.de_Morgan_conj bit.disj_conj_distrib bit.xor_def2 bit.xor_left_self bw_0 mod_prop_not or_eq_not_not_and or_not_self or_remove or_zero xor.assoc xor.commute xor_allones xor_remove) (> 1.0 s, timed out)"
+      "sh_time": 143167,
+      "atp_time": 8531,
+      "proof": "by (smt (verit) and.commute and_assoc and_remove and_zero bit.conj_disj_distrib bit.de_Morgan_conj bit.disj_conj_distrib bit.xor_def2 bit.xor_left_self bw_0 mod_prop_not or_eq_not_not_and or_not_self or_remove or_zero xor.assoc xor.commute xor_allones xor_remove) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2367_values_0": [
     {
-      "method": "unknown",
       "total_time": 51480,
-      "proof": "some (SH 51480ms, ATP 1570ms): Try this: by (metis or_remove that or.commute or.left_commute) (32 ms)"
+      "sh_time": 51480,
+      "atp_time": 1570,
+      "proof": "by (metis or_remove that or.commute or.left_commute) (32 ms)"
     }
   ],
   "AndOrXor_2416_values_0": [
     {
-      "method": "unknown",
       "total_time": 101530,
-      "proof": "some (SH 101529ms, ATP 542ms): Try this: using and_remove bw_0 demorg_and not_bw_not that xor_allones by force (15 ms)"
+      "sh_time": 101529,
+      "atp_time": 542,
+      "proof": "using and_remove bw_0 demorg_and not_bw_not that xor_allones by force (15 ms)"
     }
   ],
   "AndOrXor_2429_values_0": [
     {
-      "method": "unknown",
       "total_time": 100956,
-      "proof": "some (SH 100956ms, ATP 276ms): Try this: using and_remove bw_0 demorg_and xor_allones by force (9 ms)"
+      "sh_time": 100956,
+      "atp_time": 276,
+      "proof": "using and_remove bw_0 demorg_and xor_allones by force (9 ms)"
     }
   ],
   "AndOrXor_2430_values_0": [
     {
-      "method": "unknown",
       "total_time": 101173,
-      "proof": "some (SH 101173ms, ATP 287ms): Try this: using bw_0 demorg_or or_remove xor_allones by auto (8 ms)"
+      "sh_time": 101173,
+      "atp_time": 287,
+      "proof": "using bw_0 demorg_or or_remove xor_allones by auto (8 ms)"
     }
   ],
   "AndOrXor_2475_values_0": [
     {
-      "method": "unknown",
       "total_time": 101697,
-      "proof": "some (SH 101697ms, ATP 6711ms): Try this: by (metis Groups.add_0 add.commute bit.xor_compl_left bw_0 mod_prop_sub_left mod_prop_sum mod_prop_xor not_add_distrib not_diff_distrib xor.commute xor.left_neutral) (2.0 s)"
+      "sh_time": 101697,
+      "atp_time": 6711,
+      "proof": "by (metis Groups.add_0 add.commute bit.xor_compl_left bw_0 mod_prop_sub_left mod_prop_sum mod_prop_xor not_add_distrib not_diff_distrib xor.commute xor.left_neutral) (2.0 s)"
     }
   ],
   "AndOrXor_2486_values_0": [
     {
-      "method": "timeout",
       "total_time": 102580
     }
   ],
   "AndOrXor_2581_values_0": [
     {
-      "method": "unknown",
       "total_time": 101755,
-      "proof": "some (SH 101755ms, ATP 1503ms): Try this: by (smt (verit) and_not_self and_remove bit.conj_disj_distrib2 demorg_or or_allones or_remove or_zero xor.left_neutral xor_allones xor_and_or) (> 1.0 s, timed out)"
+      "sh_time": 101755,
+      "atp_time": 1503,
+      "proof": "by (smt (verit) and_not_self and_remove bit.conj_disj_distrib2 demorg_or or_allones or_remove or_zero xor.left_neutral xor_allones xor_and_or) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2587_values_0": [
     {
-      "method": "unknown",
       "total_time": 120392,
-      "proof": "some (SH 120391ms, ATP 10033ms): Try this: by (metis and.commute xor.left_commute bit.conj_xor_distrib2 and_int_code(2) xor_int_code(1) xor_int_code(2) disjunctive_and_not_eq_xor mod_prop_xor mod_prop_and mod_prop_not) (643 ms)"
+      "sh_time": 120391,
+      "atp_time": 10033,
+      "proof": "by (metis and.commute xor.left_commute bit.conj_xor_distrib2 and_int_code(2) xor_int_code(1) xor_int_code(2) disjunctive_and_not_eq_xor mod_prop_xor mod_prop_and mod_prop_not) (643 ms)"
     }
   ],
   "AndOrXor_2595_values_0": [
     {
-      "method": "unknown",
       "total_time": 101641,
-      "proof": "some (SH 101641ms, ATP 967ms): Try this: by (smt (verit) and.commute and_distrib and_remove and_self bit.conj_zero_right bit.disj_conj_distrib demorg_and mod_prop_and or.commute or.left_commute or_remove or_zero xor_and_or xor_remove) (> 1.0 s, timed out)"
+      "sh_time": 101641,
+      "atp_time": 967,
+      "proof": "by (smt (verit) and.commute and_distrib and_remove and_self bit.conj_zero_right bit.disj_conj_distrib demorg_and mod_prop_and or.commute or.left_commute or_remove or_zero xor_and_or xor_remove) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2607_values_0": [
     {
-      "method": "unknown",
       "total_time": 108108,
-      "proof": "some (SH 108108ms, ATP 5411ms): Try this: by (smt (verit) and_allones and_self bit.xor_self demorg_and not_bw_not or.left_commute or_assoc or_not_self or_remove that xor.assoc xor_allones xor_and_or xor_remove) (> 1.0 s, timed out)"
+      "sh_time": 108108,
+      "atp_time": 5411,
+      "proof": "by (smt (verit) and_allones and_self bit.xor_self demorg_and not_bw_not or.left_commute or_assoc or_not_self or_remove that xor.assoc xor_allones xor_and_or xor_remove) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2617_values_0": [
     {
-      "method": "unknown",
       "total_time": 107060,
-      "proof": "some (SH 107060ms, ATP 2147ms): Try this: by (smt (verit) and_eq_not_not_or and_not_self and_remove bit.compl_zero bit.conj_xor_distrib bit.de_Morgan_conj bw_0 mod_prop_not or.commute or_self xor.assoc xor_allones xor_and_or_help xor_remove) (> 1.0 s, timed out)"
+      "sh_time": 107060,
+      "atp_time": 2147,
+      "proof": "by (smt (verit) and_eq_not_not_or and_not_self and_remove bit.compl_zero bit.conj_xor_distrib bit.de_Morgan_conj bw_0 mod_prop_not or.commute or_self xor.assoc xor_allones xor_and_or_help xor_remove) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2627_values_0": [
     {
-      "method": "unknown",
       "total_time": 200562,
-      "proof": "some (SH 200562ms, ATP 25051ms): Try this: by (smt (verit) and.commute and.left_commute and_assoc and_eq_not_not_or and_not_self and_remove bit.conj_disj_distrib bit.conj_disj_distrib2 bit.conj_xor_distrib bit.conj_xor_distrib2 bit.double_compl bit.xor_def bit.xor_def2 bw_0 mod_prop_and mod_prop_not mod_prop_xor or_eq_not_not_and or_remove or_self or_zero xor.assoc xor.commute xor.left_commute xor_allones xor_remove) (> 1.0 s, timed out)"
-    }
-  ],
-  "AndOrXor_2658_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 101542,
-      "proof": "some (SH 101541ms, ATP 381ms): Try this: by (metis and_allones and_remove bit.compl_zero bit.conj_xor_distrib bit.xor_self xor.assoc xor.right_neutral xor_remove) (755 ms)"
-    }
-  ],
-  "Select_1100_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 1308,
-      "proof": "some (SH 1308ms, ATP 3ms): Try this: by metis (3 ms)"
-    }
-  ],
-  "Select_1105_values_0": [
-    {
-      "method": "unknown",
-      "total_time": 1431,
-      "proof": "some (SH 1431ms, ATP 2ms): Try this: by metis (2 ms)"
+      "sh_time": 200562,
+      "atp_time": 25051,
+      "proof": "by (smt (verit) and.commute and.left_commute and_assoc and_eq_not_not_or and_not_self and_remove bit.conj_disj_distrib bit.conj_disj_distrib2 bit.conj_xor_distrib bit.conj_xor_distrib2 bit.double_compl bit.xor_def bit.xor_def2 bw_0 mod_prop_and mod_prop_not mod_prop_xor or_eq_not_not_and or_remove or_self or_zero xor.assoc xor.commute xor.left_commute xor_allones xor_remove) (> 1.0 s, timed out)"
     }
   ],
   "AndOrXor_2647_values_0": [
     {
-      "method": "unknown",
       "total_time": 199028,
-      "proof": "some (SH 199028ms, ATP 11886ms): Try this: by (metis disjunctive_xor_eq_or xor_and_or_help xor_as_or_and demorg_and demorg_or bit.xor_def2 bit.xor_def bit.de_Morgan_disj bit.de_Morgan_conj xor_remove_inner bit.double_compl bit.compl_eq_compl_iff zero_and_eq ext bit.conj_zero_left bit.conj_zero_right and_zero or.left_neutral or_zero bit.xor_self xor_self_eq xor.left_neutral xor.right_neutral bit.xor_compl_left bit.xor_compl_right bit.conj_cancel_right bit.conj_cancel_left disjunctive_diff_eq_and_not arith_lemmas.diff_self not_bw_not disjunctive_and_not_eq_xor and_not_self bit.xor_left_self or.left_idem and_distrib mod_prop_xor mod_prop_or xor.left_commute xor.commute xor.assoc bit.disj_conj_distrib bit.conj_disj_distrib bit.conj_xor_distrib2 bit.conj_xor_distrib and_remove mod_prop_and) (647 ms)"
+      "sh_time": 199028,
+      "atp_time": 11886,
+      "proof": "by (metis disjunctive_xor_eq_or xor_and_or_help xor_as_or_and demorg_and demorg_or bit.xor_def2 bit.xor_def bit.de_Morgan_disj bit.de_Morgan_conj xor_remove_inner bit.double_compl bit.compl_eq_compl_iff zero_and_eq ext bit.conj_zero_left bit.conj_zero_right and_zero or.left_neutral or_zero bit.xor_self xor_self_eq xor.left_neutral xor.right_neutral bit.xor_compl_left bit.xor_compl_right bit.conj_cancel_right bit.conj_cancel_left disjunctive_diff_eq_and_not arith_lemmas.diff_self not_bw_not disjunctive_and_not_eq_xor and_not_self bit.xor_left_self or.left_idem and_distrib mod_prop_xor mod_prop_or xor.left_commute xor.commute xor.assoc bit.disj_conj_distrib bit.conj_disj_distrib bit.conj_xor_distrib2 bit.conj_xor_distrib and_remove mod_prop_and) (647 ms)"
     }
   ],
-  "muldivrem_229_values_0": [
+  "AndOrXor_2658_values_0": [
     {
-      "method": "unknown",
-      "total_time": 51770,
-      "proof": "some (SH 51770ms, ATP 11039ms): Try this: by (metis mod_prop_mul mod_prop_sum Int.int_distrib(1) add_right_imp_eq add.commute) (115 ms)"
+      "total_time": 101542,
+      "sh_time": 101541,
+      "atp_time": 381,
+      "proof": "by (metis and_allones and_remove bit.compl_zero bit.conj_xor_distrib bit.xor_self xor.assoc xor.right_neutral xor_remove) (755 ms)"
+    }
+  ],
+  "Select_1100_values_0": [
+    {
+      "total_time": 1308,
+      "sh_time": 1308,
+      "atp_time": 3,
+      "proof": "by metis (3 ms)"
+    }
+  ],
+  "Select_1105_values_0": [
+    {
+      "total_time": 1431,
+      "sh_time": 1431,
+      "atp_time": 2,
+      "proof": "by metis (2 ms)"
     }
   ],
   "muldivrem_152_values_0": [
     {
-      "method": "timeout",
       "total_time": 101542
+    }
+  ],
+  "muldivrem_229_values_0": [
+    {
+      "total_time": 51770,
+      "sh_time": 51770,
+      "atp_time": 11039,
+      "proof": "by (metis mod_prop_mul mod_prop_sum Int.int_distrib(1) add_right_imp_eq add.commute) (115 ms)"
     }
   ],
   "muldivrem_239_values_0": [
     {
-      "method": "unknown",
       "total_time": 56186,
-      "proof": "some (SH 56186ms, ATP 3156ms): Try this: by (metis that mult.commute diff_right_commute eq_iff_diff_eq_0 left_diff_distrib' mod_prop_sub_left Int.int_distrib(3) mod_prop_mul) (165 ms)"
+      "sh_time": 56186,
+      "atp_time": 3156,
+      "proof": "by (metis that mult.commute diff_right_commute eq_iff_diff_eq_0 left_diff_distrib' mod_prop_sub_left Int.int_distrib(3) mod_prop_mul) (165 ms)"
     }
   ]
 }
