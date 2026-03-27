@@ -68,11 +68,16 @@ def load_sledge_data(filename):
     with open(filename, 'r') as f:
         data = json.load(f)
 
-    times = {"name":[], "time":[], "timeout":[]}
+    times = {"name":[], "time":[], "timeout":[], "proof": []}
     for theorem, entry in data.items():
         times["name"].append(theorem)
-        times["timeout"].append("proof" not in entry[0])
-        times["time"].append(entry[0]["total_time"] if "proof" not in entry[0] else entry[0]['atp_time'])
+        timeout = "proof" not in entry[0]
+        times["timeout"].append(timeout)
+        times["time"].append(entry[0]["total_time"] if timeout else entry[0]['atp_time'])
+        if not timeout:
+            times['proof'].append(entry[0]['proof'])
+        else:
+            times['proof'].append(None)
     return pd.DataFrame(times)
 
 # Load times from E-Graph file
