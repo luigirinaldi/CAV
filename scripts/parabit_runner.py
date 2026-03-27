@@ -19,7 +19,7 @@ import shutil
 import sys
 
 
-# HARDCODED BINARY PATH - Change this to your binary locationP
+# HARDCODED BINARY PATH - Change this to your binary location
 PARABIT_PATH = "../parabit/"
 # ASSUMES PARABIT HAS BEEN COMPILED TO RELEASE MODE
 BINARY_PATH = PARABIT_PATH + "target/release/parabit"
