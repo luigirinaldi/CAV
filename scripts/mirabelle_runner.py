@@ -20,7 +20,7 @@ from parse_mirabelle import combine_logs, parse_log_file
 # --- Configuration ---
 
 PARABIT_BIN = os.environ.get("PARABIT_PATH", "../parabit/target/release/parabit")
-ISABELLE_DOCKER_IMAGE = "isabelle-docker:latest"
+ISABELLE_DOCKER_IMAGE = "makarius/isabelle:Isabelle2025-2"
 SLEDGEHAMMER_TIMEOUT = 300  # seconds per theorem goal
 THREADS = 4               # CPU cores available to each mirabelle Docker container
 MEMORY = "8g"            # Memory limit per mirabelle Docker container (e.g. "8g", "16g")
@@ -293,7 +293,7 @@ def setup_mount_permissions(host_path_in: Path) -> None:
 
 def run_mirabelle_benchmarks(
     benchmark_dirs: list = BENCHMARK_DIRS,
-    results_base: Path = Path("../results2/mirabelle"),
+    results_base: Path = Path("../results/mirabelle"),
     sledgehammer_timeout: int = SLEDGEHAMMER_TIMEOUT,
     threads: int = THREADS,
     memory: str = MEMORY,

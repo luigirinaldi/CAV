@@ -1,0 +1,172 @@
+{
+  "add_assoc_3": [
+    {
+      "method": "timeout",
+      "total_time": 53178
+    }
+  ],
+  "add_assoc_2": [
+    {
+      "method": "timeout",
+      "total_time": 53565
+    }
+  ],
+  "add_assoc_1": [
+    {
+      "method": "timeout",
+      "total_time": 53565
+    }
+  ],
+  "add_assoc_4": [
+    {
+      "method": "timeout",
+      "total_time": 52906
+    }
+  ],
+  "add_right_shift": [
+    {
+      "method": "timeout",
+      "total_time": 53632
+    }
+  ],
+  "commutativity_mult": [
+    {
+      "method": "unknown",
+      "total_time": 1979,
+      "proof": "some (SH 1979ms, ATP 226ms): Try this: by (metis mult.commute) (9 ms)"
+    }
+  ],
+  "add_zero": [
+    {
+      "method": "timeout",
+      "total_time": 101216
+    }
+  ],
+  "commutativity_add": [
+    {
+      "method": "unknown",
+      "total_time": 50943,
+      "proof": "some (SH 50943ms, ATP 308ms): Try this: by (metis add.comm_neutral add.left_commute) (10 ms)"
+    }
+  ],
+  "left_shift_add_1": [
+    {
+      "method": "timeout",
+      "total_time": 53489
+    }
+  ],
+  "dist_over_add": [
+    {
+      "method": "timeout",
+      "total_time": 101186
+    }
+  ],
+  "left_shift_add_2": [
+    {
+      "method": "timeout",
+      "total_time": 53244
+    }
+  ],
+  "left_shift_mult": [
+    {
+      "method": "timeout",
+      "total_time": 52457
+    }
+  ],
+  "merge_right_shift": [
+    {
+      "method": "timeout",
+      "total_time": 53438
+    }
+  ],
+  "merge_left_shift": [
+    {
+      "method": "timeout",
+      "total_time": 53570
+    }
+  ],
+  "move_sel_zero": [
+    {
+      "method": "timeout",
+      "total_time": 101211
+    }
+  ],
+  "mul_one": [
+    {
+      "method": "timeout",
+      "total_time": 101487
+    }
+  ],
+  "mul_two": [
+    {
+      "method": "timeout",
+      "total_time": 101160
+    }
+  ],
+  "mult_assoc_1": [
+    {
+      "method": "timeout",
+      "total_time": 52588
+    }
+  ],
+  "mult_assoc_3": [
+    {
+      "method": "timeout",
+      "total_time": 52346
+    }
+  ],
+  "mult_assoc_2": [
+    {
+      "method": "timeout",
+      "total_time": 52306
+    }
+  ],
+  "mult_assoc_4": [
+    {
+      "method": "timeout",
+      "total_time": 52243
+    }
+  ],
+  "redundant_sel_add": [
+    {
+      "method": "timeout",
+      "total_time": 51511
+    }
+  ],
+  "one_to_two_mult": [
+    {
+      "method": "timeout",
+      "total_time": 101143
+    }
+  ],
+  "mult_sum_same": [
+    {
+      "method": "timeout",
+      "total_time": 101234
+    }
+  ],
+  "sel_add": [
+    {
+      "method": "timeout",
+      "total_time": 101193
+    }
+  ],
+  "sub_to_neg": [
+    {
+      "method": "timeout",
+      "total_time": 101225
+    }
+  ],
+  "sel_add_zero": [
+    {
+      "method": "timeout",
+      "total_time": 101325
+    }
+  ],
+  "sum_same": [
+    {
+      "method": "timeout",
+      "total_time": 101116
+    }
+  ]
+}

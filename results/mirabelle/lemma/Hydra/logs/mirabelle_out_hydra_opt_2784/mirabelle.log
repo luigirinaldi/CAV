@@ -1,0 +1,25 @@
+1.sledgehammer initialize Params for sledgehammer: {abduce = SOME 0, cache_dir = NONE, compress = NONE, debug = false, expect =
+1.sledgehammer initialize  "", fact_filter = NONE, fact_thresholds = (0.45, 0.85), falsify =
+1.sledgehammer initialize  SOME false, induction_rules = NONE, instantiate = NONE, isar_proofs = NONE,
+1.sledgehammer initialize  lam_trans = NONE, learn = true, max_facts = NONE, max_mono_iters = NONE,
+1.sledgehammer initialize  max_new_mono_instances = NONE, max_proofs = 1, minimize = true, overlord =
+1.sledgehammer initialize  false, preplay_timeout = 1.000, provers =
+1.sledgehammer initialize  ["cvc5", "verit", "z3", "e", "spass", "vampire", "zipperposition",
+1.sledgehammer initialize   "presburger", "fastforce", "linarith", "algebra", "order", "metis",
+1.sledgehammer initialize   "meson", "force", "blast", "simp", "satx", "fast", "auto", "argo"],
+1.sledgehammer initialize  slices = 24, smt_proofs = true, spy = false, strict = false, timeout =
+1.sledgehammer initialize  300.000, try0 = true, type_enc = NONE, uncurried_aliases = NONE, verbose =
+1.sledgehammer initialize  false}
+0.try0 goal.proof         6ms LemmaSledge.hydra_opt_2784 8:293  
+1.sledgehammer goal.proof     63353ms LemmaSledge.hydra_opt_2784 8:293  some (SH 63353ms, ATP 1816ms): Try this: by (metis that(1) and_remove_inner minus_equation_iff not_gr_zero add.inverse_neutral neg_0_equal_iff_equal neg_equal_0_iff_equal equal_neg_zero neg_equal_zero zero_and_eq bit.conj_zero_left bit.conj_zero_right and_zero neg_less_0_iff_less neg_0_less_iff_less neg_less_pos less_neg_neg monoid.left_neutral monoid.right_neutral and.commute and_remove less_minus_one_simps(2) less_minus_one_simps(4) uminus_apply mod_prop_and mod_prop_neg one_neq_neg_one less_numeral_extra(4) and.semilattice_neutr_axioms and_one and.monoid_axioms signed_of_neg ext and.comm_monoid_axioms) (490 ms)
+1.sledgehammer finalize   Total number of sledgehammer calls: 1
+1.sledgehammer finalize   Number of successful sledgehammer calls: 1
+1.sledgehammer finalize   Number of sledgehammer lemmas: 34
+1.sledgehammer finalize   Max number of sledgehammer lemmas: 34
+1.sledgehammer finalize   Success rate: 100.0%
+1.sledgehammer finalize   Total number of nontrivial sledgehammer calls: 1
+1.sledgehammer finalize   Number of successful nontrivial sledgehammer calls: 1
+1.sledgehammer finalize   Total time for sledgehammer calls (Isabelle): 63.353
+1.sledgehammer finalize   Total time for successful sledgehammer calls (ATP): 1.816
+1.sledgehammer finalize   Average time for sledgehammer calls (Isabelle): 63.353
+1.sledgehammer finalize   Average time for successful sledgehammer calls (ATP): 1.816

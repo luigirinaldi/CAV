@@ -1,0 +1,376 @@
+{
+  "AddSub_1043_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101574
+    }
+  ],
+  "AddSub_1098_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101383
+    }
+  ],
+  "AddSub_1164_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102494
+    }
+  ],
+  "AddSub_1202_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101425
+    }
+  ],
+  "AddSub_1176_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102689
+    }
+  ],
+  "AddSub_1165_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102687
+    }
+  ],
+  "AddSub_1539_2_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101345
+    }
+  ],
+  "AddSub_1295_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101419
+    }
+  ],
+  "AddSub_1560_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101537
+    }
+  ],
+  "AddSub_1564_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101439
+    }
+  ],
+  "AddSub_1574_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101551
+    }
+  ],
+  "AddSub_1614_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102878
+    }
+  ],
+  "AddSub_1619_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101605
+    }
+  ],
+  "AddSub_1624_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101910
+    }
+  ],
+  "AndOrXor_1207_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101444
+    }
+  ],
+  "AndOrXor_1230_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102327
+    }
+  ],
+  "AndOrXor_1241_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102230
+    }
+  ],
+  "AndOrXor_1247_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102335
+    }
+  ],
+  "AndOrXor_1253_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101492
+    }
+  ],
+  "AndOrXor_1280_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102233
+    }
+  ],
+  "AndOrXor_1288_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101554
+    }
+  ],
+  "AndOrXor_1346a_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101459
+    }
+  ],
+  "AndOrXor_1294_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102208
+    }
+  ],
+  "AndOrXor_1346b_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101476
+    }
+  ],
+  "AndOrXor_1388_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101468
+    }
+  ],
+  "AndOrXor_135_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 103075
+    }
+  ],
+  "AndOrXor_144_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102883
+    }
+  ],
+  "AndOrXor_2052_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102884
+    }
+  ],
+  "AndOrXor_2063_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102630
+    }
+  ],
+  "AndOrXor_2113_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102213
+    }
+  ],
+  "AndOrXor_2118_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102078
+    }
+  ],
+  "AndOrXor_2123_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102221
+    }
+  ],
+  "AndOrXor_2188_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102269
+    }
+  ],
+  "AndOrXor_2231_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102729
+    }
+  ],
+  "AndOrXor_2243_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102934
+    }
+  ],
+  "AndOrXor_2247_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102152
+    }
+  ],
+  "AndOrXor_2263_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102981
+    }
+  ],
+  "AndOrXor_2264_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101482
+    }
+  ],
+  "AndOrXor_2265_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102311
+    }
+  ],
+  "AndOrXor_2284_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101417
+    }
+  ],
+  "AndOrXor_2285_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101523
+    }
+  ],
+  "AndOrXor_2297_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102085
+    }
+  ],
+  "AndOrXor_2367_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101395
+    }
+  ],
+  "AndOrXor_2416_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102247
+    }
+  ],
+  "AndOrXor_2417_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102296
+    }
+  ],
+  "AndOrXor_2429_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102017
+    }
+  ],
+  "AndOrXor_2430_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102154
+    }
+  ],
+  "AndOrXor_2475_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102810
+    }
+  ],
+  "AndOrXor_2486_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 103153
+    }
+  ],
+  "AndOrXor_2581_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102359
+    }
+  ],
+  "AndOrXor_2587_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101585
+    }
+  ],
+  "AndOrXor_2607_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101426
+    }
+  ],
+  "AndOrXor_2595_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102251
+    }
+  ],
+  "AndOrXor_2617_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102425
+    }
+  ],
+  "AndOrXor_2627_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102312
+    }
+  ],
+  "AndOrXor_2647_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 102395
+    }
+  ],
+  "AndOrXor_2658_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101503
+    }
+  ],
+  "Select_1100_values_0": [
+    {
+      "method": "unknown",
+      "total_time": 1184,
+      "proof": "some (SH 1184ms, ATP 4ms): Try this: by metis (4 ms)"
+    }
+  ],
+  "Select_1105_values_0": [
+    {
+      "method": "unknown",
+      "total_time": 1384,
+      "proof": "some (SH 1384ms, ATP 3ms): Try this: by metis (3 ms)"
+    }
+  ],
+  "muldivrem_152_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101895
+    }
+  ],
+  "muldivrem_229_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101456
+    }
+  ],
+  "muldivrem_239_values_0": [
+    {
+      "method": "timeout",
+      "total_time": 101648
+    }
+  ]
+}

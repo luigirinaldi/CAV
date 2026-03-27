@@ -1,0 +1,8 @@
+session LemmaSledge = HOL +
+options [quick_and_dirty]
+theories
+  abs_diff_shared_sub
+  abs_diff_shared_sub_signed
+  equation_abc
+  unsigned_rounding_v0_to_v2
+  unsigned_rounding_v1_to_v2

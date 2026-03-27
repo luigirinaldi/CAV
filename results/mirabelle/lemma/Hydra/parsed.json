@@ -1,0 +1,468 @@
+{
+  "hydra_opt_1097": [
+    {
+      "method": "unknown",
+      "total_time": 4133,
+      "proof": "some (SH 4133ms, ATP 254ms): Try this: by (metis or.left_neutral mod_prop_or or_remove or_self) (20 ms)"
+    }
+  ],
+  "hydra_opt_1003": [
+    {
+      "method": "unknown",
+      "total_time": 65018,
+      "proof": "some (SH 65018ms, ATP 13228ms): Try this: by (metis mod_prop_or or_remove and_remove and.commute bit.conj_disj_distrib2) (46 ms)"
+    }
+  ],
+  "hydra_opt_1099": [
+    {
+      "method": "timeout",
+      "total_time": 101366
+    }
+  ],
+  "hydra_opt_1106": [
+    {
+      "method": "unknown",
+      "total_time": 102197,
+      "proof": "some (SH 102197ms, ATP 285ms): Try this: by (metis and.left_commute and_distrib and_remove or_remove) (173 ms)"
+    }
+  ],
+  "hydra_opt_1116": [
+    {
+      "method": "unknown",
+      "total_time": 51523,
+      "proof": "some (SH 51523ms, ATP 496ms): Try this: by (metis or_remove or.left_commute or_zero) (21 ms)"
+    }
+  ],
+  "hydra_opt_1247": [
+    {
+      "method": "unknown",
+      "total_time": 1899,
+      "proof": "some (SH 1899ms, ATP 137ms): Try this: by (metis bit.double_compl mod_prop_not) (11 ms)"
+    }
+  ],
+  "hydra_opt_1150": [
+    {
+      "method": "timeout",
+      "total_time": 101380
+    }
+  ],
+  "hydra_opt_1232": [
+    {
+      "method": "timeout",
+      "total_time": 101123
+    }
+  ],
+  "hydra_opt_1502": [
+    {
+      "method": "timeout",
+      "total_time": 52659
+    }
+  ],
+  "hydra_opt_1295": [
+    {
+      "method": "timeout",
+      "total_time": 101336
+    }
+  ],
+  "hydra_opt_1677": [
+    {
+      "method": "timeout",
+      "total_time": 53063
+    }
+  ],
+  "hydra_opt_2430": [
+    {
+      "method": "unknown",
+      "total_time": 51373,
+      "proof": "some (SH 51373ms, ATP 378ms): Try this: using bw_0 mod_prop_mod by force (5 ms)"
+    }
+  ],
+  "hydra_opt_2456": [
+    {
+      "method": "timeout",
+      "total_time": 52330
+    }
+  ],
+  "hydra_opt_2438": [
+    {
+      "method": "timeout",
+      "total_time": 101368
+    }
+  ],
+  "hydra_opt_250": [
+    {
+      "method": "unknown",
+      "total_time": 51072,
+      "proof": "some (SH 51072ms, ATP 2027ms): Try this: by (metis zero_diff mod_prop_sub_right minus_int_code(1) diff_right_commute diff_eq_diff_eq) (135 ms)"
+    }
+  ],
+  "hydra_opt_251": [
+    {
+      "method": "unknown",
+      "total_time": 51261,
+      "proof": "some (SH 51261ms, ATP 1798ms): Try this: by (metis group_add_class.diff_self mod_prop_sub_right minus_int_code(1) that diff_right_commute diff_eq_diff_eq) (110 ms)"
+    }
+  ],
+  "hydra_opt_256": [
+    {
+      "method": "unknown",
+      "total_time": 3924,
+      "proof": "some (SH 3924ms, ATP 852ms): Try this: by (metis mod_prop_sub_right diff_eq_diff_eq diff_right_commute) (17 ms)"
+    }
+  ],
+  "hydra_opt_252": [
+    {
+      "method": "unknown",
+      "total_time": 51446,
+      "proof": "some (SH 51446ms, ATP 1489ms): Try this: by (metis diff_add_eq_diff_diff_swap mod_prop_sub_right mod_prop_sub_left) (29 ms)"
+    }
+  ],
+  "hydra_opt_263": [
+    {
+      "method": "unknown",
+      "total_time": 51150,
+      "proof": "some (SH 51150ms, ATP 839ms): Try this: by (metis add_diff_cancel mod_prop_sub_left mod_prop_sum) (18 ms)"
+    }
+  ],
+  "hydra_opt_2695": [
+    {
+      "method": "timeout",
+      "total_time": 53259
+    }
+  ],
+  "hydra_opt_2626": [
+    {
+      "method": "unknown",
+      "total_time": 81533,
+      "proof": "some (SH 81533ms, ATP 12594ms): Try this: by (metis that(1) bw_0 arith_lemmas.add_0 add_full_prec) (22 ms)"
+    }
+  ],
+  "hydra_opt_2696": [
+    {
+      "method": "timeout",
+      "total_time": 52703
+    }
+  ],
+  "hydra_opt_2712": [
+    {
+      "method": "unknown",
+      "total_time": 51477,
+      "proof": "some (SH 51477ms, ATP 453ms): Try this: using bw_0 mod_prop_mod by auto (5 ms)"
+    }
+  ],
+  "hydra_opt_2703": [
+    {
+      "method": "timeout",
+      "total_time": 101559
+    }
+  ],
+  "hydra_opt_2731": [
+    {
+      "method": "unknown",
+      "total_time": 104961,
+      "proof": "some (SH 104961ms, ATP 6604ms): Try this: by (metis that(1) and_self mod_prop_and that(4) and.commute and_remove_inner measure_induct_rule measure_induct nat_less_induct less_not_refl3 less_not_refl2 less_not_refl ext nat_neq_iff zero_less_iff_neq_zero order_less_imp_not_less order_less_imp_not_eq2 order_less_imp_not_eq linorder_less_linear order_less_imp_triv order_less_not_sym order_less_subst2 order_less_subst1 gr_implies_not_zero not_less_zero gr_zeroI infinite_descent0_measure less_numeral_extra(3) of_nat_0_less_iff bw_1) (253 ms)"
+    }
+  ],
+  "hydra_opt_2743": [
+    {
+      "method": "unknown",
+      "total_time": 84946,
+      "proof": "some (SH 84946ms, ATP 17210ms): Try this: by (metis that(1) that(3) bw_0 mod_prop_sum arith_lemmas.add_0 add_full_prec diff_minus_eq_add uminus_add_conv_diff verit_minus_simplify(3)) (97 ms)"
+    }
+  ],
+  "hydra_opt_2744": [
+    {
+      "method": "unknown",
+      "total_time": 83674,
+      "proof": "some (SH 83674ms, ATP 13348ms): Try this: by (metis that(1) bw_0 arith_lemmas.add_0 add_full_prec) (14 ms)"
+    }
+  ],
+  "hydra_opt_2746": [
+    {
+      "method": "unknown",
+      "total_time": 51242,
+      "proof": "some (SH 51242ms, ATP 348ms): Try this: using nat_less_le reduce_mod_bis redundant_signed that(1) by presburger (9 ms)"
+    }
+  ],
+  "hydra_opt_2748": [
+    {
+      "method": "timeout",
+      "total_time": 52881
+    }
+  ],
+  "hydra_opt_2750": [
+    {
+      "method": "unknown",
+      "total_time": 51270,
+      "proof": "some (SH 51270ms, ATP 500ms): Try this: by (metis that(1) mod_prop_or reduce_mod bit.disj_zero_right or_remove_inner nat_less_le) (53 ms)"
+    }
+  ],
+  "hydra_opt_2751": [
+    {
+      "method": "unknown",
+      "total_time": 51247,
+      "proof": "some (SH 51247ms, ATP 10123ms): Try this: by (simp add: order_less_imp_le reduce_mod reduce_mod_bis that(1)) (8 ms)"
+    }
+  ],
+  "hydra_opt_2761": [
+    {
+      "method": "unknown",
+      "total_time": 51333,
+      "proof": "some (SH 51333ms, ATP 467ms): Try this: by (metis and.commute and_remove mod_prop_and nless_le reduce_mod that(1)) (4.0 s)"
+    }
+  ],
+  "hydra_opt_2763": [
+    {
+      "method": "unknown",
+      "total_time": 51352,
+      "proof": "some (SH 51352ms, ATP 397ms): Try this: using bw_0 mod_prop_mod by auto (5 ms)"
+    }
+  ],
+  "hydra_opt_2770": [
+    {
+      "method": "unknown",
+      "total_time": 69533,
+      "proof": "some (SH 69533ms, ATP 658ms): Try this: by (metis that(1) redundant_signed mod_prop_xor xor.commute xor_remove_inner xor_int_code(1)) (263 ms)"
+    }
+  ],
+  "hydra_opt_2777": [
+    {
+      "method": "unknown",
+      "total_time": 160152,
+      "proof": "some (SH 160152ms, ATP 12707ms): Try this: by (metis that(1) redundant_signed and_self mod_prop_and and.commute and_remove_inner nat_neq_iff) (149 ms)"
+    }
+  ],
+  "hydra_opt_2784": [
+    {
+      "method": "unknown",
+      "total_time": 63353,
+      "proof": "some (SH 63353ms, ATP 1816ms): Try this: by (metis that(1) and_remove_inner minus_equation_iff not_gr_zero add.inverse_neutral neg_0_equal_iff_equal neg_equal_0_iff_equal equal_neg_zero neg_equal_zero zero_and_eq bit.conj_zero_left bit.conj_zero_right and_zero neg_less_0_iff_less neg_0_less_iff_less neg_less_pos less_neg_neg monoid.left_neutral monoid.right_neutral and.commute and_remove less_minus_one_simps(2) less_minus_one_simps(4) uminus_apply mod_prop_and mod_prop_neg one_neq_neg_one less_numeral_extra(4) and.semilattice_neutr_axioms and_one and.monoid_axioms signed_of_neg ext and.comm_monoid_axioms) (490 ms)"
+    }
+  ],
+  "hydra_opt_2778": [
+    {
+      "method": "unknown",
+      "total_time": 232226,
+      "proof": "some (SH 232226ms, ATP 7501ms): Try this: by (metis that(1) redundant_signed mod_prop_or or.commute or_remove_inner or_int_code(2) measure_induct_rule) (185 ms)"
+    }
+  ],
+  "hydra_opt_2789": [
+    {
+      "method": "unknown",
+      "total_time": 64972,
+      "proof": "some (SH 64972ms, ATP 5716ms): Try this: by (metis that(1) mod_prop_or or.commute unused_generic_or_simpl bit.disj_zero_right or_remove_inner) (146 ms)"
+    }
+  ],
+  "hydra_opt_2791": [
+    {
+      "method": "timeout",
+      "total_time": 101392
+    }
+  ],
+  "hydra_opt_2801": [
+    {
+      "method": "unknown",
+      "total_time": 83859,
+      "proof": "some (SH 83859ms, ATP 40891ms): Try this: by (smt (verit, best) and.commute and_remove and_remove_inner mod_prop_and redundant_signed that(1)) (79 ms)"
+    }
+  ],
+  "hydra_opt_2806": [
+    {
+      "method": "timeout",
+      "total_time": 52903
+    }
+  ],
+  "hydra_opt_2816": [
+    {
+      "method": "unknown",
+      "total_time": 80855,
+      "proof": "some (SH 80855ms, ATP 12917ms): Try this: by (metis that(1) bw_0 arith_lemmas.add_0 add_full_prec) (14 ms)"
+    }
+  ],
+  "hydra_opt_2817": [
+    {
+      "method": "timeout",
+      "total_time": 101544
+    }
+  ],
+  "hydra_opt_2793": [
+    {
+      "method": "unknown",
+      "total_time": 325929,
+      "proof": "some (SH 325929ms, ATP 1408ms): Try this: by (metis that(1) mod_prop_sum is_num_normalize(1) group_cancel.add1 group_cancel.add2 add.assoc not_gr_zero Groups.add_0 ext add_strict_left_mono add_strict_mono add_mono_thms_linordered_field(1) add_mono_thms_linordered_field(2) add_mono_thms_linordered_field(5) add.group_left_neutral add.comm_neutral comm_monoid_add_class.add_0 add_full_prec add_right_imp_eq add_left_imp_eq add.left_commute add.commute add.right_cancel add.left_cancel less_numeral_extra(3) add_neg_neg add_pos_pos canonically_ordered_monoid_add_class.lessE gr_zeroI not_less_zero pos_add_strict gr_implies_not_zero add_strict_right_mono mem_Collect_eq Collect_mem_eq Collect_cong add_less_imp_less_right add_less_imp_less_left zero_less_iff_neq_zero) (367 ms)"
+    }
+  ],
+  "hydra_opt_2824": [
+    {
+      "method": "unknown",
+      "total_time": 79879,
+      "proof": "some (SH 79879ms, ATP 13596ms): Try this: by (metis that(1) bw_0 arith_lemmas.add_0 add_full_prec) (15 ms)"
+    }
+  ],
+  "hydra_opt_2825": [
+    {
+      "method": "timeout",
+      "total_time": 101389
+    }
+  ],
+  "hydra_opt_2837": [
+    {
+      "method": "unknown",
+      "total_time": 51211,
+      "proof": "some (SH 51211ms, ATP 439ms): Try this: by (metis less_or_eq_imp_le mod_prop_mul mult.commute reduce_mod_bis that(1)) (691 ms)"
+    }
+  ],
+  "hydra_opt_2840": [
+    {
+      "method": "unknown",
+      "total_time": 61574,
+      "proof": "some (SH 61574ms, ATP 5282ms): Try this: by (metis add.commute less_or_eq_imp_le mod_prop_sum reduce_mod_bis that(1)) (75 ms)"
+    }
+  ],
+  "hydra_opt_2852": [
+    {
+      "method": "unknown",
+      "total_time": 58752,
+      "proof": "some (SH 58752ms, ATP 5333ms): Try this: using mod_prop_sub_left mod_prop_sub_right reduce_mod_bis that(1) by auto (10 ms)"
+    }
+  ],
+  "hydra_opt_2846": [
+    {
+      "method": "timeout",
+      "total_time": 101411
+    }
+  ],
+  "hydra_opt_2862": [
+    {
+      "method": "timeout",
+      "total_time": 101440
+    }
+  ],
+  "hydra_opt_288": [
+    {
+      "method": "unknown",
+      "total_time": 51066,
+      "proof": "some (SH 51066ms, ATP 97ms): Try this: by (metis mod_prop_sub_left mod_prop_sub_right minus_int_code(1)) (9 ms)"
+    }
+  ],
+  "hydra_opt_2873": [
+    {
+      "method": "unknown",
+      "total_time": 112856,
+      "proof": "some (SH 112855ms, ATP 22070ms): Try this: by (metis that(1) mod_prop_xor that(4) xor.commute xor_remove_inner xor.right_neutral) (104 ms)"
+    }
+  ],
+  "hydra_opt_2895": [
+    {
+      "method": "unknown",
+      "total_time": 51382,
+      "proof": "some (SH 51382ms, ATP 361ms): Try this: using nat_less_le reduce_mod_bis that(3) by presburger (7 ms)"
+    }
+  ],
+  "hydra_opt_2889": [
+    {
+      "method": "timeout",
+      "total_time": 101432
+    }
+  ],
+  "hydra_opt_293": [
+    {
+      "method": "unknown",
+      "total_time": 51451,
+      "proof": "some (SH 51451ms, ATP 2035ms): Try this: by (metis mod_prop_sub_left mod_prop_sub_right mod_prop_sum add_diff_eq eq_diff_eq uminus_add_conv_diff diff_minus_eq_add) (133 ms)"
+    }
+  ],
+  "hydra_opt_30": [
+    {
+      "method": "unknown",
+      "total_time": 101506,
+      "proof": "some (SH 101506ms, ATP 12071ms): Try this: by (metis add.commute bit.xor_one_left minus_eq_not_plus_1 mod_prop_mul mod_prop_sum mod_prop_xor mult_minus1) (47 ms)"
+    }
+  ],
+  "hydra_opt_36": [
+    {
+      "method": "unknown",
+      "total_time": 51734,
+      "proof": "some (SH 51734ms, ATP 481ms): Try this: by (metis add_left_cancel mod_prop_sum that mod_prop_mod ab_semigroup_add_class.add_ac(1) is_num_normalize(1) add_right_imp_eq add.left_commute) (222 ms)"
+    }
+  ],
+  "hydra_opt_310": [
+    {
+      "method": "timeout",
+      "total_time": 101580
+    }
+  ],
+  "hydra_opt_37": [
+    {
+      "method": "unknown",
+      "total_time": 51317,
+      "proof": "some (SH 51317ms, ATP 130ms): Try this: by (metis plus_int_code(2) mod_prop_sum plus_int_code(1)) (24 ms)"
+    }
+  ],
+  "hydra_opt_391": [
+    {
+      "method": "unknown",
+      "total_time": 51371,
+      "proof": "some (SH 51371ms, ATP 932ms): Try this: by (metis mult_minus_left minus_diff_commute Int.int_distrib(4) verit_minus_simplify(4) mod_prop_mul mod_prop_neg arith_lemmas.mult_1) (52 ms)"
+    }
+  ],
+  "hydra_opt_392": [
+    {
+      "method": "unknown",
+      "total_time": 4278,
+      "proof": "some (SH 4278ms, ATP 97ms): Try this: by (metis mult.right_neutral Groups.mult_1 mod_prop_mul) (23 ms)"
+    }
+  ],
+  "hydra_opt_386": [
+    {
+      "method": "timeout",
+      "total_time": 101474
+    }
+  ],
+  "hydra_opt_57": [
+    {
+      "method": "unknown",
+      "total_time": 51102,
+      "proof": "some (SH 51102ms, ATP 357ms): Try this: by (metis diff_add_cancel mod_prop_sub_right mod_prop_sum add_right_imp_eq add.commute) (96 ms)"
+    }
+  ],
+  "hydra_opt_625": [
+    {
+      "method": "unknown",
+      "total_time": 51276,
+      "proof": "some (SH 51276ms, ATP 181ms): Try this: by (metis and.left_neutral and.commute mod_prop_and) (18 ms)"
+    }
+  ],
+  "hydra_opt_724": [
+    {
+      "method": "unknown",
+      "total_time": 51399,
+      "proof": "some (SH 51399ms, ATP 3130ms): Try this: by (metis or.left_idem or_remove mod_prop_and and_remove or.left_commute bit.disj_conj_distrib2 zero_and_eq bit.disj_zero_right of_int_0_le_iff zero_less_double_add_iff_zero_less_single_add of_int_0_less_iff) (77 ms)"
+    }
+  ],
+  "hydra_opt_54": [
+    {
+      "method": "unknown",
+      "total_time": 194484,
+      "proof": "some (SH 194484ms, ATP 14528ms): Try this: by (metis add_left_cancel mod_prop_sum that mod_prop_mod ab_semigroup_add_class.add_ac(1) is_num_normalize(1) add_neg_neg add_pos_pos canonically_ordered_monoid_add_class.lessE gr_zeroI not_less_zero pos_add_strict gr_implies_not_zero zero_less_iff_neq_zero add_less_imp_less_right add_less_imp_less_left add_strict_right_mono add_strict_left_mono mem_Collect_eq Collect_mem_eq Collect_cong add_right_imp_eq add.left_commute) (278 ms)"
+    }
+  ],
+  "hydra_opt_64": [
+    {
+      "method": "timeout",
+      "total_time": 101494
+    }
+  ],
+  "hydra_opt_862": [
+    {
+      "method": "timeout",
+      "total_time": 52593
+    }
+  ],
+  "hydra_opt_781": [
+    {
+      "method": "timeout",
+      "total_time": 101506
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+1.sledgehammer initialize Params for sledgehammer: {abduce = SOME 0, cache_dir = NONE, compress = NONE, debug = false, expect =
+1.sledgehammer initialize  "", fact_filter = NONE, fact_thresholds = (0.45, 0.85), falsify =
+1.sledgehammer initialize  SOME false, induction_rules = NONE, instantiate = NONE, isar_proofs = NONE,
+1.sledgehammer initialize  lam_trans = NONE, learn = true, max_facts = NONE, max_mono_iters = NONE,
+1.sledgehammer initialize  max_new_mono_instances = NONE, max_proofs = 1, minimize = true, overlord =
+1.sledgehammer initialize  false, preplay_timeout = 1.000, provers =
+1.sledgehammer initialize  ["cvc5", "verit", "z3", "e", "spass", "vampire", "zipperposition",
+1.sledgehammer initialize   "presburger", "fastforce", "linarith", "algebra", "order", "metis",
+1.sledgehammer initialize   "meson", "force", "blast", "simp", "satx", "fast", "auto", "argo"],
+1.sledgehammer initialize  slices = 24, smt_proofs = true, spy = false, strict = false, timeout =
+1.sledgehammer initialize  300.000, try0 = true, type_enc = NONE, uncurried_aliases = NONE, verbose =
+1.sledgehammer initialize  false}
+0.try0 goal.proof         7ms LemmaSledge.AndOrXor_135_values_0 8:361  
+1.sledgehammer goal.proof     51431ms LemmaSledge.AndOrXor_135_values_0 8:361  some (SH 51431ms, ATP 24316ms): Try this: by (metis mod_prop_xor xor_remove and_remove bit.conj_xor_distrib2) (33 ms)
+1.sledgehammer finalize   Total number of sledgehammer calls: 1
+1.sledgehammer finalize   Number of successful sledgehammer calls: 1
+1.sledgehammer finalize   Number of sledgehammer lemmas: 4
+1.sledgehammer finalize   Max number of sledgehammer lemmas: 4
+1.sledgehammer finalize   Success rate: 100.0%
+1.sledgehammer finalize   Total number of nontrivial sledgehammer calls: 1
+1.sledgehammer finalize   Number of successful nontrivial sledgehammer calls: 1
+1.sledgehammer finalize   Total time for sledgehammer calls (Isabelle): 51.431
+1.sledgehammer finalize   Total time for successful sledgehammer calls (ATP): 24.316
+1.sledgehammer finalize   Average time for sledgehammer calls (Isabelle): 51.431
+1.sledgehammer finalize   Average time for successful sledgehammer calls (ATP): 24.316

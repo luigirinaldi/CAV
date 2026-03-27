@@ -1,0 +1,12 @@
+theory AddSub_1165_values_0
+    imports rewrite_defs arith_lemmas bitwise_lemmas mixed_lemmas signed_lemmas
+begin
+theorem AddSub_1165_values_0_th:
+"(bw k ((bw k ((bw k 0) - (bw k var_a))) + (bw k ((bw k 0) - (bw k var_b)))))=(bw k ((bw k 0) - (bw k ((bw k var_a) + (bw k var_b)))))" (is "?lhs = ?rhs")
+if "(k > 0)"
+for k :: nat and var_a var_b :: int
+proof -
+  show ?thesis sorry
+qed
+
+end
