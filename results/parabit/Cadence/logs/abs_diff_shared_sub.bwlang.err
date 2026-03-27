@@ -1,0 +1,18 @@
+[2026-03-27T11:52:11Z INFO  parabit] Running parabit on file: abs_diff_shared_sub
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 0: 21 nodes, 21 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 1: 91 nodes, 70 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 2: 194 nodes, 105 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 3: 345 nodes, 139 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 4: 639 nodes, 245 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 5: 1273 nodes, 506 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 6: 3367 nodes, 1255 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 7: 13918 nodes, 5509 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 0: 21 nodes, 21 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 1: 91 nodes, 70 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 2: 194 nodes, 105 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 3: 345 nodes, 139 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 4: 639 nodes, 245 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 5: 1273 nodes, 506 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 6: 3367 nodes, 1255 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 7: 13918 nodes, 5509 classes
+{"elapsed":1.07, "maxrss":127140}

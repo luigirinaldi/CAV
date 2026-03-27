@@ -1,0 +1,18 @@
+[2026-03-27T11:48:09Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (and (bw k (xor (bw k "%A") (bw k "%B"))) (bw k (xor (bw k (xor (bw k "%B") (bw k "%C"))) (bw k "%A")))))
+    to:
+    (bw k (and (bw k (xor (bw k var_A) (bw k var_B))) (bw k (xor (bw k (xor (bw k var_B) (bw k var_C))) (bw k var_A)))))
+[2026-03-27T11:48:09Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (and (bw k (xor (bw k "%A") (bw k "%B"))) (bw k (xor (bw k "%C") (bw k (not (bw k 0)))))))
+    to:
+    (bw k (and (bw k (xor (bw k var_A) (bw k var_B))) (bw k (xor (bw k var_C) (bw k (not (bw k 0)))))))
+[2026-03-27T11:48:09Z INFO  parabit] Running parabit on file: AndOrXor_1288_values_0
+[2026-03-27T11:48:09Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-03-27T11:48:09Z INFO  parabit] Iteration 1: 103 nodes, 57 classes
+[2026-03-27T11:48:09Z INFO  parabit] Iteration 2: 205 nodes, 89 classes
+[2026-03-27T11:48:09Z INFO  parabit] Iteration 3: 430 nodes, 136 classes
+[2026-03-27T11:48:09Z INFO  parabit] Iteration 4: 941 nodes, 264 classes
+[2026-03-27T11:48:09Z INFO  parabit] Iteration 5: 2684 nodes, 563 classes
+[2026-03-27T11:48:09Z INFO  parabit] Iteration 6: 14129 nodes, 2167 classes
+[2026-03-27T11:48:13Z INFO  parabit] Iteration 7: 709712 nodes, 29122 classes
+{"elapsed":29.75, "maxrss":4882400}

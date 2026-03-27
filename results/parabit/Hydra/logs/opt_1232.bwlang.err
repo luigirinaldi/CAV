@@ -1,0 +1,17 @@
+[2026-03-27T11:50:54Z INFO  parabit] Running parabit on file: hydra_opt_1232
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 0: 21 nodes, 21 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 1: 87 nodes, 63 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 2: 158 nodes, 89 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 3: 302 nodes, 126 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 4: 512 nodes, 202 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 5: 939 nodes, 325 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 6: 1796 nodes, 563 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 7: 3928 nodes, 1238 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 8: 12260 nodes, 2295 classes
+[2026-03-27T11:50:54Z INFO  parabit] Iteration 9: 29390 nodes, 7294 classes
+[2026-03-27T11:50:57Z INFO  parabit] Iteration 10: 133863 nodes, 42240 classes
+memory allocation of 1375731728 bytes failed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+timeout: the monitored command dumped core
+Command terminated by signal 6
+{"elapsed":58.84, "maxrss":6119592}

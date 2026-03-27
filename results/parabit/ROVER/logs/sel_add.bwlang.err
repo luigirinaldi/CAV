@@ -1,0 +1,18 @@
+[2026-03-27T11:47:00Z INFO  parabit] Running parabit on file: sel_add
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 0: 25 nodes, 25 classes
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 1: 106 nodes, 83 classes
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 2: 197 nodes, 112 classes
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 3: 380 nodes, 180 classes
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 4: 784 nodes, 316 classes
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 5: 1550 nodes, 625 classes
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 6: 4114 nodes, 1491 classes
+[2026-03-27T11:47:00Z INFO  parabit] Iteration 7: 14359 nodes, 5050 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 0: 25 nodes, 25 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 1: 106 nodes, 83 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 2: 197 nodes, 112 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 3: 380 nodes, 180 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 4: 784 nodes, 316 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 5: 1550 nodes, 625 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 6: 4114 nodes, 1491 classes
+[2026-03-27T11:47:01Z INFO  parabit] Iteration 7: 14359 nodes, 5050 classes
+{"elapsed":1.32, "maxrss":131960}

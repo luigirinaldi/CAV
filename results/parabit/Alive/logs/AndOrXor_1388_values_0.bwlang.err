@@ -1,0 +1,23 @@
+[2026-03-27T11:48:07Z WARN  parabit] Sanitised input expression 0 from:
+    (bw (+ (- k 1) 1) (and (bw (+ (- k 1) 1) (signed 1 (bw 1 "%a"))) (bw k "%b")))
+    to:
+    (bw (+ (- k 1) 1) (and (bw (+ (- k 1) 1) (signed 1 (bw 1 var_a))) (bw k var_b)))
+[2026-03-27T11:48:07Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (sel (bw 1 "%a") (bw k "%b") (bw k 0)))
+    to:
+    (bw k (sel (bw 1 var_a) (bw k var_b) (bw k 0)))
+[2026-03-27T11:48:07Z INFO  parabit] Running parabit on file: AndOrXor_1388_values_0
+[2026-03-27T11:48:07Z INFO  parabit] Iteration 0: 17 nodes, 17 classes
+[2026-03-27T11:48:07Z INFO  parabit] Iteration 1: 62 nodes, 44 classes
+[2026-03-27T11:48:07Z INFO  parabit] Iteration 2: 117 nodes, 60 classes
+[2026-03-27T11:48:07Z INFO  parabit] Iteration 3: 230 nodes, 90 classes
+[2026-03-27T11:48:07Z INFO  parabit] Iteration 4: 813 nodes, 200 classes
+[2026-03-27T11:48:08Z INFO  parabit] Iteration 5: 4540 nodes, 1347 classes
+
+thread 'main' (774968) panicked at src/language.rs:143:13:
+assertion `left == right` failed: Merged non-equal constants
+  left: 0
+ right: 1
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Command exited with non-zero status 101
+{"elapsed":1.27, "maxrss":756644}

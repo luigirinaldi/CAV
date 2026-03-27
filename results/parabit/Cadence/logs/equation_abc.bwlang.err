@@ -1,0 +1,14 @@
+[2026-03-27T11:52:11Z INFO  parabit] Running parabit on file: equation_abc
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 0: 43 nodes, 40 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 1: 183 nodes, 126 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 2: 415 nodes, 230 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 3: 1006 nodes, 489 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 4: 3346 nodes, 1375 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 5: 17015 nodes, 7022 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 0: 43 nodes, 40 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 1: 183 nodes, 126 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 2: 415 nodes, 230 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 3: 1006 nodes, 489 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 4: 3346 nodes, 1375 classes
+[2026-03-27T11:52:12Z INFO  parabit] Iteration 5: 17015 nodes, 7022 classes
+{"elapsed":1.13, "maxrss":143512}

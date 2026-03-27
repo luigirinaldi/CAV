@@ -1,0 +1,110 @@
+[2026-03-27T11:47:11Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k "%Y")
+    to:
+    (bw k var_Y)
+[2026-03-27T11:47:11Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k "%Y")
+    to:
+    (bw k var_Y)
+[2026-03-27T11:47:11Z INFO  parabit] Running parabit on file: Select_1105_values_0
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:11Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-03-27T11:47:12Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+{"elapsed":0.17, "maxrss":4352}

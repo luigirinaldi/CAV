@@ -1,0 +1,15 @@
+[2026-03-27T11:46:57Z INFO  parabit] Running parabit on file: redundant_sel_add
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 0: 9 nodes, 9 classes
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 1: 28 nodes, 24 classes
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 2: 41 nodes, 24 classes
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 3: 67 nodes, 37 classes
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 4: 131 nodes, 62 classes
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 5: 247 nodes, 92 classes
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 6: 572 nodes, 196 classes
+[2026-03-27T11:46:57Z INFO  parabit] Iteration 7: 2532 nodes, 914 classes
+[2026-03-27T11:46:58Z INFO  parabit] Iteration 8: 182080 nodes, 82310 classes
+memory allocation of 12884901888 bytes failed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+timeout: the monitored command dumped core
+Command terminated by signal 6
+{"elapsed":9.00, "maxrss":6532128}

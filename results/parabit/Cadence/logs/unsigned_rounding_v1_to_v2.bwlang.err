@@ -1,0 +1,26 @@
+[2026-03-27T11:52:10Z INFO  parabit] Running parabit on file: unsigned_rounding_v1_to_v2
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 0: 20 nodes, 17 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 1: 88 nodes, 51 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 2: 148 nodes, 74 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 3: 250 nodes, 109 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 4: 447 nodes, 159 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 5: 930 nodes, 358 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 6: 3165 nodes, 990 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 7: 14812 nodes, 3651 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 0: 20 nodes, 17 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 1: 88 nodes, 51 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 2: 148 nodes, 74 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 3: 250 nodes, 109 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 4: 447 nodes, 159 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 5: 930 nodes, 358 classes
+[2026-03-27T11:52:10Z INFO  parabit] Iteration 6: 3165 nodes, 990 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 7: 14812 nodes, 3651 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 0: 20 nodes, 17 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 1: 88 nodes, 51 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 2: 148 nodes, 74 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 3: 250 nodes, 109 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 4: 447 nodes, 159 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 5: 930 nodes, 358 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 6: 3165 nodes, 990 classes
+[2026-03-27T11:52:11Z INFO  parabit] Iteration 7: 14812 nodes, 3651 classes
+{"elapsed":1.42, "maxrss":101160}
