@@ -71,8 +71,8 @@ def load_sledge_data(filename):
     times = {"name":[], "time":[], "timeout":[]}
     for theorem, entry in data.items():
         times["name"].append(theorem)
-        times["timeout"].append("proof" in entry[0])
-        times["time"].append(entry[0]["total_time"])
+        times["timeout"].append("proof" not in entry[0])
+        times["time"].append(entry[0]["total_time"] if "proof" not in entry[0] else entry[0]['atp_time'])
     return pd.DataFrame(times)
 
 # Load times from E-Graph file
