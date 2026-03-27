@@ -1,3 +1,4 @@
+from pathlib import Path
 import re
 import sys
 import json
@@ -16,11 +17,10 @@ def parse_log_file(filename):
                 if sledge_match.group(5) == "some":
                     proof_info = sledge_match.group(3)
                     if match := re.match(
-                        r".*\(SH (\d+)ms, ATP (\d+)ms\) \[cvc5\].*Try this:(.*)",
+                        r".*\(SH (\d+)ms, ATP (\d+)ms\) .*Try this:(.*)",
                         proof_info,
                     ):
                         info = {
-                            "method": "cvc5",
                             "total_time": total_time,
                             "sh_time": int(match.group(1)),
                             "atp_time": int(match.group(2)),
@@ -28,16 +28,25 @@ def parse_log_file(filename):
                         }
                     else:
                         info = {
-                            "method": "unknown",
                             "total_time": total_time,
                             "proof": proof_info.strip(),
                         }
                     results.setdefault(name, []).append(info)
                 elif sledge_match.group(7) == "timeout":
                     results.setdefault(name, []).append(
-                        {"method": "timeout", "total_time": total_time}
+                        {"total_time": total_time}
                     )
     return results
+
+
+def combine_logs(log_paths: list[Path], out_file: Path) -> dict:
+    """Parse multiple mirabelle log files and write combined JSON to out_file."""
+    all_parsed = {}
+    for log_path in log_paths:
+        all_parsed.update(parse_log_file(str(log_path)))
+    with open(out_file, "w") as f:
+        json.dump(all_parsed, f, indent=2)
+    return all_parsed
 
 
 if __name__ == "__main__":
@@ -48,23 +57,12 @@ if __name__ == "__main__":
     log_path = sys.argv[1]
     output_path = sys.argv[2]
 
-    parsed_results = parse_log_file(log_path)
+    if Path(log_path).is_file():
+        log_files = [Path(log_path)]
+    elif (dir_path := Path(log_path)).is_dir():
+        log_files = [*dir_path.glob('*.log')]
+        print(log_files)
+    else:
+        sys.exit(1)
 
-    timeouts = [k for k, v in parsed_results.items() if v[0]["method"] == "timeout"]
-    print("Found", len(parsed_results), "theorems.", len(timeouts), "timeouts:\n  ", " ".join(timeouts))
-
-    output_dict = {}
-
-    for k, v in parsed_results.items():
-        if any(x["method"] == "timeout" for x in v):
-            assert len(v) == 1, f"More than one timeout parsed for {k}:\n{v}"
-            output_dict[k] = v[0]
-        elif any(poses := [x["method"] == "cvc5" for x in v]):
-            out_val = v.pop(poses.index(True))
-            assert all(x["method"] != "cvc5" for x in v), (
-                f"There are other cvc5 proofs for {k}:\n{v}"
-            )
-            output_dict[k] = out_val
-
-    with open(output_path, "w") as out_file:
-        json.dump(output_dict, out_file, indent=2)
+    combine_logs(log_files, Path(output_path))

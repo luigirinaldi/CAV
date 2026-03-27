@@ -15,7 +15,7 @@ from pathlib import Path
 
 from tqdm import tqdm
 
-from parse_mirabelle import parse_log_file
+from parse_mirabelle import combine_logs, parse_log_file
 
 # --- Configuration ---
 
@@ -214,9 +214,7 @@ def process_variant(
     logs_dir.mkdir(parents=True, exist_ok=True)
     print(f"  Running mirabelle on {len(theory_stems)} theories ({mode}, {jobs} parallel) ...")
 
-    all_parsed = {}
-    solved = 0
-    timeouts = 0
+    log_paths: list[Path] = []
     executor = ThreadPoolExecutor(max_workers=jobs)
     futures = {
         executor.submit(
@@ -230,7 +228,6 @@ def process_variant(
             total=len(theory_stems),
             desc=f"{benchmark_name}/{mode}",
             unit="thm",
-            postfix={"solved": 0, "timeout": 0},
         ) as pbar:
             for future in as_completed(futures):
                 theory = futures[future]
@@ -241,14 +238,7 @@ def process_variant(
                 else:
                     log_dst = logs_dir / f"{theory}.log"
                     shutil.copy(log_src, log_dst)
-                    parsed = parse_log_file(str(log_dst))
-                    all_parsed.update(parsed)
-                    for entry in parsed.values():
-                        if entry[0]["method"] == "timeout":
-                            timeouts += 1
-                        else:
-                            solved += 1
-                    pbar.set_postfix({"solved": solved, "timeout": timeouts})
+                    log_paths.append(log_dst)
                 pbar.update(1)
     except KeyboardInterrupt:
         tqdm.write("\nInterrupt received — killing all running containers ...")
@@ -257,9 +247,11 @@ def process_variant(
     else:
         executor.shutdown(wait=False)
 
-    # 6. Write combined parsed results
-    with open(out_dir / "parsed.json", "w") as f:
-        json.dump(all_parsed, f, indent=2)
+    # 6. Parse all logs and write combined results
+    combined = combine_logs(log_paths, out_dir / "parsed.json")
+    solved = sum(1 for entries in combined.values() if "proof" in entries[0])
+    timeouts = sum(1 for entries in combined.values() if "proof" not in entries[0])
+    print(f"  {benchmark_name}/{mode}: {solved} solved, {timeouts} timeouts")
 
 def setup_mount_permissions(host_path_in: Path) -> None:
     """
