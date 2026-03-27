@@ -17,7 +17,7 @@ def parse_log_file(filename):
                 if sledge_match.group(5) == "some":
                     proof_info = sledge_match.group(3)
                     if match := re.match(
-                        r".*\(SH (\d+)ms, ATP (\d+)ms\) .*Try this:(.*)",
+                        r".*\(SH (\d+)ms, ATP (\d+)ms\).*Try this:(.*)",
                         proof_info,
                     ):
                         info = {
