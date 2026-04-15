@@ -1,0 +1,62 @@
+file,status,time_taken,max_memory_mb,timed_out,last_err_line,problem_name,verified,theorem_size
+AddSub_1164_values_0.bwlang,SUCCESS,0.0,4.3046875,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 2: 119 nodes, 56 classes",AddSub_1164_values_0,True,18
+AddSub_1176_values_0.bwlang,SUCCESS,0.01,4.328125,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 2: 137 nodes, 56 classes",AddSub_1176_values_0,True,19
+AddSub_1202_values_0.bwlang,SUCCESS,0.02,6.87109375,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 4: 938 nodes, 207 classes",AddSub_1202_values_0,True,34
+AddSub_1165_values_0.bwlang,SUCCESS,0.01,5.359375,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 3: 405 nodes, 151 classes",AddSub_1165_values_0,True,45
+AddSub_1564_values_0.bwlang,SUCCESS,0.01,6.57421875,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 4: 887 nodes, 259 classes",AddSub_1564_values_0,True,44
+AddSub_1560_values_0.bwlang,SUCCESS,0.01,4.2578125,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 2: 86 nodes, 25 classes",AddSub_1560_values_0,True,22
+AddSub_1539_2_values_0.bwlang,SUCCESS,0.0,4.24609375,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 2: 94 nodes, 51 classes",AddSub_1539_2_values_0,True,17
+AddSub_1574_values_0.bwlang,SUCCESS,0.0,4.76171875,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 3: 386 nodes, 146 classes",AddSub_1574_values_0,True,22
+AddSub_1619_values_0.bwlang,SUCCESS,0.02,8.171875,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 5: 1379 nodes, 411 classes",AddSub_1619_values_0,True,56
+AndOrXor_1241_values_0.bwlang,SUCCESS,0.0,5.08984375,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 3: 231 nodes, 59 classes",AndOrXor_1241_values_0,True,31
+AndOrXor_1230_values_0.bwlang,SUCCESS,0.0,4.66796875,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 2: 173 nodes, 35 classes",AndOrXor_1230_values_0,True,26
+AndOrXor_1247_values_0.bwlang,SUCCESS,0.01,4.94140625,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 3: 231 nodes, 59 classes",AndOrXor_1247_values_0,True,28
+AddSub_1624_values_0.bwlang,SUCCESS,0.09,22.40625,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 8: 6836 nodes, 1730 classes",AddSub_1624_values_0,True,50
+AndOrXor_1280_values_0.bwlang,SUCCESS,0.01,6.05859375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 4: 365 nodes, 57 classes",AndOrXor_1280_values_0,True,22
+AndOrXor_1253_values_0.bwlang,SUCCESS,0.08,17.00390625,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 6: 3053 nodes, 317 classes",AndOrXor_1253_values_0,True,396
+AddSub_1614_values_0.bwlang,SUCCESS,0.21,54.05078125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 7: 12566 nodes, 3071 classes",AddSub_1614_values_0,True,86
+AndOrXor_1346b_values_0.bwlang,SUCCESS,0.0,4.4765625,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 4: 66 nodes, 31 classes",AndOrXor_1346b_values_0,True,17
+AndOrXor_135_values_0.bwlang,SUCCESS,0.06,9.03125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 6: 1834 nodes, 328 classes",AndOrXor_135_values_0,True,333
+AddSub_1043_values_0.bwlang,SUCCESS,0.45,63.28515625,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 6: 10972 nodes, 2370 classes",AddSub_1043_values_0,True,1211
+AddSub_1295_values_0.bwlang,SUCCESS,0.46,94.3203125,False,"[2026-04-15T14:07:15Z INFO  parabit] Iteration 7: 21458 nodes, 1401 classes",AddSub_1295_values_0,True,103
+AndOrXor_144_values_0.bwlang,SUCCESS,0.0,4.796875,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 5: 145 nodes, 47 classes",AndOrXor_144_values_0,True,31
+AndOrXor_1294_values_0.bwlang,SUCCESS,0.27,28.078125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 6: 4556 nodes, 459 classes",AndOrXor_1294_values_0,True,1326
+AndOrXor_2052_values_0.bwlang,SUCCESS,0.01,4.8359375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 4: 150 nodes, 54 classes",AndOrXor_2052_values_0,True,38
+AndOrXor_2113_values_0.bwlang,SUCCESS,0.02,6.05078125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 4: 354 nodes, 47 classes",AndOrXor_2113_values_0,True,69
+AndOrXor_2118_values_0.bwlang,SUCCESS,0.02,7.578125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 5: 643 nodes, 76 classes",AndOrXor_2118_values_0,True,96
+AndOrXor_2123_values_0.bwlang,SUCCESS,0.03,8.140625,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 5: 938 nodes, 155 classes",AndOrXor_2123_values_0,True,77
+AndOrXor_2188_values_0.bwlang,SUCCESS,0.02,8.26953125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 4: 846 nodes, 120 classes",AndOrXor_2188_values_0,True,83
+AndOrXor_2063_values_0.bwlang,SUCCESS,0.11,15.27734375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 7: 4869 nodes, 1104 classes",AndOrXor_2063_values_0,True,663
+AndOrXor_2243_values_0.bwlang,SUCCESS,0.01,5.1015625,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 7: 230 nodes, 71 classes",AndOrXor_2243_values_0,True,60
+AndOrXor_2247_values_0.bwlang,SUCCESS,0.0,4.453125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 2: 169 nodes, 35 classes",AndOrXor_2247_values_0,True,26
+AndOrXor_2284_values_0.bwlang,SUCCESS,0.05,11.68359375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 5: 1907 nodes, 177 classes",AndOrXor_2284_values_0,True,124
+AndOrXor_2263_values_0.bwlang,SUCCESS,0.12,18.28515625,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 10: 4751 nodes, 606 classes",AndOrXor_2263_values_0,True,952
+AndOrXor_2297_values_0.bwlang,SUCCESS,0.03,8.06640625,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 5: 950 nodes, 127 classes",AndOrXor_2297_values_0,True,99
+AndOrXor_2264_values_0.bwlang,SUCCESS,0.24,45.3984375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 6: 12447 nodes, 684 classes",AndOrXor_2264_values_0,True,246
+AndOrXor_2367_values_0.bwlang,SUCCESS,0.0,4.5,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 2: 75 nodes, 39 classes",AndOrXor_2367_values_0,True,21
+AndOrXor_2416_values_0.bwlang,SUCCESS,0.0,4.5234375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 2: 175 nodes, 35 classes",AndOrXor_2416_values_0,True,29
+AndOrXor_2417_values_0.bwlang,SUCCESS,0.0,4.5859375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 2: 176 nodes, 35 classes",AndOrXor_2417_values_0,True,29
+AndOrXor_2429_values_0.bwlang,SUCCESS,0.01,4.64453125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 2: 169 nodes, 35 classes",AndOrXor_2429_values_0,True,26
+AndOrXor_2430_values_0.bwlang,SUCCESS,0.0,4.6328125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 2: 173 nodes, 35 classes",AndOrXor_2430_values_0,True,26
+AndOrXor_2486_values_0.bwlang,SUCCESS,0.02,6.30078125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 4: 689 nodes, 189 classes",AndOrXor_2486_values_0,True,34
+AndOrXor_2587_values_0.bwlang,SUCCESS,0.03,7.74609375,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 5: 963 nodes, 114 classes",AndOrXor_2587_values_0,True,215
+AndOrXor_2581_values_0.bwlang,SUCCESS,0.02,6.03125,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 4: 535 nodes, 78 classes",AndOrXor_2581_values_0,True,71
+AndOrXor_2595_values_0.bwlang,SUCCESS,0.09,9.8984375,False,"[2026-04-15T14:07:17Z INFO  parabit] Iteration 5: 749 nodes, 147 classes",AndOrXor_2595_values_0,True,763
+AndOrXor_1388_values_0.bwlang,FAILED,1.02,739.234375,False,Command exited with non-zero status 101,AndOrXor_1388_values_0,True,
+AndOrXor_2617_values_0.bwlang,SUCCESS,0.35,29.296875,False,"[2026-04-15T14:07:17Z INFO  parabit] Iteration 4: 1087 nodes, 141 classes",AndOrXor_2617_values_0,True,1998
+AndOrXor_2607_values_0.bwlang,SUCCESS,1.53,98.8671875,False,"[2026-04-15T14:07:17Z INFO  parabit] Iteration 5: 3766 nodes, 333 classes",AndOrXor_2607_values_0,True,6343
+AndOrXor_2658_values_0.bwlang,SUCCESS,0.08,9.8828125,False,"[2026-04-15T14:07:18Z INFO  parabit] Iteration 4: 1442 nodes, 165 classes",AndOrXor_2658_values_0,True,199
+Select_1100_values_0.bwlang,SUCCESS,0.0,4.33203125,False,"[2026-04-15T14:07:18Z INFO  parabit] Iteration 0: 4 nodes, 4 classes",Select_1100_values_0,True,10
+Select_1105_values_0.bwlang,SUCCESS,0.0,4.30078125,False,"[2026-04-15T14:07:18Z INFO  parabit] Iteration 0: 4 nodes, 4 classes",Select_1105_values_0,True,10
+muldivrem_152_values_0.bwlang,SUCCESS,0.0,4.33984375,False,"[2026-04-15T14:07:18Z INFO  parabit] Iteration 2: 64 nodes, 25 classes",muldivrem_152_values_0,True,21
+muldivrem_229_values_0.bwlang,SUCCESS,0.01,5.234375,False,"[2026-04-15T14:07:19Z INFO  parabit] Iteration 3: 273 nodes, 125 classes",muldivrem_229_values_0,True,21
+AndOrXor_2265_values_0.bwlang,SUCCESS,9.1,557.5546875,False,"[2026-04-15T14:07:16Z INFO  parabit] Iteration 9: 4217 nodes, 426 classes",AndOrXor_2265_values_0,False,42196
+AndOrXor_1288_values_0.bwlang,FAILED,10,920.47265625,False,Command exited with non-zero status 124,AndOrXor_1288_values_0,True,
+AndOrXor_2285_values_0.bwlang,FAILED,10,1633.51171875,False,Command exited with non-zero status 124,AndOrXor_2285_values_0,True,
+AndOrXor_2475_values_0.bwlang,FAILED,10,1247.734375,False,Command exited with non-zero status 124,AndOrXor_2475_values_0,True,
+AndOrXor_1346a_values_0.bwlang,FAILED,10,1785.76171875,False,Command exited with non-zero status 124,AndOrXor_1346a_values_0,True,
+muldivrem_239_values_0.bwlang,SUCCESS,9.66,1020.0859375,False,"[2026-04-15T14:07:22Z INFO  parabit] Iteration 7: 96944 nodes, 22295 classes",muldivrem_239_values_0,True,81
+AndOrXor_2627_values_0.bwlang,FAILED,10,1939.73046875,False,Command exited with non-zero status 124,AndOrXor_2627_values_0,True,
+AndOrXor_2231_values_0.bwlang,FAILED,10,1276.59765625,False,Command exited with non-zero status 124,AndOrXor_2231_values_0,True,
+AddSub_1098_values_0.bwlang,FAILED,10,1770.16796875,False,Command exited with non-zero status 124,AddSub_1098_values_0,True,
+AndOrXor_2647_values_0.bwlang,FAILED,10,2040.51953125,False,Command exited with non-zero status 124,AndOrXor_2647_values_0,True,

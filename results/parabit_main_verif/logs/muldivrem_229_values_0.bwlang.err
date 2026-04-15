@@ -1,0 +1,14 @@
+[2026-04-15T14:07:19Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (* (bw k (+ (bw k "%X") (bw k C1))) (bw k "%Op1")))
+    to:
+    (bw k (* (bw k (+ (bw k var_X) (bw k C1))) (bw k var_Op1)))
+[2026-04-15T14:07:19Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (+ (bw k (* (bw k "%X") (bw k "%Op1"))) (bw k (* (bw k C1) (bw k "%Op1")))))
+    to:
+    (bw k (+ (bw k (* (bw k var_X) (bw k var_Op1))) (bw k (* (bw k C1) (bw k var_Op1)))))
+[2026-04-15T14:07:19Z INFO  parabit] Running parabit on file: muldivrem_229_values_0
+[2026-04-15T14:07:19Z INFO  parabit] Iteration 0: 18 nodes, 18 classes
+[2026-04-15T14:07:19Z INFO  parabit] Iteration 1: 74 nodes, 54 classes
+[2026-04-15T14:07:19Z INFO  parabit] Iteration 2: 141 nodes, 82 classes
+[2026-04-15T14:07:19Z INFO  parabit] Iteration 3: 273 nodes, 125 classes
+{"elapsed":0.01, "maxrss":5360}

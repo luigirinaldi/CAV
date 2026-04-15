@@ -1,0 +1,62 @@
+file,status,time_taken,max_memory_mb,timed_out,last_err_line,problem_name,verified,theorem_size
+AddSub_1164_values_0.bwlang,SUCCESS,0.0,4.7109375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1164_values_0,True,18
+AddSub_1165_values_0.bwlang,SUCCESS,0.01,5.34375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1165_values_0,True,29
+AddSub_1176_values_0.bwlang,SUCCESS,0.0,4.36328125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1176_values_0,True,19
+AddSub_1564_values_0.bwlang,SUCCESS,0.01,6.34375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1564_values_0,True,30
+AddSub_1539_2_values_0.bwlang,SUCCESS,0.0,4.48828125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1539_2_values_0,True,17
+AddSub_1202_values_0.bwlang,SUCCESS,0.02,6.9765625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1202_values_0,True,32
+AddSub_1560_values_0.bwlang,SUCCESS,0.0,4.453125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1560_values_0,True,20
+AddSub_1619_values_0.bwlang,SUCCESS,0.02,8.14453125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1619_values_0,True,50
+AddSub_1574_values_0.bwlang,SUCCESS,0.0,4.85546875,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1574_values_0,True,22
+AndOrXor_1230_values_0.bwlang,SUCCESS,0.0,4.62890625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_1230_values_0,True,26
+AndOrXor_1241_values_0.bwlang,SUCCESS,0.01,4.9296875,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_1241_values_0,True,29
+AndOrXor_1247_values_0.bwlang,SUCCESS,0.01,4.8359375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_1247_values_0,True,26
+AddSub_1624_values_0.bwlang,SUCCESS,0.1,22.4375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1624_values_0,True,42
+AndOrXor_1280_values_0.bwlang,SUCCESS,0.01,5.828125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_1280_values_0,True,22
+AddSub_1614_values_0.bwlang,SUCCESS,0.22,54.2265625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1614_values_0,True,48
+AndOrXor_1253_values_0.bwlang,SUCCESS,0.1,16.67578125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_1253_values_0,True,329
+AndOrXor_1346b_values_0.bwlang,SUCCESS,0.0,4.34765625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_1346b_values_0,True,17
+AndOrXor_135_values_0.bwlang,SUCCESS,0.07,10.03515625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_135_values_0,True,301
+AddSub_1295_values_0.bwlang,SUCCESS,0.45,94.609375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1295_values_0,True,93
+AddSub_1043_values_0.bwlang,SUCCESS,0.44,63.0625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AddSub_1043_values_0,True,657
+AndOrXor_144_values_0.bwlang,SUCCESS,0.01,4.80859375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_144_values_0,True,31
+AndOrXor_2052_values_0.bwlang,SUCCESS,0.01,4.8046875,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2052_values_0,True,38
+AndOrXor_2063_values_0.bwlang,SUCCESS,0.08,15.1953125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2063_values_0,True,167
+AndOrXor_2118_values_0.bwlang,SUCCESS,0.03,7.5625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2118_values_0,True,62
+AndOrXor_2113_values_0.bwlang,SUCCESS,0.02,6.03125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2113_values_0,True,61
+AndOrXor_1294_values_0.bwlang,SUCCESS,0.36,31.84375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_1294_values_0,True,960
+AndOrXor_2123_values_0.bwlang,SUCCESS,0.03,7.8515625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2123_values_0,True,75
+AndOrXor_2188_values_0.bwlang,SUCCESS,0.03,8.3203125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2188_values_0,True,83
+AndOrXor_2243_values_0.bwlang,SUCCESS,0.01,5.234375,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2243_values_0,True,60
+AndOrXor_2247_values_0.bwlang,SUCCESS,0.0,4.53125,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2247_values_0,True,26
+AndOrXor_2263_values_0.bwlang,SUCCESS,0.13,18.265625,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2263_values_0,True,670
+AndOrXor_2284_values_0.bwlang,SUCCESS,0.05,11.79296875,False,[2026-04-15T14:14:06Z INFO  parabit] Reducing size,AndOrXor_2284_values_0,True,78
+AndOrXor_2264_values_0.bwlang,SUCCESS,0.23,45.3359375,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2264_values_0,True,138
+AndOrXor_2297_values_0.bwlang,SUCCESS,0.03,8.078125,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2297_values_0,True,59
+AndOrXor_2367_values_0.bwlang,SUCCESS,0.0,4.66796875,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2367_values_0,True,21
+AndOrXor_2416_values_0.bwlang,SUCCESS,0.0,4.6484375,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2416_values_0,True,27
+AndOrXor_2417_values_0.bwlang,SUCCESS,0.0,4.48046875,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2417_values_0,True,27
+AndOrXor_2429_values_0.bwlang,SUCCESS,0.0,4.5546875,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2429_values_0,True,26
+AndOrXor_2430_values_0.bwlang,SUCCESS,0.0,4.58203125,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2430_values_0,True,26
+AndOrXor_2486_values_0.bwlang,SUCCESS,0.02,6.4375,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2486_values_0,True,34
+AndOrXor_2581_values_0.bwlang,SUCCESS,0.02,6.22265625,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2581_values_0,True,61
+AndOrXor_2587_values_0.bwlang,SUCCESS,0.03,7.703125,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2587_values_0,True,65
+AndOrXor_2595_values_0.bwlang,SUCCESS,0.06,9.76953125,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2595_values_0,True,255
+AndOrXor_1388_values_0.bwlang,FAILED,1.06,739.0078125,False,Command exited with non-zero status 101,AndOrXor_1388_values_0,True,
+AndOrXor_2617_values_0.bwlang,SUCCESS,0.26,29.28125,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2617_values_0,True,702
+AndOrXor_2607_values_0.bwlang,SUCCESS,2.0,100.609375,False,[2026-04-15T14:14:07Z INFO  parabit] Reducing size,AndOrXor_2607_values_0,True,3625
+AndOrXor_2658_values_0.bwlang,SUCCESS,0.04,9.98828125,False,[2026-04-15T14:14:09Z INFO  parabit] Reducing size,AndOrXor_2658_values_0,True,119
+Select_1100_values_0.bwlang,SUCCESS,0.0,4.3671875,False,[2026-04-15T14:14:09Z INFO  parabit] Reducing size,Select_1100_values_0,True,10
+Select_1105_values_0.bwlang,SUCCESS,0.0,4.10546875,False,[2026-04-15T14:14:09Z INFO  parabit] Reducing size,Select_1105_values_0,True,10
+muldivrem_152_values_0.bwlang,SUCCESS,0.0,4.4609375,False,[2026-04-15T14:14:09Z INFO  parabit] Reducing size,muldivrem_152_values_0,True,19
+AndOrXor_2265_values_0.bwlang,SUCCESS,3.08,557.7265625,False,[2026-04-15T14:14:08Z INFO  parabit] Reducing size,AndOrXor_2265_values_0,True,794
+muldivrem_229_values_0.bwlang,SUCCESS,0.0,5.08203125,False,[2026-04-15T14:14:09Z INFO  parabit] Reducing size,muldivrem_229_values_0,True,21
+AndOrXor_1346a_values_0.bwlang,FAILED,9.22,1785.4453125,False,Command terminated by signal 6,AndOrXor_1346a_values_0,True,
+AndOrXor_1288_values_0.bwlang,FAILED,10,921.078125,False,Command exited with non-zero status 124,AndOrXor_1288_values_0,True,
+AndOrXor_2285_values_0.bwlang,FAILED,10,1868.90625,False,Command exited with non-zero status 124,AndOrXor_2285_values_0,True,
+AndOrXor_2475_values_0.bwlang,FAILED,10,1330.2265625,False,Command exited with non-zero status 124,AndOrXor_2475_values_0,True,
+muldivrem_239_values_0.bwlang,SUCCESS,8.42,1020.0546875,False,[2026-04-15T14:14:17Z INFO  parabit] Reducing size,muldivrem_239_values_0,True,69
+AndOrXor_2627_values_0.bwlang,FAILED,10,1939.9765625,False,Command exited with non-zero status 124,AndOrXor_2627_values_0,True,
+AndOrXor_2231_values_0.bwlang,FAILED,10,1277.234375,False,Command exited with non-zero status 124,AndOrXor_2231_values_0,True,
+AddSub_1098_values_0.bwlang,FAILED,10,1770.3671875,False,Command exited with non-zero status 124,AddSub_1098_values_0,True,
+AndOrXor_2647_values_0.bwlang,FAILED,10,2040.3828125,False,Command exited with non-zero status 124,AndOrXor_2647_values_0,True,

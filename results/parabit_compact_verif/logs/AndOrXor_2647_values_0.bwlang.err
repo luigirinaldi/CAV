@@ -1,0 +1,21 @@
+[2026-04-15T14:14:07Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (xor (bw k (and (bw k "%a") (bw k "%b"))) (bw k (xor (bw k "%a") (bw k "%b")))))
+    to:
+    (bw k (xor (bw k (and (bw k var_a) (bw k var_b))) (bw k (xor (bw k var_a) (bw k var_b)))))
+[2026-04-15T14:14:07Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (or (bw k "%a") (bw k "%b")))
+    to:
+    (bw k (or (bw k var_a) (bw k var_b)))
+[2026-04-15T14:14:07Z INFO  parabit] Running parabit on file: AndOrXor_2647_values_0
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 0: 14 nodes, 14 classes
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 1: 57 nodes, 32 classes
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 2: 96 nodes, 50 classes
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 3: 179 nodes, 69 classes
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 4: 340 nodes, 129 classes
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 5: 921 nodes, 219 classes
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 6: 3385 nodes, 430 classes
+[2026-04-15T14:14:07Z INFO  parabit] Iteration 7: 19951 nodes, 836 classes
+memory allocation of 96 bytes failed
+timeout: the monitored command dumped core
+Command exited with non-zero status 124
+{"elapsed":13.71, "maxrss":2089352}

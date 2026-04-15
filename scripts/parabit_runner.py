@@ -370,7 +370,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
             file_path = isabelle_dir / f"{r['problem_name']}.thy"
             num_lines = count_lines(file_path)
             r["theorem_size"] = num_lines
-            if num_lines >= 3500:
+            if num_lines >= 10000:
                 print("""
     ██     ██  █████  ██████  ███    ██ ██ ███    ██  ██████  
     ██     ██ ██   ██ ██   ██ ████   ██ ██ ████   ██ ██       
@@ -379,7 +379,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
      ███ ███  ██   ██ ██   ██ ██   ████ ██ ██   ████  ██████  
     """)
                 print(
-                    f"Skipping {r['problem_name']} because {num_lines} are too many liens for isabelle"
+                    f"Skipping {r['problem_name']} because {num_lines} are too many lines for isabelle"
                 )
                 r["verified"] = False
                 results_out.append(r)

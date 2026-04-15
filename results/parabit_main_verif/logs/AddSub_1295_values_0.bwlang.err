@@ -1,0 +1,18 @@
+[2026-04-15T14:07:15Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (+ (bw k (and (bw k "%a") (bw k "%b"))) (bw k (xor (bw k "%a") (bw k "%b")))))
+    to:
+    (bw k (+ (bw k (and (bw k var_a) (bw k var_b))) (bw k (xor (bw k var_a) (bw k var_b)))))
+[2026-04-15T14:07:15Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (or (bw k "%a") (bw k "%b")))
+    to:
+    (bw k (or (bw k var_a) (bw k var_b)))
+[2026-04-15T14:07:15Z INFO  parabit] Running parabit on file: AddSub_1295_values_0
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 0: 14 nodes, 14 classes
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 1: 61 nodes, 34 classes
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 2: 100 nodes, 51 classes
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 3: 186 nodes, 76 classes
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 4: 380 nodes, 141 classes
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 5: 990 nodes, 229 classes
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 6: 3095 nodes, 486 classes
+[2026-04-15T14:07:15Z INFO  parabit] Iteration 7: 21458 nodes, 1401 classes
+{"elapsed":0.46, "maxrss":96584}
