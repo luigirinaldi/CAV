@@ -26,7 +26,7 @@ BINARY_PATH = PARABIT_PATH + "target/release/parabit"
 
 PROOF_PATH = PARABIT_PATH + "proofs/"
 
-ISABELLE_DOCKER_IMAGE = "isabelle-docker:latest"
+ISABELLE_DOCKER_IMAGE = "makarius/isabelle:Isabelle2025-2"
 
 
 def run_safe_subprocess(
@@ -413,8 +413,10 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
                 ISABELLE_DOCKER_IMAGE,
                 "build",
                 "-v",
+		"-o",
+		"timeout_scale=2.0",
                 "-d",
-                "/build_dir/",
+		"/build_dir/",
                 "-c",
                 "CheckProofs",
             ],
