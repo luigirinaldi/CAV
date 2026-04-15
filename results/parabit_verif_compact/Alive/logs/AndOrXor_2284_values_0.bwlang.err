@@ -1,0 +1,17 @@
+[2026-04-15T14:52:25Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (or (bw k "%A") (bw k (xor (bw k (or (bw k "%A") (bw k "%B"))) (bw k (not (bw k 0)))))))
+    to:
+    (bw k (or (bw k var_A) (bw k (xor (bw k (or (bw k var_A) (bw k var_B))) (bw k (not (bw k 0)))))))
+[2026-04-15T14:52:25Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (or (bw k "%A") (bw k (xor (bw k "%B") (bw k (not (bw k 0)))))))
+    to:
+    (bw k (or (bw k var_A) (bw k (xor (bw k var_B) (bw k (not (bw k 0)))))))
+[2026-04-15T14:52:25Z INFO  parabit] Running parabit on file: AndOrXor_2284_values_0
+[2026-04-15T14:52:25Z INFO  parabit] Iteration 0: 20 nodes, 20 classes
+[2026-04-15T14:52:25Z INFO  parabit] Iteration 1: 81 nodes, 42 classes
+[2026-04-15T14:52:25Z INFO  parabit] Iteration 2: 151 nodes, 44 classes
+[2026-04-15T14:52:25Z INFO  parabit] Iteration 3: 291 nodes, 67 classes
+[2026-04-15T14:52:25Z INFO  parabit] Iteration 4: 796 nodes, 92 classes
+[2026-04-15T14:52:25Z INFO  parabit] Iteration 5: 1907 nodes, 177 classes
+[2026-04-15T14:52:25Z INFO  parabit] Reducing size
+{"elapsed":0.07, "maxrss":11760}

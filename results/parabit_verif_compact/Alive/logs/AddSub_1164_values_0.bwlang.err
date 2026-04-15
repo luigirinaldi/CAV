@@ -1,0 +1,14 @@
+[2026-04-15T14:56:44Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (+ (bw k (- (bw k 0) (bw k "%a"))) (bw k "%b")))
+    to:
+    (bw k (+ (bw k (- (bw k 0) (bw k var_a))) (bw k var_b)))
+[2026-04-15T14:56:44Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (- (bw k "%b") (bw k "%a")))
+    to:
+    (bw k (- (bw k var_b) (bw k var_a)))
+[2026-04-15T14:56:44Z INFO  parabit] Running parabit on file: AddSub_1164_values_0
+[2026-04-15T14:56:44Z INFO  parabit] Iteration 0: 14 nodes, 14 classes
+[2026-04-15T14:56:44Z INFO  parabit] Iteration 1: 61 nodes, 40 classes
+[2026-04-15T14:56:44Z INFO  parabit] Iteration 2: 119 nodes, 56 classes
+[2026-04-15T14:56:44Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4352}

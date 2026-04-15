@@ -1,0 +1,25 @@
+[2026-04-15T14:54:45Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (or (bw k (xor (bw k "%A") (bw k "%B"))) (bw k (xor (bw k (xor (bw k "%B") (bw k "%C"))) (bw k "%A")))))
+    to:
+    (bw k (or (bw k (xor (bw k var_A) (bw k var_B))) (bw k (xor (bw k (xor (bw k var_B) (bw k var_C))) (bw k var_A)))))
+[2026-04-15T14:54:45Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k (or (bw k (xor (bw k "%A") (bw k "%B"))) (bw k "%C")))
+    to:
+    (bw k (or (bw k (xor (bw k var_A) (bw k var_B))) (bw k var_C)))
+[2026-04-15T14:54:45Z INFO  parabit] Running parabit on file: AndOrXor_2231_values_0
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 0: 18 nodes, 18 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 1: 74 nodes, 46 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 2: 136 nodes, 76 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 3: 264 nodes, 100 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 4: 477 nodes, 175 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 5: 1142 nodes, 311 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 6: 2796 nodes, 472 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 7: 6796 nodes, 1789 classes
+[2026-04-15T14:54:45Z INFO  parabit] Iteration 8: 75421 nodes, 3516 classes
+[2026-04-15T14:54:47Z INFO  parabit] Iteration 9: 456898 nodes, 14238 classes
+[2026-04-15T14:55:52Z INFO  parabit] Iteration 10: 6417348 nodes, 349675 classes
+memory allocation of 96 bytes failed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+timeout: the monitored command dumped core
+Command terminated by signal 6
+{"elapsed":219.12, "maxrss":8036308}
