@@ -1,20 +1,19 @@
-[2026-04-15T14:53:17Z WARN  parabit] Sanitised input expression 0 from:
+[2026-04-15T15:08:40Z WARN  parabit] Sanitised input expression 0 from:
     (bw k (and (bw k (xor (bw k "%A") (bw k "%B"))) (bw k (xor (bw k (xor (bw k "%B") (bw k "%C"))) (bw k "%A")))))
     to:
     (bw k (and (bw k (xor (bw k var_A) (bw k var_B))) (bw k (xor (bw k (xor (bw k var_B) (bw k var_C))) (bw k var_A)))))
-[2026-04-15T14:53:17Z WARN  parabit] Sanitised input expression 0 from:
+[2026-04-15T15:08:40Z WARN  parabit] Sanitised input expression 0 from:
     (bw k (and (bw k (xor (bw k "%A") (bw k "%B"))) (bw k (xor (bw k "%C") (bw k (not (bw k 0)))))))
     to:
     (bw k (and (bw k (xor (bw k var_A) (bw k var_B))) (bw k (xor (bw k var_C) (bw k (not (bw k 0)))))))
-[2026-04-15T14:53:17Z INFO  parabit] Running parabit on file: AndOrXor_1288_values_0
-[2026-04-15T14:53:17Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
-[2026-04-15T14:53:17Z INFO  parabit] Iteration 1: 103 nodes, 57 classes
-[2026-04-15T14:53:17Z INFO  parabit] Iteration 2: 205 nodes, 89 classes
-[2026-04-15T14:53:17Z INFO  parabit] Iteration 3: 430 nodes, 136 classes
-[2026-04-15T14:53:17Z INFO  parabit] Iteration 4: 941 nodes, 264 classes
-[2026-04-15T14:53:17Z INFO  parabit] Iteration 5: 2684 nodes, 563 classes
-[2026-04-15T14:53:17Z INFO  parabit] Iteration 6: 14129 nodes, 2167 classes
-[2026-04-15T14:53:22Z INFO  parabit] Iteration 7: 709712 nodes, 29122 classes
-[2026-04-15T14:53:49Z INFO  parabit] Reducing size
-Command exited with non-zero status 124
-{"elapsed":360.47, "maxrss":4882400}
+[2026-04-15T15:08:40Z INFO  parabit] Running parabit on file: AndOrXor_1288_values_0
+[2026-04-15T15:08:40Z INFO  parabit] Iteration 0: 24 nodes, 24 classes
+[2026-04-15T15:08:40Z INFO  parabit] Iteration 1: 103 nodes, 57 classes
+[2026-04-15T15:08:40Z INFO  parabit] Iteration 2: 205 nodes, 89 classes
+[2026-04-15T15:08:40Z INFO  parabit] Iteration 3: 430 nodes, 136 classes
+[2026-04-15T15:08:40Z INFO  parabit] Iteration 4: 941 nodes, 264 classes
+[2026-04-15T15:08:40Z INFO  parabit] Iteration 5: 2684 nodes, 563 classes
+[2026-04-15T15:08:40Z INFO  parabit] Iteration 6: 14129 nodes, 2167 classes
+[2026-04-15T15:08:44Z INFO  parabit] Iteration 7: 709712 nodes, 29122 classes
+[2026-04-15T15:09:10Z INFO  parabit] Reducing size
+{"elapsed":479.28, "maxrss":4882168}

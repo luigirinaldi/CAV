@@ -1,10 +1,10 @@
 theory AddSub_1624_values_0
-    imports  arith_lemmas bitwise_lemmas mixed_lemmas
+    imports  arith_lemmas mixed_lemmas bitwise_lemmas
 begin
 theorem AddSub_1624_values_0_th:
 "(bw k ((bw k (or (bw k var_A) (bw k var_B))) - (bw k (xor (bw k var_A) (bw k var_B)))))=(bw k (and (bw k var_A) (bw k var_B)))" (is "?lhs = ?rhs")
 if "(k > 0)"
-for k :: nat and var_A var_B :: int
+for k :: nat and var_B var_A :: int
 proof -
     have "?lhs = (bw k ((bw k (or (bw k var_A) (bw k var_B))) + ((-1) * (bw k (xor (bw k var_A) (bw k var_B))))))" using sub_to_neg that by (simp only: sub_to_neg; fail | simp add: sub_to_neg; fail | blast; fail | metis)
     moreover have "... = (bw k (((-1) * (bw k (xor (bw k var_A) (bw k var_B)))) + (bw k (or (bw k var_A) (bw k var_B)))))" using add.commute that by (simp only: add.commute; fail | simp add: add.commute; fail | blast; fail | metis)

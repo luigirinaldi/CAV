@@ -4,7 +4,7 @@ begin
 theorem AddSub_1614_values_0_th:
 "(bw k ((bw k var_X) - (bw k ((bw k var_X) + (bw k var_Y)))))=(bw k ((bw k 0) - (bw k var_Y)))" (is "?lhs = ?rhs")
 if "(k > 0)"
-for k :: nat and var_X var_Y :: int
+for k :: nat and var_Y var_X :: int
 proof -
     have "?lhs = (bw k ((bw k var_X) - (bw k ((bw k var_Y) + (bw k var_X)))))" using add.commute that by (simp only: add.commute; fail | simp add: add.commute; fail | blast; fail | metis)
     moreover have "... = (bw k ((bw k var_X) - (bw k ((bw k (not (bw k (not (bw k var_Y))))) + (bw k var_X)))))" using not_bw_not that by (simp only: not_bw_not; fail | simp add: not_bw_not; fail | blast; fail | metis)

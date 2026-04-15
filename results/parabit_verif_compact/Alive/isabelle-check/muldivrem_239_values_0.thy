@@ -1,10 +1,10 @@
 theory muldivrem_239_values_0
-    imports  arith_lemmas bitwise_lemmas
+    imports  bitwise_lemmas arith_lemmas
 begin
 theorem muldivrem_239_values_0_th:
 "(bw k ((bw k ((bw k 0) - (bw k var_X))) * (bw k ((bw k 0) - (bw k var_Y)))))=(bw k ((bw k var_X) * (bw k var_Y)))" (is "?lhs = ?rhs")
 if "(k > 0)"
-for k :: nat and var_Y var_X :: int
+for k :: nat and var_X var_Y :: int
 proof -
     have "?lhs = (bw k (((bw k 0) - (bw k var_X)) * (bw k ((bw k 0) - (bw k var_Y)))))" using mul_eq_prec that by (simp only: mul_eq_prec; fail | simp add: mul_eq_prec; fail | blast; fail | metis)
     moreover have "... = (bw k (((bw k 0) + ((-1) * (bw k var_X))) * (bw k ((bw k 0) - (bw k var_Y)))))" using sub_to_neg that by (simp only: sub_to_neg; fail | simp add: sub_to_neg; fail | blast; fail | metis)

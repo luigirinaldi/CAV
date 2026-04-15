@@ -4,7 +4,7 @@ begin
 theorem AndOrXor_2052_values_0_th:
 "(bw k (or (bw k (and (bw k var_x) (bw k C1))) (bw k C)))=(bw k (and (bw k (or (bw k var_x) (bw k C))) (bw k (or (bw k C) (bw k C1)))))" (is "?lhs = ?rhs")
 if "(k > 0)"
-for k :: nat and C1 C var_x :: int
+for k :: nat and C1 var_x C :: int
 proof -
     have "?lhs = (bw k (not (bw k (not (bw k (or (bw k (and (bw k var_x) (bw k C1))) (bw k C)))))))" using not_bw_not that by (simp only: not_bw_not; fail | simp add: not_bw_not; fail | blast; fail | metis)
     moreover have "... = (bw k (not (bw k (not (bw k (or (bw k (bw k (and (bw k var_x) (bw k C1)))) (bw k C)))))))" using and_remove that by (simp only: and_remove; fail | simp add: and_remove; fail | blast; fail | metis)

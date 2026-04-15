@@ -1,10 +1,10 @@
 theory AndOrXor_2063_values_0
-    imports  arith_lemmas bitwise_lemmas
+    imports  bitwise_lemmas arith_lemmas
 begin
 theorem AndOrXor_2063_values_0_th:
 "(bw k (or (bw k (xor (bw k var_x) (bw k C1))) (bw k C)))=(bw k (xor (bw k (or (bw k var_x) (bw k C))) (bw k (and (bw k C1) (bw k (not (bw k C)))))))" (is "?lhs = ?rhs")
 if "(k > 0)"
-for k :: nat and var_x C C1 :: int
+for k :: nat and C1 var_x C :: int
 proof -
     have "?lhs = (bw k (not (bw k (not (bw k (or (bw k (xor (bw k var_x) (bw k C1))) (bw k C)))))))" using not_bw_not that by (simp only: not_bw_not; fail | simp add: not_bw_not; fail | blast; fail | metis)
     moreover have "... = (bw k (not (bw k (not (or (bw k (xor (bw k var_x) (bw k C1))) (bw k C))))))" using or_remove that by (simp only: or_remove; fail | simp add: or_remove; fail | blast; fail | metis)

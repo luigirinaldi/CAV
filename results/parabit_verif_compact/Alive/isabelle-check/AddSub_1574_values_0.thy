@@ -4,7 +4,7 @@ begin
 theorem AddSub_1574_values_0_th:
 "(bw k ((bw k C) - (bw k ((bw k var_X) + (bw k C2)))))=(bw k ((bw k ((bw k C) - (bw k C2))) - (bw k var_X)))" (is "?lhs = ?rhs")
 if "(k > 0)"
-for k :: nat and var_X C C2 :: int
+for k :: nat and C var_X C2 :: int
 proof -
     have "?lhs = (bw k ((bw k C) - ((bw k var_X) + (bw k C2))))" using diff_right_eq_prec that by (simp only: diff_right_eq_prec; fail | simp add: diff_right_eq_prec; fail | blast; fail | metis)
     moreover have "... = (bw k ((bw k C) + ((-1) * ((bw k var_X) + (bw k C2)))))" using sub_to_neg that by (simp only: sub_to_neg; fail | simp add: sub_to_neg; fail | blast; fail | metis)
