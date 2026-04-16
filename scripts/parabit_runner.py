@@ -350,7 +350,7 @@ def count_lines(file_path):
         return sum(1 for _ in f)
 
 
-def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
+def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image):
     try:
         proof_path = Path(PROOF_PATH)
 
@@ -410,7 +410,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
                 "run",
                 "-v",
                 f"{isabelle_dir.absolute()}:/build_dir/",
-                ISABELLE_DOCKER_IMAGE,
+                docker_image,
                 "build",
                 "-v",
 		"-o",
@@ -494,6 +494,12 @@ def main():
         help="Verify the generated equivalence by running it through Isabelle. This will override any arguments in 'extra-commands' (assumes a docker image is installed with isabelle)",
     )
     parser.add_argument(
+        "--isabelle-image",
+        default=ISABELLE_DOCKER_IMAGE,
+        type=str,
+        help="Name of the isabelle docker image"
+    )
+    parser.add_argument(
         "--extra-commands",
         type=str,
         default=None,
@@ -546,7 +552,7 @@ def main():
 
     if args.check_isabelle:
         # Verify the generated results
-        run_isabelle(results, isabelle_dir, csv_path)
+        run_isabelle(results, isabelle_dir, csv_path, args.isabelle_image)
         # Save results again
         save_results_to_csv(results, csv_path)
 
