@@ -1,0 +1,12 @@
+[2026-04-16T11:40:39Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k "%Y")
+    to:
+    (bw k var_Y)
+[2026-04-16T11:40:39Z WARN  parabit] Sanitised input expression 0 from:
+    (bw k "%Y")
+    to:
+    (bw k var_Y)
+[2026-04-16T11:40:39Z INFO  parabit] Running parabit on file: Select_1105_values_0
+[2026-04-16T11:40:39Z INFO  parabit] Iteration 0: 4 nodes, 4 classes
+[2026-04-16T11:40:39Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4096}

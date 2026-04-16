@@ -1,0 +1,13 @@
+[2026-04-16T12:04:25Z INFO  parabit] Running parabit on file: abs_diff_shared_sub_signed
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 0: 31 nodes, 31 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 1: 137 nodes, 97 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 2: 350 nodes, 177 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 3: 972 nodes, 425 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 4: 4635 nodes, 1932 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 5: 43238 nodes, 18834 classes
+[2026-04-16T12:05:58Z INFO  parabit] Iteration 6: 975041 nodes, 416545 classes
+memory allocation of 48 bytes failed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+timeout: the monitored command dumped core
+Command terminated by signal 6
+{"elapsed":99.39, "maxrss":6966372}

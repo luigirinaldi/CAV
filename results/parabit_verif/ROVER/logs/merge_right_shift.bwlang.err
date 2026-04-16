@@ -1,0 +1,8 @@
+[2026-04-16T11:39:46Z INFO  parabit] Running parabit on file: merge_right_shift
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 0: 24 nodes, 21 classes
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 1: 70 nodes, 51 classes
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 2: 90 nodes, 55 classes
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 3: 124 nodes, 69 classes
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 4: 181 nodes, 73 classes
+[2026-04-16T11:39:46Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4480}

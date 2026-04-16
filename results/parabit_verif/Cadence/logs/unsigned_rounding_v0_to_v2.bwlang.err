@@ -1,0 +1,11 @@
+[2026-04-16T12:04:25Z INFO  parabit] Running parabit on file: unsigned_rounding_v0_to_v2
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 0: 19 nodes, 16 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 1: 78 nodes, 49 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 2: 137 nodes, 72 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 3: 235 nodes, 105 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 4: 417 nodes, 146 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 5: 861 nodes, 338 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 6: 3007 nodes, 964 classes
+[2026-04-16T12:04:25Z INFO  parabit] Iteration 7: 14522 nodes, 3588 classes
+[2026-04-16T12:04:25Z INFO  parabit] Reducing size
+{"elapsed":0.91, "maxrss":97204}

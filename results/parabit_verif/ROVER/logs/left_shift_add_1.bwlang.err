@@ -1,0 +1,7 @@
+[2026-04-16T11:39:44Z INFO  parabit] Running parabit on file: left_shift_add_1
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 0: 25 nodes, 23 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 1: 84 nodes, 61 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 2: 173 nodes, 106 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 3: 394 nodes, 207 classes
+[2026-04-16T11:39:44Z INFO  parabit] Reducing size
+{"elapsed":0.01, "maxrss":4736}

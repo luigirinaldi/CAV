@@ -1,0 +1,6 @@
+file,status,time_taken,max_memory_mb,timed_out,last_err_line,problem_name,verified,theorem_size
+unsigned_rounding_v1_to_v2.bwlang,SUCCESS,0.7,96.46875,False,[2026-04-16T12:04:25Z INFO  parabit] Reducing size,unsigned_rounding_v1_to_v2,True,72
+unsigned_rounding_v0_to_v2.bwlang,SUCCESS,0.91,94.92578125,False,[2026-04-16T12:04:25Z INFO  parabit] Reducing size,unsigned_rounding_v0_to_v2,True,532
+equation_abc.bwlang,SUCCESS,0.88,136.90625,False,[2026-04-16T12:04:26Z INFO  parabit] Reducing size,equation_abc,True,38
+abs_diff_shared_sub.bwlang,SUCCESS,0.88,118.91015625,False,[2026-04-16T12:04:27Z INFO  parabit] Reducing size,abs_diff_shared_sub,True,53
+abs_diff_shared_sub_signed.bwlang,FAILED,99.39,6803.09765625,False,Command terminated by signal 6,abs_diff_shared_sub_signed,True,

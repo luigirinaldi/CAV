@@ -1,0 +1,18 @@
+[2026-04-16T12:01:58Z INFO  parabit] Running parabit on file: hydra_opt_724
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 0: 10 nodes, 10 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 1: 30 nodes, 20 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 2: 42 nodes, 26 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 3: 58 nodes, 25 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 4: 67 nodes, 25 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 5: 104 nodes, 30 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 6: 112 nodes, 24 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 7: 126 nodes, 29 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 8: 155 nodes, 26 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 9: 205 nodes, 45 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 10: 481 nodes, 100 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 11: 1997 nodes, 83 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 12: 2381 nodes, 33 classes
+[2026-04-16T12:01:58Z INFO  parabit] Iteration 13: 2499 nodes, 28 classes
+Error: "Equivalence wasn't found"
+Command exited with non-zero status 1
+{"elapsed":0.04, "maxrss":8116}

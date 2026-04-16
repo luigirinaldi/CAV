@@ -1,0 +1,9 @@
+[2026-04-16T11:39:44Z INFO  parabit] Running parabit on file: mult_sum_same
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 0: 24 nodes, 20 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 1: 89 nodes, 55 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 2: 159 nodes, 88 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 3: 308 nodes, 154 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 4: 647 nodes, 288 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 5: 1488 nodes, 590 classes
+[2026-04-16T11:39:44Z INFO  parabit] Reducing size
+{"elapsed":0.02, "maxrss":8192}

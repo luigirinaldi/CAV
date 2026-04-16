@@ -1,0 +1,7 @@
+[2026-04-16T11:39:46Z INFO  parabit] Running parabit on file: mult_assoc_4
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 0: 25 nodes, 23 classes
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 1: 73 nodes, 52 classes
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 2: 107 nodes, 70 classes
+[2026-04-16T11:39:46Z INFO  parabit] Iteration 3: 160 nodes, 94 classes
+[2026-04-16T11:39:46Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4608}

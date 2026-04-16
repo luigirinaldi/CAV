@@ -1,0 +1,28 @@
+session CheckProofs = HOL + theories
+  move_sel_zero
+mul_two
+dist_over_add
+mult_sum_same
+add_assoc_4
+add_zero
+commutativity_add
+left_shift_add_2
+add_assoc_3
+sum_same
+merge_left_shift
+left_shift_add_1
+one_to_two_mult
+add_right_shift
+mul_one
+sub_to_neg
+mult_assoc_1
+add_assoc_1
+commutativity_mult
+sel_add
+merge_right_shift
+mult_assoc_2
+mult_assoc_3
+left_shift_mult
+sel_add_zero
+add_assoc_2
+mult_assoc_4

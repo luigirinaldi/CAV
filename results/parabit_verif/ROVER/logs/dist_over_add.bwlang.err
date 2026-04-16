@@ -1,0 +1,7 @@
+[2026-04-16T11:39:44Z INFO  parabit] Running parabit on file: dist_over_add
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 0: 27 nodes, 24 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 1: 95 nodes, 67 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 2: 208 nodes, 127 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 3: 473 nodes, 247 classes
+[2026-04-16T11:39:44Z INFO  parabit] Reducing size
+{"elapsed":0.01, "maxrss":4864}

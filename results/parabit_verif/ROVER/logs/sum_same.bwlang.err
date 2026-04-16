@@ -1,0 +1,5 @@
+[2026-04-16T11:39:44Z INFO  parabit] Running parabit on file: sum_same
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 0: 11 nodes, 10 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 1: 37 nodes, 24 classes
+[2026-04-16T11:39:44Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4224}

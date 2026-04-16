@@ -1,0 +1,7 @@
+[2026-04-16T11:39:45Z INFO  parabit] Running parabit on file: mul_one
+[2026-04-16T11:39:45Z INFO  parabit] Iteration 0: 9 nodes, 9 classes
+[2026-04-16T11:39:45Z INFO  parabit] Iteration 1: 27 nodes, 18 classes
+[2026-04-16T11:39:45Z INFO  parabit] Iteration 2: 34 nodes, 20 classes
+[2026-04-16T11:39:45Z INFO  parabit] Iteration 3: 40 nodes, 15 classes
+[2026-04-16T11:39:45Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4224}

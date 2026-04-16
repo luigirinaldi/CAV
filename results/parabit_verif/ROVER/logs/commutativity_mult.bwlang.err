@@ -1,0 +1,5 @@
+[2026-04-16T11:39:45Z INFO  parabit] Running parabit on file: commutativity_mult
+[2026-04-16T11:39:45Z INFO  parabit] Iteration 0: 12 nodes, 12 classes
+[2026-04-16T11:39:45Z INFO  parabit] Iteration 1: 30 nodes, 23 classes
+[2026-04-16T11:39:45Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4224}

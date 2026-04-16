@@ -1,0 +1,5 @@
+[2026-04-16T12:00:30Z INFO  parabit] Running parabit on file: hydra_opt_2793
+[2026-04-16T12:00:30Z INFO  parabit] Iteration 0: 16 nodes, 14 classes
+[2026-04-16T12:00:30Z INFO  parabit] Iteration 1: 50 nodes, 31 classes
+[2026-04-16T12:00:30Z INFO  parabit] Reducing size
+{"elapsed":0.00, "maxrss":4224}

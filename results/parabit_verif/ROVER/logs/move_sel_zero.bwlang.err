@@ -1,0 +1,9 @@
+[2026-04-16T11:39:44Z INFO  parabit] Running parabit on file: move_sel_zero
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 0: 24 nodes, 22 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 1: 84 nodes, 58 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 2: 117 nodes, 64 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 3: 167 nodes, 83 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 4: 297 nodes, 127 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 5: 732 nodes, 280 classes
+[2026-04-16T11:39:44Z INFO  parabit] Reducing size
+{"elapsed":0.02, "maxrss":7552}

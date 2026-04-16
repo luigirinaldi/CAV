@@ -1,0 +1,7 @@
+[2026-04-16T11:39:44Z INFO  parabit] Running parabit on file: one_to_two_mult
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 0: 18 nodes, 14 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 1: 67 nodes, 38 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 2: 121 nodes, 50 classes
+[2026-04-16T11:39:44Z INFO  parabit] Iteration 3: 276 nodes, 88 classes
+[2026-04-16T11:39:44Z INFO  parabit] Reducing size
+{"elapsed":0.01, "maxrss":4992}
