@@ -26,7 +26,7 @@ BINARY_PATH = PARABIT_PATH + "target/release/parabit"
 
 PROOF_PATH = PARABIT_PATH + "proofs/"
 
-ISABELLE_DOCKER_IMAGE = "isabelle-docker:latest"
+ISABELLE_DOCKER_IMAGE = "makarius/isabelle:Isabelle2025-2"
 
 
 def run_safe_subprocess(
@@ -350,7 +350,7 @@ def count_lines(file_path):
         return sum(1 for _ in f)
 
 
-def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
+def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image):
     try:
         proof_path = Path(PROOF_PATH)
 
@@ -370,7 +370,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
             file_path = isabelle_dir / f"{r['problem_name']}.thy"
             num_lines = count_lines(file_path)
             r["theorem_size"] = num_lines
-            if num_lines >= 3500:
+            if num_lines >= 10000:
                 print("""
     ██     ██  █████  ██████  ███    ██ ██ ███    ██  ██████  
     ██     ██ ██   ██ ██   ██ ████   ██ ██ ████   ██ ██       
@@ -379,7 +379,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
      ███ ███  ██   ██ ██   ██ ██   ████ ██ ██   ████  ██████  
     """)
                 print(
-                    f"Skipping {r['problem_name']} because {num_lines} are too many liens for isabelle"
+                    f"Skipping {r['problem_name']} because {num_lines} are too many lines for isabelle"
                 )
                 r["verified"] = False
                 results_out.append(r)
@@ -410,11 +410,13 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path):
                 "run",
                 "-v",
                 f"{isabelle_dir.absolute()}:/build_dir/",
-                ISABELLE_DOCKER_IMAGE,
+                docker_image,
                 "build",
                 "-v",
+		"-o",
+		"timeout_scale=2.0",
                 "-d",
-                "/build_dir/",
+		"/build_dir/",
                 "-c",
                 "CheckProofs",
             ],
@@ -492,6 +494,12 @@ def main():
         help="Verify the generated equivalence by running it through Isabelle. This will override any arguments in 'extra-commands' (assumes a docker image is installed with isabelle)",
     )
     parser.add_argument(
+        "--isabelle-image",
+        default=ISABELLE_DOCKER_IMAGE,
+        type=str,
+        help="Name of the isabelle docker image"
+    )
+    parser.add_argument(
         "--extra-commands",
         type=str,
         default=None,
@@ -544,7 +552,7 @@ def main():
 
     if args.check_isabelle:
         # Verify the generated results
-        run_isabelle(results, isabelle_dir, csv_path)
+        run_isabelle(results, isabelle_dir, csv_path, args.isabelle_image)
         # Save results again
         save_results_to_csv(results, csv_path)
 
