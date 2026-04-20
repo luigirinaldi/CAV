@@ -1,23 +1,22 @@
-[2026-03-27T11:48:21Z WARN  parabit] Sanitised input expression 0 from:
+[2026-04-20T10:45:46Z WARN  parabit] Sanitised input expression 0 from:
     (bw (+ (- k 1) 1) (+ (bw (+ (- k 1) 1) (bw 1 "%a")) (bw k "%b")))
     to:
     (bw (+ (- k 1) 1) (+ (bw (+ (- k 1) 1) (bw 1 var_a)) (bw k var_b)))
-[2026-03-27T11:48:21Z WARN  parabit] Sanitised input expression 0 from:
+[2026-04-20T10:45:46Z WARN  parabit] Sanitised input expression 0 from:
     (bw k (sel (bw 1 "%a") (bw k (+ (bw k "%b") (bw k 1))) (bw k "%b")))
     to:
     (bw k (sel (bw 1 var_a) (bw k (+ (bw k var_b) (bw k 1))) (bw k var_b)))
-[2026-03-27T11:48:21Z INFO  parabit] Running parabit on file: AddSub_1098_values_0
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 0: 17 nodes, 17 classes
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 1: 75 nodes, 53 classes
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 2: 140 nodes, 74 classes
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 3: 270 nodes, 128 classes
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 4: 820 nodes, 227 classes
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 5: 1535 nodes, 382 classes
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 6: 3811 nodes, 999 classes
-[2026-03-27T11:48:21Z INFO  parabit] Iteration 7: 15915 nodes, 3608 classes
-[2026-03-27T11:48:26Z INFO  parabit] Iteration 8: 182494 nodes, 41463 classes
+[2026-04-20T10:45:46Z INFO  parabit] Running parabit on file: AddSub_1098_values_0
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 0: 17 nodes, 17 classes
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 1: 75 nodes, 53 classes
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 2: 140 nodes, 74 classes
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 3: 270 nodes, 128 classes
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 4: 820 nodes, 227 classes
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 5: 1535 nodes, 382 classes
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 6: 3811 nodes, 999 classes
+[2026-04-20T10:45:46Z INFO  parabit] Iteration 7: 15915 nodes, 3608 classes
+[2026-04-20T10:45:50Z INFO  parabit] Iteration 8: 182494 nodes, 41463 classes
 memory allocation of 96 bytes failed
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 timeout: the monitored command dumped core
 Command terminated by signal 6
-{"elapsed":13.26, "maxrss":7435316}
+{"elapsed":29.76, "maxrss":7435036}

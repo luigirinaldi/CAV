@@ -1,14 +1,13 @@
-[2026-03-27T11:51:50Z INFO  parabit] Running parabit on file: hydra_opt_2703
-[2026-03-27T11:51:50Z INFO  parabit] Iteration 0: 18 nodes, 15 classes
-[2026-03-27T11:51:50Z INFO  parabit] Iteration 1: 69 nodes, 46 classes
-[2026-03-27T11:51:50Z INFO  parabit] Iteration 2: 136 nodes, 68 classes
-[2026-03-27T11:51:50Z INFO  parabit] Iteration 3: 210 nodes, 92 classes
-[2026-03-27T11:51:50Z INFO  parabit] Iteration 4: 435 nodes, 174 classes
-[2026-03-27T11:51:50Z INFO  parabit] Iteration 5: 1548 nodes, 551 classes
-[2026-03-27T11:51:50Z INFO  parabit] Iteration 6: 10412 nodes, 3377 classes
-[2026-03-27T11:52:02Z INFO  parabit] Iteration 7: 159800 nodes, 55714 classes
+[2026-04-20T10:49:36Z INFO  parabit] Running parabit on file: hydra_opt_2703
+[2026-04-20T10:49:36Z INFO  parabit] Iteration 0: 18 nodes, 15 classes
+[2026-04-20T10:49:36Z INFO  parabit] Iteration 1: 69 nodes, 46 classes
+[2026-04-20T10:49:36Z INFO  parabit] Iteration 2: 136 nodes, 68 classes
+[2026-04-20T10:49:36Z INFO  parabit] Iteration 3: 210 nodes, 92 classes
+[2026-04-20T10:49:36Z INFO  parabit] Iteration 4: 435 nodes, 174 classes
+[2026-04-20T10:49:36Z INFO  parabit] Iteration 5: 1548 nodes, 551 classes
+[2026-04-20T10:49:36Z INFO  parabit] Iteration 6: 10412 nodes, 3377 classes
+[2026-04-20T10:49:44Z INFO  parabit] Iteration 7: 159800 nodes, 55714 classes
 memory allocation of 96 bytes failed
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 timeout: the monitored command dumped core
 Command terminated by signal 6
-{"elapsed":19.31, "maxrss":7440396}
+{"elapsed":30.91, "maxrss":7440048}
