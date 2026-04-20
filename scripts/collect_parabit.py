@@ -3,6 +3,7 @@ import argparse
 from pathlib import Path
 
 from parabit_runner import run_with_args
+from tqdm import tqdm
 
 
 BENCHMARKS_BASE = Path('../benchmarks')
@@ -43,7 +44,12 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     args.extra_commands = None
+    args.verbose = False
+    args.isabelle_image = 'isabelle-docker:latest'
 
+    progress_bars : dict[str, tqdm]= {}
+    for bench in BENCHMARKS:
+        progress_bars[bench] = tqdm(desc=bench)
     for bench in BENCHMARKS:
         args.input_dir = BENCHMARKS_BASE / bench / 'bwlang'
 
@@ -53,4 +59,5 @@ if __name__ == "__main__":
         else:
             args.output_dir = RESULT_BASE / 'parabit' / bench
         print(f"Running {bench}")
-        run_with_args(args)
+        pbar = progress_bars[bench]
+        run_with_args(args, pbar)

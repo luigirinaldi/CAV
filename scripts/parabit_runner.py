@@ -185,6 +185,8 @@ def run_binary_parallel(
     timeout: int,
     memory_limit_gb: int,
     args: str,
+    verbose : bool = False,
+    progress_bar : tqdm | None = None 
 ) -> List[dict]:
     """
     Run the binary on all matching files in parallel with resource limits.
@@ -209,8 +211,12 @@ def run_binary_parallel(
 
     results = []
 
-    # Create a progress bar
-    pbar = tqdm(total=len(input_files), desc="Processing files", position=0)
+    if progress_bar is None:
+        # Create a progress bar
+        pbar = tqdm(desc="Processing files")
+    else:
+        pbar = progress_bar
+    pbar.total = len(input_files)
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         future_to_file = {
@@ -246,15 +252,16 @@ def run_binary_parallel(
                         "verified": None,
                     }
                 )
-                # Update tqdm line with result
-                if success:
-                    pbar.write(
-                        f" {base_name} ({time_taken:.2f}s, {max_memory_mb:.1f}MB)"
-                    )
-                else:
-                    pbar.write(
-                        f" {base_name} ({time_taken:.2f}s, {max_memory_mb:.1f}MB) - {last_err_line[:50]}"
-                    )
+                if verbose:
+                    # Update tqdm line with result
+                    if success:
+                        pbar.write(
+                            f" {base_name} ({time_taken:.2f}s, {max_memory_mb:.1f}MB)"
+                        )
+                    else:
+                        pbar.write(
+                            f" {base_name} ({time_taken:.2f}s, {max_memory_mb:.1f}MB) - {last_err_line[:50]}"
+                        )
             except Exception as e:
                 pbar.write(f" Exception processing {input_file.name}: {e}")
                 results.append(
@@ -272,7 +279,8 @@ def run_binary_parallel(
             finally:
                 pbar.update(1)
 
-    pbar.close()
+    if progress_bar is None:
+        pbar.close()
     return results
 
 
@@ -443,7 +451,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
         print(f"Failed to run bash command: {e}", file=sys.stderr)
         raise e
 
-def run_with_args(args):
+def run_with_args(args, progress_bar = None):
     # Validate inputs
     if not args.input_dir.exists():
         print(f"L Error: Input directory '{args.input_dir}' does not exist")
@@ -475,6 +483,8 @@ def run_with_args(args):
         timeout=args.timeout,
         memory_limit_gb=args.memory,
         args=args.extra_commands,
+        verbose=args.verbose,
+        progress_bar=progress_bar
     )
 
     # Save results to CSV
@@ -539,9 +549,16 @@ def main():
         default=None,
         help="Commands to pass onto parabit",
     )
+    parser.add_argument(
+        "--quiet",
+        default=False,
+        action='store_true',
+        help="Disabling printing of results as they come in"
+    )
+    
 
     args = parser.parse_args()
-
+    args.verbose = not args.quiet
     run_with_args(args)
 
 if __name__ == "__main__":
