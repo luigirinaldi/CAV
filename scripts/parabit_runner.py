@@ -184,7 +184,6 @@ def run_binary_parallel(
     binary_path: str,
     timeout: int,
     memory_limit_gb: int,
-    file_pattern: str,
     args: str,
 ) -> List[dict]:
     """
@@ -194,6 +193,7 @@ def run_binary_parallel(
     log_dir = output_dir / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
 
+    file_pattern = "*.bwlang"
     input_files = list(input_dir.glob(file_pattern))
     if not input_files:
         print(f" No files matching '{file_pattern}' found in {input_dir}")
@@ -443,6 +443,54 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
         print(f"Failed to run bash command: {e}", file=sys.stderr)
         raise e
 
+def run_with_args(args):
+    # Validate inputs
+    if not args.input_dir.exists():
+        print(f"L Error: Input directory '{args.input_dir}' does not exist")
+        return 1
+
+    if not args.input_dir.is_dir():
+        print(f"L Error: '{args.input_dir}' is not a directory")
+        return 1
+
+    # Create output directory
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+
+
+    if args.check_isabelle:
+        isabelle_dir = args.output_dir / "isabelle_out"
+        isabelle_dir.mkdir()
+
+        if args.extra_commands:
+            print("Warning: override extra parabit args")
+
+        args.extra_commands = f"get-proof --theorem-path {isabelle_dir}"
+
+    # Run the binary on all files
+    results = run_binary_parallel(
+        input_dir=args.input_dir,
+        output_dir=args.output_dir,
+        max_workers=args.jobs,
+        binary_path=BINARY_PATH,
+        timeout=args.timeout,
+        memory_limit_gb=args.memory,
+        args=args.extra_commands,
+    )
+
+    # Save results to CSV
+    csv_path = args.output_dir / 'results.csv'
+    save_results_to_csv(results, csv_path)
+
+    # Print summary
+    print_summary(results)
+
+    if args.check_isabelle:
+        # Verify the generated results
+        run_isabelle(results, isabelle_dir, csv_path, args.isabelle_image)
+        # Save results again
+        save_results_to_csv(results, csv_path)
+
+    return 0
 
 def main():
     parser = argparse.ArgumentParser(
@@ -474,20 +522,6 @@ def main():
         help="Memory limit per process in GB (default: 8.0)",
     )
     parser.add_argument(
-        "-p",
-        "--pattern",
-        type=str,
-        default="*.bwlang",
-        help="File pattern to match (default: *.bwlang)",
-    )
-    parser.add_argument(
-        "-o",
-        "--csv-output",
-        type=str,
-        default="results.csv",
-        help="Output CSV filename (default: results.csv)",
-    )
-    parser.add_argument(
         "--check-isabelle",
         default=False,
         action="store_true",
@@ -508,56 +542,7 @@ def main():
 
     args = parser.parse_args()
 
-    # Validate inputs
-    if not args.input_dir.exists():
-        print(f"L Error: Input directory '{args.input_dir}' does not exist")
-        return 1
-
-    if not args.input_dir.is_dir():
-        print(f"L Error: '{args.input_dir}' is not a directory")
-        return 1
-
-    # Create output directory
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-
-    extra_parabit_args = args.extra_commands
-
-    if args.check_isabelle:
-        isabelle_dir = args.output_dir / "isabelle-check"
-        isabelle_dir.mkdir()
-
-        if extra_parabit_args != "":
-            print("Warning: override extra parabit args")
-
-        extra_parabit_args = f"get-proof --theorem-path {isabelle_dir}"
-
-    # Run the binary on all files
-    results = run_binary_parallel(
-        input_dir=args.input_dir,
-        output_dir=args.output_dir,
-        max_workers=args.jobs,
-        binary_path=BINARY_PATH,
-        timeout=args.timeout,
-        memory_limit_gb=args.memory,
-        file_pattern=args.pattern,
-        args=extra_parabit_args,
-    )
-
-    # Save results to CSV
-    csv_path = args.output_dir / args.csv_output
-    save_results_to_csv(results, csv_path)
-
-    # Print summary
-    print_summary(results)
-
-    if args.check_isabelle:
-        # Verify the generated results
-        run_isabelle(results, isabelle_dir, csv_path, args.isabelle_image)
-        # Save results again
-        save_results_to_csv(results, csv_path)
-
-    return 0
-
+    run_with_args(args)
 
 if __name__ == "__main__":
     exit(main())
