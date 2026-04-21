@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import subprocess
+from subprocess_tee import run
 import time
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -358,7 +359,7 @@ def count_lines(file_path):
         return sum(1 for _ in f)
 
 
-def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image):
+def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image, verbose: bool = True):
     try:
         proof_path = Path(PROOF_PATH)
 
@@ -411,8 +412,10 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
 
     # 3. Run bash command inside the destination directory
     print("Checking proof with Isabelle")
+    isabelle_log = isabelle_dir / "isabelle.log"
     try:
-        result = subprocess.run(
+        runner = run if verbose else subprocess.run
+        result = runner(
             [
                 "docker",
                 "run",
@@ -421,16 +424,25 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
                 docker_image,
                 "build",
                 "-v",
-		"-o",
-		"timeout_scale=2.0",
+                "-o",
+                "timeout_scale=2.0",
                 "-d",
-		"/build_dir/",
+                "/build_dir/",
                 "-c",
                 "CheckProofs",
             ],
             cwd=isabelle_dir,
             text=True,
+            capture_output=not verbose,
         )
+
+        with open(isabelle_log, "w") as log_f:
+            log_f.write(result.stdout)
+            if result.stderr:
+                log_f.write("\n--- stderr ---\n")
+                log_f.write(result.stderr)
+
+        print(f"Isabelle log saved to {isabelle_log}")
 
         if not result.returncode == 0:
             raise ValueError(f"Isabelle proof check failed:\n{result.stdout}")
@@ -496,7 +508,7 @@ def run_with_args(args, progress_bar = None):
 
     if args.check_isabelle:
         # Verify the generated results
-        run_isabelle(results, isabelle_dir, csv_path, args.isabelle_image)
+        run_isabelle(results, isabelle_dir, csv_path, args.isabelle_image, args.verbose)
         # Save results again
         save_results_to_csv(results, csv_path)
 
@@ -559,6 +571,7 @@ def main():
 
     args = parser.parse_args()
     args.verbose = not args.quiet
+    print(args.verbose, args.quiet)
     run_with_args(args)
 
 if __name__ == "__main__":
