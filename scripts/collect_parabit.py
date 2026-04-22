@@ -41,6 +41,12 @@ if __name__ == "__main__":
         action="store_true",
         help="Verify the results by running Isabelle"
     )
+    parser.add_argument(
+        "--outdir",
+        type=str,
+        default=RESULT_BASE,
+        help="Directory where the logs should be stored"
+    )
     
     args = parser.parse_args()
     args.extra_commands = None
