@@ -44,23 +44,44 @@ Requirements:
 
   * RAM: 16 GB
   * CPU cores: 12
-  * Time (smoke test): [expected time to execute the smoke test on a standard
-    laptop (including compilation, installation, etc.)]
+  * Time (smoke test): 15 minutes
   * Time (full review): [expected time to execute the full review (do not
     include the time of reviewers reading the paper, playing with the tool on
     their own, etc.)]
 
 external connectivity: NO
 
+## Setup
+
+- Install Docker on the system (https://docs.docker.com/get-docker/)
+
+- Load the container present in this tar:
+    ```
+    docker load ...
+    docker run -it 
+    ```
 ## Smoke test
 
 The smoke test will run a subset of the tests with a smaller timeout and then
 verify them using Isabelle.
 
-This should take approximately 5 minutes.
-
-You can check that the table and plot generation works for Tables 2 and 3, as
-well as Figure 7 by running the following:
+- Load the Docker container in interactive mode as described previously.
+- Run the smoke test
+    ```
+    ./scripts/run_smoke.sh
+    ```
+- After ~15 minutes the test will have run all of the benchmarks with a 5
+second timeout and 1 GB memory bound. All the results can be found in the 
+results directory, under {fill_in}.
+- The tests that were passed and the time taken to pass are found in the
+`{benchmark}/results.csv` of each respective benchmark. 
+Eg. `/artifact/results/ROVER/results.csv`
+- Run the following command to produce tables and figures:
+    ```
+    command
+    ```
+- After running this the Tables and Figures will be found in 
+`/artifact/results/plots` and `/artifact/results/tables` respectively.
 
 ## Full Review
 

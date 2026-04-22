@@ -362,7 +362,6 @@ def count_lines(file_path):
 def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image, verbose: bool = True):
     try:
         proof_path = Path(PROOF_PATH)
-
         for thy_file in proof_path.glob("*.thy"):
             shutil.copy(thy_file, isabelle_dir / thy_file.name)
 
@@ -417,17 +416,13 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
         runner = run if verbose else subprocess.run
         result = runner(
             [
-                "docker",
-                "run",
-                "-v",
-                f"{isabelle_dir.absolute()}:/build_dir/",
-                docker_image,
+                "isabelle",
                 "build",
                 "-v",
                 "-o",
                 "timeout_scale=2.0",
                 "-d",
-                "/build_dir/",
+                f"{isabelle_dir.absolute()}",
                 "-c",
                 "CheckProofs",
             ],
