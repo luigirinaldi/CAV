@@ -1,18 +1,83 @@
-# CAV 2026 Parabit Artifact
+# CAV 2026 Artifact: A Multi-Width Parametric Bitvector Equivalence Solver
 
-This repository holds the artifact for the Parabit submission.
+Claimed badges: Available + Functional
 
-It has the following structure:
+Justification for the badges: [no need to justify Available -- just provide the DOI link in HotCRP]
 
-- Parabit Solver
-- Parametric benchmarks
-    - Alive
-    - Hydra
-    - ROVER
-    - Cadence
-- Scripts
-    - parabit_runner.py
-    - pbv_runner.py
-    - make_graphs
-    - process results
-    ....
+  * Functional: [give reasons why you believe that the Functional badge should
+    be awarded (if applied for Functional or Reusable); example:  The artifact
+    replicates most of the results in the paper (see below for details).  It
+    compiles Tool and executes the benchmarks on it and the other tools.  We
+    validate the correctness of the outputs of Tool by cross-comparison with
+    the results of the other tools.  The source code of Tool is included in the
+    artifact.]
+
+    - replicated: [which claims/results of the paper are replicated by the
+      artifact and how (you can, e.g., refer to a concrete point in FULL REVIEW
+      below), e.g.,
+       * Table 1: point (1)
+       * Figure 1: point (2)
+       * Figures 2 and 3: point (3)
+       * Figure 4: point (4) [requires external connectivity]
+       * Proof of Thm. 5: point (5)
+      ]
+
+    - not-replicated: [which claims/results cannot be replicated and why, e.g.,
+       * Table 2: to reproduce the results, one needs to have access to the
+                  computer Holly 6000, which is not available outside our
+                  research lab
+       * Table 3: this table is a result of a survey among undergraduate students
+                  at the Institute of Happiness; the survey cannot be
+                  reproduced as a part of the artifact, but the raw filled in
+                  questionnaires are available in the directory survey/
+       * Fig. 6: to obtain the results, one needs to have a working installation
+                 of AcmeVerifier of Acme Inc.; if the reviewers have it,
+                 they can reproduce the results by point (6) below.
+      ]
+
+  * Reusable: [give reasons why you believe that the Reusable badge should be
+    awarded (if applied for); e.g., The license of Tool is GNU GPLv3.  Tool is
+    provided with an extensive test suite (in /tool/tests/) and documentation
+    (in /tool/doc after the tool is compiled).]
+
+Requirements:
+
+  * RAM: 16 GB
+  * CPU cores: 12
+  * Time (smoke test): [expected time to execute the smoke test on a standard
+    laptop (including compilation, installation, etc.)]
+  * Time (full review): [expected time to execute the full review (do not
+    include the time of reviewers reading the paper, playing with the tool on
+    their own, etc.)]
+
+external connectivity: NO
+
+## Smoke test
+
+The smoke test will run a subset of the tests with a smaller timeout and then
+verify them using Isabelle.
+
+This should take approximately 5 minutes.
+
+You can check that the table and plot generation works for Tables 2 and 3, as
+well as Figure 7 by running the following:
+
+## Full Review
+
+In order to replicate the full review there is a small version, which runs all
+of the benchmarks using the parabit tool with the timeouts used in the paper.
+
+In order to compare against prior work, we also evaluated the novel benchmarks
+using the PBV solver [cite]. Running this will take ~{tbd} hours.
+
+Finally, as before, the graphs and tables can be obtained by running 
+
+```
+insert
+```
+
+This will generate the plots as pdfs in the /plots folder and the tables as
+latex functions in the /tables folder.
+-------------------------------------------------------------------------------
+**                               FULL REVIEW                                 **
+-------------------------------------------------------------------------------
