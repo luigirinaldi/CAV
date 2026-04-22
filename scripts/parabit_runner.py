@@ -394,7 +394,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
                 results_out.append(r)
             else:
                 theorems_to_check.append(r["problem_name"])
-                r["verified"] = None
+                r["verified"] = None if r['status'] == 'SUCCESS' else False
                 results_out.append(r)
 
     save_results_to_csv(results, csv_path)
@@ -455,7 +455,7 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
         else:
             print("Proof verified by Isabelle!")
             for r in results:
-                if r["verified"] is None:
+                if r["verified"] is None and r['status'] == 'SUCCESS':
                     r["verified"] = True
             return True
 
