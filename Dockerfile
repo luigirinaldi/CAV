@@ -25,5 +25,10 @@ COPY --from=docker.io/astral/uv:latest /uv /uvx /usr/local/bin/
 RUN cd ./scripts && uv sync --locked --no-install-project
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    default-jre-headless fontconfig time && \
+    default-jre-headless fontconfig time curl zstd && \
     rm -rf /var/lib/apt/lists/*
+
+# Get the pbv binary from the paper artifact (https://doi.org/10.5281/zenodo.15143242)
+RUN mkdir /artifact/pbv && curl -L https://zenodo.org/records/15143242/files/artifact.tar.gz?download=1 | tar -xz -C /artifact/pbv/
+RUN cd /artifact/pbv/artifact/evaluation/solvers && tar --zstd -xvf solvers.tar.zstd
+RUN chmod +x /artifact/pbv/artifact/evaluation/solvers/pbvsolver
