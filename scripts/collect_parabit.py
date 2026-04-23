@@ -44,14 +44,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--outdir",
         type=str,
-        default=RESULT_BASE,
+        default=str(RESULT_BASE),
         help="Directory where the logs should be stored"
     )
     
     args = parser.parse_args()
     args.extra_commands = None
     args.verbose = False
-    args.isabelle_image = 'isabelle-docker:latest'
 
     progress_bars : dict[str, tqdm]= {}
     for bench in BENCHMARKS:
@@ -61,9 +60,9 @@ if __name__ == "__main__":
 
         args.check_isabelle = args.verify
         if args.verify:
-            args.output_dir = RESULT_BASE / 'parabit_verif' / bench
+            args.output_dir = Path(args.outdir) / 'parabit_verif' / bench
         else:
-            args.output_dir = RESULT_BASE / 'parabit' / bench
+            args.output_dir = Path(args.outdir) / 'parabit' / bench
         print(f"Running {bench}")
         pbar = progress_bars[bench]
         run_with_args(args, pbar)
