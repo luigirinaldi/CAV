@@ -1,7 +1,7 @@
 # latex_style.mplstyle
 
 # Use LaTeX for text rendering
-text.usetex : True
+text.usetex : False
 
 # Font
 font.family : serif

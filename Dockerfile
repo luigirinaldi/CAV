@@ -3,7 +3,7 @@ FROM makarius/isabelle:Isabelle2025-2 AS isabelle
 FROM rust:1-slim  
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    default-jre-headless fontconfig time curl zstd texlive-latex-base texlive-fonts-recommended cm-super dvipng && \
+    default-jre-headless fontconfig time curl zstd texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra cm-super dvipng && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /artifact
