@@ -16,4 +16,4 @@ uv run pbv_runner.py ../benchmarks/Hydra/smt2 ../smoke_test/pbv/Hydra --max-work
 uv run parabit_runner.py ../benchmarks/Alive/bwlang ../smoke_test/parabit_verif/Alive -j 8 -m 1 -t 1 --check-isabelle
 
 # Generate Tables and Plots
-SMOKE_TEST=1 uv run jupyter nbconvert --to notebook --execute --inplace ./plots/eval_graphs.ipynb
+TIMEOUT=1000 SMOKE_TEST=1 uv run jupyter nbconvert --to notebook --execute --inplace ./plots/eval_graphs.ipynb
