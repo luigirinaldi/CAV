@@ -106,7 +106,7 @@ written to the `/output/smoke_test/` directory:
     survival plots with the union of all problems as opposed to the intersection.
 
 (4) If the process completed without errors then the verification succeeded, and
-the following output should be present in the output:
+the following should be present in the output:
     ```
     Timing CheckProofs (6 threads, 173.955s elapsed time, 447.134s cpu time, 60.019s GC time, factor 2.57)
     Finished CheckProofs (0:02:56 elapsed time, 0:07:30 cpu time, factor 2.56)
