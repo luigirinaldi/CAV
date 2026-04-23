@@ -566,7 +566,6 @@ def main():
 
     args = parser.parse_args()
     args.verbose = not args.quiet
-    print(args.verbose, args.quiet)
     run_with_args(args)
 
 if __name__ == "__main__":

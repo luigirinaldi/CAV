@@ -64,6 +64,7 @@ def run_with_args(
     max_workers: int,
     type_check: bool,
     progress_bar: tqdm | None = None,
+    verbose: bool = False
 ) -> list[dict]:
     log_dir = output_dir / "logs"
     os.makedirs(log_dir, exist_ok=True)
@@ -91,18 +92,22 @@ def run_with_args(
                     result = future.result()
                     results.append(result)
                     time_str = f" ({result['time']:.3f}s)" if result.get('time') is not None else ""
-                    pbar.write(f"✅ {result['file']}: {result['result']}{time_str}")
+                    if verbose:
+                        pbar.write(f"✅ {result['file']}: {result['result']}{time_str}")
                 except Exception as e:
                     filepath = futures[future]
                     if not type_check:
-                        pbar.write(f"⚠️  {filepath.name}: Error - {e}. Retrying with --type-check...")
+                        if verbose:
+                            pbar.write(f"⚠️  {filepath.name}: Error - {e}. Retrying with --type-check...")
                         try:
                             retry_result = process_file(filepath, log_dir, timeout, type_check=True)
                             results.append(retry_result)
                             time_str = f" ({retry_result['time']:.3f}s)" if retry_result.get('time') is not None else ""
-                            pbar.write(f"✅ {retry_result['file']}: {retry_result['result']}{time_str} (with type-check)")
+                            if verbose:
+                                pbar.write(f"✅ {retry_result['file']}: {retry_result['result']}{time_str} (with type-check)")
                         except Exception as retry_e:
-                            pbar.write(f"❌ {filepath.name}: Error even with type-check - {retry_e}")
+                            if verbose:
+                                pbar.write(f"❌ {filepath.name}: Error even with type-check - {retry_e}")
                             log_file = log_dir / filepath.with_suffix('.log').name
                             last_log_line = ""
                             if log_file.exists():
@@ -111,7 +116,8 @@ def run_with_args(
                                     last_log_line = log_content.split('\n')[-1]
                             results.append({"file": filepath.name, "result": "error", "time": None, "last_log_line": last_log_line})
                     else:
-                        pbar.write(f"❌ {filepath.name}: Error - {e}")
+                        if verbose:
+                            pbar.write(f"❌ {filepath.name}: Error - {e}")
                         log_file = log_dir / filepath.with_suffix('.log').name
                         last_log_line = ""
                         if log_file.exists():
@@ -150,6 +156,7 @@ def main():
     parser.add_argument("--timeout", type=int, default=10, help="Timeout per file in seconds (default: 300)")
     parser.add_argument("--max-workers", type=int, default=4, help="Maximum number of parallel workers (default: 4)")
     parser.add_argument("--type-check", action=argparse.BooleanOptionalAction, help="Run the type checker on the provided formula")
+    parser.add_argument("--verbose", action=argparse.BooleanOptionalAction, help="Print extra detail")
 
     args = parser.parse_args()
 
@@ -164,10 +171,11 @@ def main():
     csv_output = Path(args.output_dir) / "results.csv"
     print(f"\n📊 Results saved to {csv_output}")
     print(f"Total files: {len(results)}")
-    print(f"SAT: {sum(1 for r in results if r['result'] == 'sat')}")
-    print(f"UNSAT: {sum(1 for r in results if r['result'] == 'unsat')}")
-    print(f"Timeout: {sum(1 for r in results if r['result'] == 'timeout')}")
-    print(f"Errors: {sum(1 for r in results if r['result'] == 'error')}")
+    if args.verbose:
+        print(f"SAT: {sum(1 for r in results if r['result'] == 'sat')}")
+        print(f"UNSAT: {sum(1 for r in results if r['result'] == 'unsat')}")
+        print(f"Timeout: {sum(1 for r in results if r['result'] == 'timeout')}")
+        print(f"Errors: {sum(1 for r in results if r['result'] == 'error')}")
 
 if __name__ == "__main__":
     main()
