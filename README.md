@@ -83,19 +83,22 @@ respectively.
 ## Full Review
 
 In order to replicate the full review there is a small version, which runs all
-of the benchmarks using the parabit tool with the timeouts used in the paper.
+of the benchmarks using the parabit and pbv tool with extra resource contraints
+(5 second timeout and 2 GB memory max), in order to achieve a shorter runtime.
 
-In order to compare against prior work, we also evaluated the novel benchmarks
-using the PBV solver [cite]. Running this will take ~{tbd} hours.
+### Small
 
-Finally, as before, the graphs and tables can be obtained by running 
-
+- Running the small case can be done from within the interactive docker environment:
 ```
-insert
+./scripts/run_small.sh
 ```
+- As before, the tables and figures can be found in the `tables` and `plots` folders.
 
-This will generate the plots as pdfs in the /plots folder and the tables as
-latex functions in the /tables folder.
+### Full
+- In order to replicate the full results of the paper the following script should be run:
+```
+    ./scripts/run_full.sh
+```
 -------------------------------------------------------------------------------
 **                               FULL REVIEW                                 **
 -------------------------------------------------------------------------------
