@@ -1,5 +1,6 @@
 import os
 import subprocess
+import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 import argparse
@@ -24,37 +25,22 @@ def process_file(filepath: Path, log_dir: Path, timeout: int, type_check: bool =
         stderr=subprocess.PIPE,
         text=True
     )
+    t_start = time.perf_counter()
     try:
         stdout, stderr = proc.communicate(timeout=timeout)
     except subprocess.TimeoutExpired:
         proc.kill()
         stdout, stderr = proc.communicate()
-        # Force remove the container if still running
         full_output = f"{stdout}\nTIMEOUT\n"
         output_path.write_text(full_output)
         return {"file": filepath.name, "result": "timeout", "time": timeout, "last_log_line": "TIMEOUT"}
+    elapsed = time.perf_counter() - t_start
 
     if proc.returncode == 0:
         output_path.write_text(stdout)
+        duration = elapsed
 
-        # Extract timestamps and calculate duration
         lines = stdout.strip().split('\n')
-        start_time = None
-        end_time = None
-
-        for line in lines:
-            if line.startswith("START_TIME="):
-                start_time = float(line.split("=")[1])
-            elif line.startswith("END_TIME="):
-                end_time = float(line.split("=")[1])
-
-        # Calculate duration
-        if start_time is not None and end_time is not None:
-            duration = end_time - start_time
-        else:
-            duration = None
-
-        # Parse the result from the output (excluding timestamp lines)
         result_lines = [line for line in lines if not line.startswith("START_TIME=") and not line.startswith("END_TIME=")]
         last_line = result_lines[-1].strip().lower() if result_lines else ""
 
