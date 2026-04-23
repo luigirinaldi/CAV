@@ -16,6 +16,7 @@ Justification for the badges:
        * Table 2: point (1)
        * Table 3: point (2)
        * Figure 7: point (3)
+       * Proof-certificate verification: point (4) 
 
     - not-replicated: all claims in the paper are replicated by this artifact.
 
@@ -75,7 +76,7 @@ written to the `/output/smoke_test/` directory:
     tables/table2/combined.md       -- Table 2 (restricted to Alive + Hydra)
 ```
 
-- To check that Table 2 generation worked, inspect:
+(1) To check that Table 2 generation worked, inspect:
     ```
     cat ./results/smoke_test/tables/table2/combined.md
     ```
@@ -83,19 +84,28 @@ written to the `/output/smoke_test/` directory:
     counts in the pbv_full, parabit, and vbs columns, and should have 
     the following results:
 
-    [INSERT_RESULTS]
+    [INSERT_SAMPLE_TABLE]
 
-- To check that Figure 7 generation worked, inspect:
+(2) To check that Table 3 generation worked, inspect:
+    ```
+    cat ./results/smoke_test/tables/table3/table3.md
+    ```
+    The table should contain means statistics for the Alive and Hydra benchmarks
+    excluding statistics for the `pbv` solver.
+    **Note** the full table will be generated in later sections. 
+    The table should contain the following values:
+    [INSERT_SAMPLE_TABLE]
+
+(3) To check that Figure 7 generation worked, inspect:
     ```
     ls smoke_test/plots/
     ```
-
     The directory should contain `Figure7.pdf`, a version of the figure found 
     in the paper with a smaller timeout and hence fewer solved problems.
     There is also a variant `Figure7_variant.pdf` containing a version of the
     survival plots with the union of all problems as opposed to the intersection.
 
-- If the process completed without errors then the verification succeeded, and
+(4) If the process completed without errors then the verification succeeded, and
 the following output should be present in the output:
     ```
     Timing CheckProofs (6 threads, 173.955s elapsed time, 447.134s cpu time, 60.019s GC time, factor 2.57)
@@ -104,11 +114,11 @@ the following output should be present in the output:
     Isabelle log saved to ../smoke_test/parabit_verif/Alive/isabelle_out/isabelle.log
     Proof verified by Isabelle!
     ```
-    To re-run the Isabelle proof check, first navigate to the certificate directory:
+    To re-run the Isabelle proof check, navigate to the certificate directory:
     ```
     cd ./results/smoke_test/parabit_verif/Alive/isabelle_out
     ```
-    Then the set of benchmarks can be verified by running the following command:
+    The set of benchmarks can be verified by running the following command:
     ```
     isabelle build -v -d ./ -c CheckProofs
     echo "exit code = $?"
