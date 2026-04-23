@@ -70,18 +70,15 @@ verify them using Isabelle.
     ```
     ./scripts/run_smoke.sh
     ```
-- After ~15 minutes the test will have run all of the benchmarks with a 5
-second timeout and 1 GB memory bound. All the results can be found in the 
-results directory, under {fill_in}.
+- After ~15 minutes the test will have run the Hydra and Alive benchmarks with
+a 1 second timeout and 1 GB memory bound. All the results can be found in the 
+`smoke_test` directory.
 - The tests that were passed and the time taken to pass are found in the
 `{benchmark}/results.csv` of each respective benchmark. 
-Eg. `/artifact/results/ROVER/results.csv`
-- Run the following command to produce tables and figures:
-    ```
-    command
-    ```
-- After running this the Tables and Figures will be found in 
-`/artifact/results/plots` and `/artifact/results/tables` respectively.
+Eg. `/artifact/smoke_test/parabit/ROVER/results.csv`
+- The script also produces a small version of Table 2 and Figure 7. These are 
+located in `/artifact/smoke_test/tables` and `/artifact/smoke_test/plots` 
+respectively.
 
 ## Full Review
 
