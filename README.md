@@ -36,13 +36,13 @@ external connectivity: NO
 Run the following to load the Docker image:
 
 ```
-    docker load < parabit-artifact.tar
+docker load < parabit-artifact.tar
 ```
 
 After that, start an interactive session with:
 
 ```
-    docker run -v ./output:/artifact/output --rm -it parabit-artifact
+docker run -v ./output:/artifact/output --rm -it parabit-artifact
 ```
 
 The command above starts the docker container and places you in a bash
@@ -77,48 +77,47 @@ written to the `/output/smoke_test/` directory:
 ```
 
 (1) To check that Table 2 generation worked, inspect:
-    ```
-    cat ./results/smoke_test/tables/table2/combined.md
-    ```
-    The table should contain rows for Alive and Hydra with non-zero solved
+```
+cat ./results/smoke_test/tables/table2/combined.md
+```
+  - The table should contain rows for Alive and Hydra with non-zero solved
     counts in the pbv_full, parabit, and vbs columns, and should have 
     the following results:
 
     [INSERT_SAMPLE_TABLE]
 
 (2) To check that Table 3 generation worked, inspect:
-    ```
-    cat ./results/smoke_test/tables/table3/table3.md
-    ```
-    The table should contain means statistics for the Alive and Hydra benchmarks
-    excluding statistics for the `pbv` solver.
-    **Note** the full table will be generated in later sections. 
-    The table should contain the following values:
+```
+cat ./results/smoke_test/tables/table3/table3.md
+```
+  - The table should contain means statistics for the Alive and Hydra benchmarks
+    excluding statistics for the `pbv` solver. The table should contain the following values:
     [INSERT_SAMPLE_TABLE]
+  - **Note** the full table will be generated in later sections. 
 
 (3) To check that Figure 7 generation worked, inspect:
-    ```
-    ls smoke_test/plots/
-    ```
-    The directory should contain `Figure7.pdf`, a version of the figure found 
-    in the paper with a smaller timeout and hence fewer solved problems.
-    There is also a variant `Figure7_variant.pdf` containing a version of the
-    survival plots with the union of all problems as opposed to the intersection.
+```
+ls smoke_test/plots/
+```
+- The directory should contain `Figure7.pdf`, a version of the figure found 
+in the paper with a smaller timeout and hence fewer solved problems.
+There is also a variant `Figure7_variant.pdf` containing a version of the
+survival plots with the union of all problems as opposed to the intersection.
 
 (4) If the process completed without errors then the verification succeeded, and
 the following should be present in the output:
-    ```
-    Timing CheckProofs (6 threads, 173.955s elapsed time, 447.134s cpu time, 60.019s GC time, factor 2.57)
-    Finished CheckProofs (0:02:56 elapsed time, 0:07:30 cpu time, factor 2.56)
-    ...
-    Isabelle log saved to ../smoke_test/parabit_verif/Alive/isabelle_out/isabelle.log
-    Proof verified by Isabelle!
-    ```
-    To re-run the Isabelle proof check, navigate to the certificate directory:
+```
+Timing CheckProofs (6 threads, 173.955s elapsed time, 447.134s cpu time, 60.019s GC time, factor 2.57)
+Finished CheckProofs (0:02:56 elapsed time, 0:07:30 cpu time, factor 2.56)
+...
+Isabelle log saved to ../smoke_test/parabit_verif/Alive/isabelle_out/isabelle.log
+Proof verified by Isabelle!
+```
+  - To re-run the Isabelle proof check, navigate to the certificate directory:
     ```
     cd ./results/smoke_test/parabit_verif/Alive/isabelle_out
     ```
-    The set of benchmarks can be verified by running the following command:
+  - The set of benchmarks can be verified by running the following command:
     ```
     isabelle build -v -d ./ -c CheckProofs
     echo "exit code = $?"
