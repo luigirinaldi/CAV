@@ -71,37 +71,34 @@ def process_file(filepath: Path, log_dir: Path, timeout: int, type_check: bool =
         output_path.write_text(error_output)
         raise RuntimeError(f"Process failed for {filepath.name}: {stderr.strip()}")
 
-def main():
-    parser = argparse.ArgumentParser(description="Run docker command on files in parallel with timeout.")
-    parser.add_argument("input_dir", help="Directory containing input files")
-    parser.add_argument("output_dir", help="Directory to store output files")
-    parser.add_argument("--timeout", type=int, default=10, help="Timeout per file in seconds (default: 300)")
-    parser.add_argument("--max-workers", type=int, default=4, help="Maximum number of parallel workers (default: 4)")
-    parser.add_argument("--csv-output", default="results.csv", help="CSV file to save results (default: results.csv)")
-    parser.add_argument("--type-check", action=argparse.BooleanOptionalAction, help="Run the type checker on the provided formula")
-
-    args = parser.parse_args()
-
-    input_dir = Path(args.input_dir)
-    output_dir = Path(args.output_dir)
-    timeout = args.timeout
-    max_workers = args.max_workers
-
-    # Create log directory inside output_dir
+def run_with_args(
+    input_dir: Path,
+    output_dir: Path,
+    timeout: int,
+    max_workers: int,
+    type_check: bool,
+    progress_bar: tqdm | None = None,
+) -> list[dict]:
     log_dir = output_dir / "logs"
     os.makedirs(log_dir, exist_ok=True)
-
-    # CSV will be saved in output_dir
-    csv_output = output_dir / args.csv_output
+    csv_output = output_dir / "results.csv"
 
     files = [f for f in input_dir.iterdir() if f.is_file() and f.suffix == ".smt2"]
 
     results = []
 
-    pbar = tqdm(total=len(files), desc="Processing files", position=0)
+    if progress_bar is None:
+        pbar = tqdm(total=len(files), desc=input_dir.name)
+        owns_pbar = True
+    else:
+        pbar = progress_bar
+        pbar.total = len(files)
+        pbar.desc = input_dir.name
+        pbar.reset()
+        owns_pbar = False
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(process_file, f, log_dir, timeout, args.type_check): f for f in files}
+        futures = {executor.submit(process_file, f, log_dir, timeout, type_check): f for f in files}
         try:
             for future in as_completed(futures):
                 try:
@@ -111,8 +108,7 @@ def main():
                     pbar.write(f"✅ {result['file']}: {result['result']}{time_str}")
                 except Exception as e:
                     filepath = futures[future]
-                    # If type-check was not enabled, retry with type-check
-                    if not args.type_check:
+                    if not type_check:
                         pbar.write(f"⚠️  {filepath.name}: Error - {e}. Retrying with --type-check...")
                         try:
                             retry_result = process_file(filepath, log_dir, timeout, type_check=True)
@@ -121,7 +117,6 @@ def main():
                             pbar.write(f"✅ {retry_result['file']}: {retry_result['result']}{time_str} (with type-check)")
                         except Exception as retry_e:
                             pbar.write(f"❌ {filepath.name}: Error even with type-check - {retry_e}")
-                            # Read last line from log file
                             log_file = log_dir / filepath.with_suffix('.log').name
                             last_log_line = ""
                             if log_file.exists():
@@ -131,7 +126,6 @@ def main():
                             results.append({"file": filepath.name, "result": "error", "time": None, "last_log_line": last_log_line})
                     else:
                         pbar.write(f"❌ {filepath.name}: Error - {e}")
-                        # Read last line from log file
                         log_file = log_dir / filepath.with_suffix('.log').name
                         last_log_line = ""
                         if log_file.exists():
@@ -142,29 +136,46 @@ def main():
                 finally:
                     pbar.update(1)
         except KeyboardInterrupt:
-            pbar.close()
+            if owns_pbar:
+                pbar.close()
             print("\nCtrl-C detected! Terminating all running processes...")
             for future in futures:
                 future.cancel()
             executor.shutdown(wait=False, cancel_futures=True)
-            # Optionally, force kill any remaining docker containers (best effort)
-            import subprocess
-            subprocess.run(["docker", "ps", "-q", "--filter", "name=pbvsolver_"], stdout=subprocess.PIPE)
-            running = subprocess.run(["docker", "ps", "-q", "--filter", "name=pbvsolver_"], stdout=subprocess.PIPE)
-            for cid in running.stdout.decode().split():
-                subprocess.run(["docker", "rm", "-f", cid])
             print("All processes terminated.")
             exit(1)
 
-    pbar.close()
+    if owns_pbar:
+        pbar.close()
 
-    # Save results to CSV
     with open(csv_output, 'w', newline='') as csvfile:
         fieldnames = ['file', 'result', 'time', 'last_log_line']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames, extrasaction='ignore')
         writer.writeheader()
         writer.writerows(results)
 
+    return results
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Run docker command on files in parallel with timeout.")
+    parser.add_argument("input_dir", help="Directory containing input files")
+    parser.add_argument("output_dir", help="Directory to store output files")
+    parser.add_argument("--timeout", type=int, default=10, help="Timeout per file in seconds (default: 300)")
+    parser.add_argument("--max-workers", type=int, default=4, help="Maximum number of parallel workers (default: 4)")
+    parser.add_argument("--type-check", action=argparse.BooleanOptionalAction, help="Run the type checker on the provided formula")
+
+    args = parser.parse_args()
+
+    results = run_with_args(
+        Path(args.input_dir),
+        Path(args.output_dir),
+        args.timeout,
+        args.max_workers,
+        args.type_check or False,
+    )
+
+    csv_output = Path(args.output_dir) / "results.csv"
     print(f"\n📊 Results saved to {csv_output}")
     print(f"Total files: {len(results)}")
     print(f"SAT: {sum(1 for r in results if r['result'] == 'sat')}")
