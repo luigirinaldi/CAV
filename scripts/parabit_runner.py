@@ -242,7 +242,18 @@ def run_binary_parallel(
                     future.result()
                 )
                 status = "SUCCESS" if success else "FAILED"
-                timed_out = "TIMEOUT" in last_err_line
+                timed_out = '124' in last_err_line
+                exit_reason = None
+                if not success:
+                    if '124' in last_err_line:
+                        exit_reason = 'timeout'
+                    elif '6' in last_err_line:
+                        exit_reason = 'memory'
+                    elif '101' in last_err_line:
+                        exit_reason = 'crash'
+                    elif '1' in last_err_line:
+                        exit_reason = 'saturation'
+                        
                 results.append(
                     {
                         "file": base_name,
@@ -252,6 +263,7 @@ def run_binary_parallel(
                         "time_taken": time_taken,
                         "max_memory_mb": max_memory_mb,
                         "timed_out": timed_out,
+                        "exit_reason": exit_reason,
                         "verified": None,
                     }
                 )
@@ -276,6 +288,7 @@ def run_binary_parallel(
                         "time_taken": 0.0,
                         "max_memory_mb": 0.0,
                         "timed_out": False,
+                        "exit_reason": None,
                         "verified": None,
                     }
                 )
@@ -298,6 +311,7 @@ def save_results_to_csv(results: List[dict], output_file: Path):
         "time_taken",
         "max_memory_mb",
         "timed_out",
+        "exit_reason",
         "last_err_line",
         "problem_name",
         "verified",
