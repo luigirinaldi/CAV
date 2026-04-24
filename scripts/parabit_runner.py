@@ -16,6 +16,8 @@ from typing import Dict, List, Tuple
 import psutil
 from tqdm import tqdm
 
+from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn, TextColumn
+
 import shutil
 import sys
 
@@ -280,8 +282,7 @@ def run_binary_parallel(
             finally:
                 pbar.update(1)
 
-    if progress_bar is None:
-        pbar.close()
+    pbar.close()
     return results
 
 
@@ -359,7 +360,7 @@ def count_lines(file_path):
         return sum(1 for _ in f)
 
 
-def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image, verbose: bool = True):
+def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, verbose: bool = True):
     try:
         proof_path = Path(PROOF_PATH)
         for thy_file in proof_path.glob("*.thy"):
@@ -410,53 +411,53 @@ def run_isabelle(results: List[dict], isabelle_dir: Path, csv_path, docker_image
         sys.exit(1)
 
     # 3. Run bash command inside the destination directory
-    print("Checking proof with Isabelle")
     isabelle_log = isabelle_dir / "isabelle.log"
-    try:
-        runner = run if verbose else subprocess.run
-        result = runner(
-            [
-                "isabelle",
-                "build",
-                "-v",
-                "-o",
-                "timeout_scale=2.0",
-                "-d",
-                f"{isabelle_dir.absolute()}",
-                "-c",
-                "CheckProofs",
-            ],
-            cwd=isabelle_dir,
-            text=True,
-            capture_output=not verbose,
-        )
 
-        with open(isabelle_log, "w") as log_f:
-            log_f.write(result.stdout)
-            if result.stderr:
-                log_f.write("\n--- stderr ---\n")
-                log_f.write(result.stderr)
+    with Progress(
+      SpinnerColumn(),
+      TextColumn("[bold green]{task.description}"),
+      TimeElapsedColumn(),
+    ) as progress:
+        progress.add_task("Checking proof with Isabelle")
+        try:
+            runner = run if verbose else subprocess.run
+            result = runner(
+                [
+                    "isabelle",
+                    "build",
+                    "-v",
+                    "-o",
+                    "timeout_scale=2.0",
+                    "-d",
+                    f"{isabelle_dir.absolute()}",
+                    "-c",
+                    "CheckProofs",
+                ],
+                cwd=isabelle_dir,
+                text=True,
+                capture_output=not verbose,
+            )
 
-        print(f"Isabelle log saved to {isabelle_log}")
+            with open(isabelle_log, "w") as log_f:
+                log_f.write(result.stdout)
+                if result.stderr:
+                    log_f.write("\n--- stderr ---\n")
+                    log_f.write(result.stderr)
 
-        if not result.returncode == 0:
-            raise ValueError(f"Isabelle proof check failed:\n{result.stdout}")
-            # try:
-            #     failing_theorems = find_failing_theories(result.stdout)
-            #     return (True, failing_theorems)  # Returns Ok(Some(failing_theorems))
-            # except Exception as e:
-            #     print(f"Error while processing the logs: {e}", file=sys.stderr)
-            #     raise e
-        else:
-            print("Proof verified by Isabelle!")
-            for r in results:
-                if r["verified"] is None and r['status'] == 'SUCCESS':
-                    r["verified"] = True
-            return True
+            print(f"Isabelle log saved to {isabelle_log}")
 
-    except Exception as e:
-        print(f"Failed to run bash command: {e}", file=sys.stderr)
-        raise e
+            if not result.returncode == 0:
+                raise ValueError(f"Isabelle proof check failed:\n{result.stdout}")
+            else:
+                print("Proof verified by Isabelle!")
+                for r in results:
+                    if r["verified"] is None and r['status'] == 'SUCCESS':
+                        r["verified"] = True
+                return True
+
+        except Exception as e:
+            print(f"Failed to run bash command: {e}", file=sys.stderr)
+            raise e
 
 def run_with_args(args, progress_bar = None):
     # Validate inputs
@@ -503,7 +504,7 @@ def run_with_args(args, progress_bar = None):
 
     if args.check_isabelle:
         # Verify the generated results
-        run_isabelle(results, isabelle_dir, csv_path, args.isabelle_image, args.verbose)
+        run_isabelle(results, isabelle_dir, csv_path, args.verbose)
         # Save results again
         save_results_to_csv(results, csv_path)
 

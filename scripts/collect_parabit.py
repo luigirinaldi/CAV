@@ -52,17 +52,16 @@ if __name__ == "__main__":
     args.extra_commands = None
     args.verbose = False
 
-    progress_bars : dict[str, tqdm]= {}
-    for bench in BENCHMARKS:
-        progress_bars[bench] = tqdm(desc=bench)
     for bench in BENCHMARKS:
         args.input_dir = BENCHMARKS_BASE / bench / 'bwlang'
 
         args.check_isabelle = args.verify
         if args.verify:
+            print(f"\n=== Executing experiment and verifying benchmark: {bench} ===\n")
             args.output_dir = Path(args.outdir) / 'parabit_verif' / bench
         else:
+            print(f"\n=== Executing experiment on benchmark: {bench} ===\n")
             args.output_dir = Path(args.outdir) / 'parabit' / bench
-        print(f"Running {bench}")
-        pbar = progress_bars[bench]
-        run_with_args(args, pbar)
+        progress_bar = tqdm(desc=bench)
+        run_with_args(args, progress_bar)
+        progress_bar.close()
