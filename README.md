@@ -24,7 +24,7 @@ Requirements:
 
   * RAM: 16 GB
   * CPU cores: 12
-  * Time (smoke test): ~4 minutes
+  * Time (smoke test): ~5 minutes
   * Time (full review): ~6 hours
 
 external connectivity: NO
@@ -74,11 +74,12 @@ written to the `/output/smoke_test/` directory:
     pbv/Hydra/results.csv           -- pbv results on Hydra
     plots/Figure7.pdf               -- survival plots (Alive + Hydra only)
     tables/table2/combined.md       -- Table 2 (restricted to Alive + Hydra)
+    tables/table3/table3.md         -- Table 3 (restricted to Alive + Hydra)
 ```
 
 (1) To check that Table 2 generation worked, inspect:
 ```
-cat ./results/smoke_test/tables/table2/combined.md
+cat ./output/smoke_test/tables/table2/combined.md
 ```
   - The table should contain rows for Alive and Hydra with non-zero solved
     counts in the pbv_full, parabit, and vbs columns, and should have 
@@ -104,11 +105,10 @@ cat ./results/smoke_test/tables/table2/combined.md
 
 (2) To check that Table 3 generation worked, inspect:
 ```
-cat ./results/smoke_test/tables/table3/table3.md
+cat ./output/smoke_test/tables/table3/table3.md
 ```
-  - The table should contain means statistics for the Alive and Hydra benchmarks
-    excluding statistics for the `pbv` solver. The table should contain the 
-    following values:
+  - The table should contain mean statistics for the Alive and Hydra benchmarks.
+    The table should contain the following values:
 
 ```
 | benchmark   |   #_parabit |   Nodes |   Classes |   Iterations |   Time(ms) |   Proof_len |   Time_w_Proof(ms) |   #_pbv |   PBV_Time(ms) |
@@ -127,7 +127,7 @@ cat ./results/smoke_test/tables/table3/table3.md
 
 (3) To check that Figure 7 generation worked, inspect:
 ```
-ls smoke_test/plots/
+ls ./output/smoke_test/plots/
 ```
 - The directory should contain `Figure7.pdf`, a version of the figure found 
 in the paper with a smaller timeout and hence fewer solved problems.
@@ -144,11 +144,11 @@ Proof verified by Isabelle!
 ```
   - The logs can be found by navigating to the following directory:
     ```
-    /artifact/smoke_test/parabit_verif/Alive/isabelle_out/isabelle.log
+    /artifact/output/smoke_test/parabit_verif/Alive/isabelle_out/isabelle.log
     ```
   - To re-run the Isabelle proof check, navigate to the certificate directory:
     ```
-    cd ./results/smoke_test/parabit_verif/Alive/isabelle_out
+    cd ./output/smoke_test/parabit_verif/Alive/isabelle_out
     ```
   - The set of benchmarks can be verified by running the following command:
     ```
@@ -164,7 +164,7 @@ Proof verified by Isabelle!
 Assuming the smoke test passed, start a fresh interactive session:
 
 ```
-  docker run -it parabit-artifact
+  docker run -v ./output:/artifact/output -it parabit-artifact
 ```
 
 We provide two versions: a short version with tighter resource limits that
@@ -176,7 +176,7 @@ completes in half an hour, and the full version matching the paper results.
 ```
 **Full version** (60-second timeout, 8 GB memory per process):
 ```
-  ./scripts/run_full.sh                      [~ runtime: 5 hours 30 minutes ]
+  ./scripts/run_full.sh                      [~ runtime: 6 hours ]
 ```
 
 The commands will print progress as they execute the benchmarks.
@@ -194,7 +194,7 @@ should remain consistent.
 
 In the following, we present the instructions for obtaining tables and plots
 for the full results, the same instructions can be applied to the short version
-by replace results with results_short.
+by replacing `results` with `results_short`.
 
 (1) To obtain the results in Table 2:
   - Inspect /output/results/tables/table2/combined.md:
@@ -229,14 +229,14 @@ is also confirmed by the presence of the `Proof verified by Isabelle!` string
 in the standard output.
   - The logs can be inspected by running the following command:
     ```
-    cat /artifact/results/parabit_verif/{benchmark}/isabelle_out/isabelle.log
+    cat /artifact/output/results/parabit_verif/{benchmark}/isabelle_out/isabelle.log
     ```
-  - Where the `benchmark` should be substituded for either of `ROVER`, `Alive`,
+  - Where the `benchmark` should be substituted for either of `ROVER`, `Alive`,
     `Hydra` or `Industry`.
   - If you wish to re-run the proof certificate verification you can do so by 
     first navigating to the directory and then building the theories:
     ```
-    cd /artifact/results/parabit_verif/{benchmark}/isabelle_out
+    cd /artifact/output/results/parabit_verif/{benchmark}/isabelle_out
     isabelle build -v -d ./ -c CheckProofs
     echo "exit code = $?"
     ```
