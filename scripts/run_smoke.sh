@@ -1,14 +1,9 @@
 #!/bin/bash
-
-mkdir ./output -p
-
 cd ./parabit 
 cargo build --release
 cd ../scripts
 
 OUTDIR=../output/smoke_test 
-
-mkdir $OUTIDR
 
 # Run Alive and Hydra to check parabit and PBV
 uv run parabit_runner.py ../benchmarks/Alive/bwlang $OUTDIR/parabit/Alive -j 8 -m 1 -t 2 --quiet

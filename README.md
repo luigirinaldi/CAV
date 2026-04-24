@@ -84,15 +84,45 @@ cat ./results/smoke_test/tables/table2/combined.md
     counts in the pbv_full, parabit, and vbs columns, and should have 
     the following results:
 
-    [INSERT_SAMPLE_TABLE]
+```
+# Single Width
+| benchmark   | pbv_full   | pbv_restricted   | parabit   | vbs     |
+|:------------|:-----------|:-----------------|:----------|:--------|
+| Alive       | 103/196    | 31/61            | 53/61     | 129/196 |
+| Hydra       | 55/74      | 26/30            | 24/30     | 56/74   |
+| unique      | 108        | 7                | 27        | -       |
+| solved      | 59%        | 63%              | 85%       | 69%     |
+
+# Multi Width
+| benchmark   | pbv_full   | pbv_restricted   | parabit   | vbs   |
+|:------------|:-----------|:-----------------|:----------|:------|
+| Alive       | 3/4        | 0/1              | 1/1       | 4/4   |
+| Hydra       | 33/75      | 9/40             | 32/40     | 56/75 |
+| unique      | 27         | 0                | 24        | -     |
+| solved      | 46%        | 22%              | 80%       | 76%   |
+```
 
 (2) To check that Table 3 generation worked, inspect:
 ```
 cat ./results/smoke_test/tables/table3/table3.md
 ```
   - The table should contain means statistics for the Alive and Hydra benchmarks
-    excluding statistics for the `pbv` solver. The table should contain the following values:
-    [INSERT_SAMPLE_TABLE]
+    excluding statistics for the `pbv` solver. The table should contain the 
+    following values:
+
+```
+| benchmark   |   #_parabit |   Nodes |   Classes |   Iterations |   Time(ms) |   Proof_len |   Time_w_Proof(ms) |   #_pbv |   PBV_Time(ms) |
+|:------------|------------:|--------:|----------:|-------------:|-----------:|------------:|-------------------:|--------:|---------------:|
+| Alive (200) |          54 |     940 |       330 |         5.28 |      12.35 |         187 |              56.47 |     106 |          58.6  |
+| Hydra (154) |          56 |     443 |       177 |         3.93 |       2.99 |          23 |               8.39 |      93 |          46.15 |
+
+# Proof failures
+## Benchmark - Alive
+- Benchmark file `AndOrXor_2647_values_0` was found to be equivalent in 72.74ms, but a proof certificate could not be generated after 2000ms because of `timeout`.
+- Benchmark file `AndOrXor_2265_values_0` was found to be equivalent in 15.74ms, but a proof certificate could not be generated after 2000ms because of `timeout`.
+- Benchmark file `AndOrXor_2285_values_0` was found to be equivalent in 20.63ms, but a proof certificate could not be generated after 2000ms because of `timeout`.
+```
+
   - **Note** the full table will be generated in later sections. 
 
 (3) To check that Figure 7 generation worked, inspect:
@@ -110,9 +140,12 @@ the following should be present in the output:
 Timing CheckProofs (6 threads, 173.955s elapsed time, 447.134s cpu time, 60.019s GC time, factor 2.57)
 Finished CheckProofs (0:02:56 elapsed time, 0:07:30 cpu time, factor 2.56)
 ...
-Isabelle log saved to ../smoke_test/parabit_verif/Alive/isabelle_out/isabelle.log
 Proof verified by Isabelle!
 ```
+  - The logs can be found by navigating to the following directory:
+    ```
+    /artifact/smoke_test/parabit_verif/Alive/isabelle_out/isabelle.log
+    ```
   - To re-run the Isabelle proof check, navigate to the certificate directory:
     ```
     cd ./results/smoke_test/parabit_verif/Alive/isabelle_out
@@ -130,45 +163,81 @@ Proof verified by Isabelle!
 
 Assuming the smoke test passed, start a fresh interactive session:
 
+```
   docker run -it parabit-artifact
-
-All results are written to `results/` and figures/tables to
-`results/plots/` and `results/tables/` respectively.
+```
 
 We provide two versions: a short version with tighter resource limits that
-completes in a few hours, and the full version matching the paper results.
+completes in half an hour, and the full version matching the paper results.
 
 **Short version** (5-second timeout, 2 GB memory per process):
-
-  ./scripts/run_small.sh                           [~ runtime: ]
-
+```
+  ./scripts/run_short.sh                     [~ runtime: 25 minutes ]
+```
 **Full version** (60-second timeout, 8 GB memory per process):
+```
+  ./scripts/run_full.sh                      [~ runtime: 5 hours 30 minutes ]
+```
 
-  ./scripts/run_full.sh                            [~ runtime: 5h30m]
+The commands will print progress as they execute the benchmarks.
+All results are written to `output/` and figures/tables to `output/results/plots/` 
+and `output/results/tables/` respectively.
 
-Both scripts run parabit and pbv on all four benchmark suites (Rover, Alive,
+For completeness we also include the output files from the smoke, short and 
+full run in the folder ref_output/.
+
+Both scripts run `parabit` and `pbv` on all four benchmark suites (Rover, Alive,
 Hydra, Industry), verify proofs with Isabelle, and generate all tables and
 figures. Concrete timing values will differ from the paper on different
 hardware, but the overall trends (relative solve rates, ranking of tools)
 should remain consistent.
 
-(1) To obtain the results in Table 2, inspect:
+In the following, we present the instructions for obtaining tables and plots
+for the full results, the same instructions can be applied to the short version
+by replace results with results_short.
 
-      results/tables/table2/combined.md
-
-    These contain the per-benchmark breakdown of solved problems for parabit,
+(1) To obtain the results in Table 2:
+  - Inspect /output/results/tables/table2/combined.md:
+```
+    cd /artifact/output/results/tables/table2
+    cat combined.md
+```
+  - This will print the table to the standard output.
+  - These contain the per-benchmark breakdown of solved problems for parabit,
     pbv (full and restricted), and the virtual best solver.
 
-(2) To obtain the results in Table 3, inspect:
-
-      results/tables/table3/table3.md
-
-    This contains per-benchmark averages for e-graph nodes, classes,
+(2) To obtain the results in Table 3:
+  - Inspect /output/results/tables/table3/table3.md:
+```
+    cd /artifact/output/results/tables/table3
+    cat table3.md
+```
+  - This will print the table to the standard output.
+  - This contains per-benchmark averages for e-graph nodes, classes,
     iterations, solve time, proof length, and proof verification time.
 
 (3) To obtain Figure 7, inspect:
-
-      results/plots/Figure7.pdf
-
-    These contain the survival plots for all four benchmarks, showing
+```
+    cd /artifact/output/results/plots/
+```
+  - The directory should contain `Figure7.pdf`.
+  - These contain the survival plots for all four benchmarks, showing
     cumulative solve counts as a function of time for parabit, pbv, and VBS.
+
+(4) If the commands complete successfully then the verification succeeded, this
+is also confirmed by the presence of the `Proof verified by Isabelle!` string
+in the standard output.
+  - The logs can be inspected by running the following command:
+    ```
+    cat /artifact/results/parabit_verif/{benchmark}/isabelle_out/isabelle.log
+    ```
+  - Where the `benchmark` should be substituded for either of `ROVER`, `Alive`,
+    `Hydra` or `Industry`.
+  - If you wish to re-run the proof certificate verification you can do so by 
+    first navigating to the directory and then building the theories:
+    ```
+    cd /artifact/results/parabit_verif/{benchmark}/isabelle_out
+    isabelle build -v -d ./ -c CheckProofs
+    echo "exit code = $?"
+    ```
+    The exit code should be zero.
