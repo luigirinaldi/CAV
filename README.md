@@ -30,6 +30,71 @@ Requirements:
 external connectivity: NO
 
 -------------------------------------------------------------------------------
+**                        ARTIFACT DIRECTORY STRUCTURE                       **
+-------------------------------------------------------------------------------
+
+  artifact/
+  ├── Dockerfile                   -- Dockerfile to build the artifact image
+  ├── README.md                    -- This file
+  ├── benchmarks/                  -- Benchmark suites used in the evaluation
+  │   ├── Alive/                   -- Benchmark families (Cadence = Industry in the paper)
+  │   ├── Hydra/
+  │   ├── ROVER/
+  │   ├── Cadence/
+  │   │   ├── *.txt                -- Lists of benchmark paths by category
+  │   │   │                        --   (e.g., arithmetic.txt, multiwidth.txt)
+  │   │   ├── bwlang/              -- Benchmarks in native bwlang format
+  │   │   └── smt2/                -- Benchmarks in SMT-LIB-like syntax
+  │   └── tools/                   -- Utility scripts for benchmark processing
+  ├── parabit/                     -- Source code and proof infrastructure for parabit
+  │   ├── Cargo.toml               -- Rust project manifest
+  │   ├── src/                     -- Rust source code
+  │   ├── proofs/                  -- Isabelle/HOL theory files for proof certificates
+  │   │   ├── rewrite_defs.thy     -- Definitions of the rewrite rules
+  │   │   ├── arith_lemmas.thy     -- Proofs of arithmetic lemmas
+  │   │   ├── bitwise_lemmas.thy   -- Proofs of bitwise lemmas
+  │   │   └── mixed_lemmas.thy     -- Proofs of mixed lemmas
+  │   └── tests/                   -- Unit and integration tests
+  ├── pbv/                         -- The pbv comparison tool (pre-built artifact)
+  ├── scripts/                     -- Scripts for running the evaluation
+  │   ├── run_smoke.sh             -- Entry point for the smoke test
+  │   ├── run_short.sh             -- Entry point for the short evaluation
+  │   ├── run_full.sh              -- Entry point for the full evaluation
+  │   ├── parabit_runner.py        -- Invokes parabit on a benchmark suite
+  │   ├── pbv_runner.py            -- Invokes pbv on a benchmark suite
+  │   ├── collect_parabit.py       -- Aggregates parabit results into CSV
+  │   ├── collect_pbv.py           -- Aggregates pbv results into CSV
+  │   ├── mirabelle_runner.py      -- Invokes Isabelle to verify proof certificates
+  │   ├── parse_mirabelle.py       -- Parses Isabelle output
+  │   └── plots/
+  │       └── eval_graphs.ipynb    -- Notebook that produces all tables and figures
+  └── output/                      -- Created at runtime (mounted from host via -v)
+      ├── smoke_test/              -- Written by run_smoke.sh (Alive + Hydra only)
+      │   ├── parabit/{bench}/     -- parabit raw results per benchmark family
+      │   │   ├── results.csv
+      │   │   └── logs/            -- per-benchmark stdout/stderr and stats JSON
+      │   ├── parabit_verif/{bench}/  -- Isabelle verification results
+      │   │   ├── results.csv
+      │   │   └── isabelle_out/    -- Isabelle session directory and logs
+      │   ├── pbv/{bench}/         -- pbv raw results per benchmark family
+      │   │   └── results.csv
+      │   ├── plots/
+      │   │   ├── Figure7.pdf
+      │   │   └── Figure7_variant.pdf
+      │   └── tables/
+      │       ├── table2/
+      │       │   ├── combined.md
+      │       │   ├── single.tex
+      │       │   └── multiple.tex
+      │       └── table3/
+      │           ├── table3.md
+      │           └── table3.tex
+      ├── results/                 -- Written by run_full.sh (all four benchmarks)
+      │   └── (same layout as smoke_test/; {bench} = Alive, Hydra, ROVER, Cadence)
+      └── results_short/           -- Written by run_short.sh (all four benchmarks)
+          └── (same layout as smoke_test/; {bench} = Alive, Hydra, ROVER, Cadence)
+
+-------------------------------------------------------------------------------
 **                                SMOKE TEST                                 **
 -------------------------------------------------------------------------------
 
