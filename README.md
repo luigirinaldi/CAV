@@ -299,8 +299,10 @@ by replacing `results` with `results_short`.
     cd /artifact/output/results/plots/
 ```
   - The directory should contain `Figure7.pdf`.
-  - These contain the survival plots for all four benchmarks, showing
-    cumulative solve counts as a function of time for parabit, pbv, and VBS.
+  - These contain the survival plots for the Alive and Hydra benchmarks, 
+  showing cumulative solve counts as a function of time for parabit, 
+  pbv, and VBS.
+
 
 (4) If the commands complete successfully then the verification succeeded, this
 is also confirmed by the presence of the `Proof verified by Isabelle!` string
@@ -319,3 +321,5 @@ in the standard output.
     echo "exit code = $?"
     ```
     The exit code should be zero.
+
+**Note** Both `run_short` and `run_full` accept command-line arguments to provide the number of available cpus, the amount of available memory, and a timeout, by providing extra cpus or memory the results can be obtained more rapidly and should be identical.
