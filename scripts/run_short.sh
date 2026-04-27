@@ -14,7 +14,7 @@ TIMEOUT=5           # seconds
 while [[ $# -gt 0 ]]; do
     case $1 in
         -t|--timeout) TIMEOUT="$2"; shift 2 ;;
-        -j|--cpus)    CPUS="$2";    shift 2 ;;
+        -c|--cpus)    CPUS="$2";    shift 2 ;;
         -m|--memory)  MEMORY="$2";  shift 2 ;;
         *) echo "Unknown argument: $1"; exit 1 ;;
     esac

@@ -37,8 +37,10 @@ The artifact directory structure is as follows:
 
 ```
   artifact/
-  ├── Dockerfile                   -- Dockerfile to build the artifact image
+  ├── LICENSE                      -- Artifact License (CC BY 4.0)
   ├── README.md                    -- This file
+  ├── parabit-artifact.tar.gz      -- Artifact image
+  ├── Dockerfile                   -- Dockerfile to build the artifact image
   ├── benchmarks/                  -- Benchmark suites used in the evaluation
   │   ├── Alive/
   │   ├── Hydra/
@@ -53,42 +55,53 @@ The artifact directory structure is as follows:
   │   ├── src/                     -- Rust source code
   │   ├── proofs/                  -- Isabelle/HOL proof files
   │   └── tests/                   -- Unit and integration tests
-  ├── scripts/                     -- Scripts for running the evaluation
-  │   ├── run_smoke.sh             -- Entry point for the smoke test
-  │   ├── run_short.sh             -- Entry point for the short evaluation
-  │   ├── run_full.sh              -- Entry point for the full evaluation
-  │   ├── parabit_runner.py        -- Invokes parabit on a benchmark suite
-  │   ├── pbv_runner.py            -- Invokes pbv on a benchmark suite
-  │   ├── collect_parabit.py       -- Runs parabit on all benchmark suites
-  │   ├── collect_pbv.py           -- Runs pbv on all benchmark suites
-  │   └── plots/
-  │       └── eval_graphs.ipynb    -- Notebook producing tables and figures
-  └── output/                      -- Contains generated results
-      ├── results/                 -- Written by run_full.sh 
-      │   ├── parabit/{bench}/     -- parabit raw results per benchmark family
-      │   │   ├── results.csv
-      │   │   └── logs/            -- per-benchmark stdout/stderr and stats JSON
-      │   ├── parabit_verif/{bench}/  -- Isabelle verification results
-      │   │   ├── results.csv
-      │   │   └── isabelle_out/    -- Isabelle session directory and logs
-      │   ├── pbv/{bench}/         -- pbv results per benchmark family
-      │   │   └── results.csv
-      │   ├── plots/
-      │   │   ├── Figure7.pdf
-      │   │   └── Figure7_variant.pdf
-      │   └── tables/
-      │       ├── table2/
-      │       │   ├── combined.md
-      │       │   ├── single.tex
-      │       │   └── multiple.tex
-      │       └── table3/
-      │           ├── table3.md
-      │           └── table3.tex
-      ├── results_short/            -- Written by run_short.sh
-      │   └── (same layout as results/; {bench} = Alive, Hydra, ROVER, Industry)
-      └── smoke_test/               -- Written by run_smoke.sh
-          └── (same layout as results/; {bench} = Alive, Hydra)
+  └── scripts/                     -- Scripts for running the evaluation
+      ├── run_smoke.sh             -- Entry point for the smoke test
+      ├── run_short.sh             -- Entry point for the short evaluation
+      ├── run_full.sh              -- Entry point for the full evaluation
+      ├── parabit_runner.py        -- Invokes parabit on a benchmark suite
+      ├── pbv_runner.py            -- Invokes pbv on a benchmark suite
+      ├── collect_parabit.py       -- Runs parabit on all benchmark suites
+      ├── collect_pbv.py           -- Runs pbv on all benchmark suites
+      └── plots/
+          └── eval_graphs.ipynb    -- Notebook producing tables and figures
 ```
+
+When the evaluation scripts are run (inside the Docker container with the
+`output/` directory mounted from the host), results are written to the
+following structure:
+
+```
+  output/
+  ├── smoke_test/               -- Written by run_smoke.sh
+  │   │                         --   {bench} = Alive, Hydra
+  ├── results_short/            -- Written by run_short.sh
+  │   │                         --   {bench} = Alive, Hydra, ROVER, Industry
+  └── results/                  -- Written by run_full.sh
+      │                         --   {bench} = Alive, Hydra, ROVER, Industry
+      ├── parabit/{bench}/      -- parabit raw results per benchmark family
+      │   ├── results.csv
+      │   └── logs/             -- per-benchmark stdout/stderr and stats JSON
+      ├── parabit_verif/{bench}/ -- Isabelle verification results
+      │   ├── results.csv
+          ├── logs/             -- per-benchmark stdout/stderr
+      │   └── isabelle_out/     -- Isabelle session directory and logs
+      ├── pbv/{bench}/          -- pbv results per benchmark family
+      │   └── results.csv
+      ├── plots/
+      │   ├── Figure7.pdf
+      │   └── Figure7_variant.pdf
+      └── tables/
+          ├── table2/
+          │   ├── combined.md
+          │   ├── single.tex
+          │   └── multiple.tex
+          └── table3/
+              ├── table3.md
+              └── table3.tex
+```
+
+`smoke_test/` and `results_short/` follow the same layout as `results/`.
 
 -------------------------------------------------------------------------------
 **                              DEPENDENCIES                                 **
@@ -256,8 +269,8 @@ completes in half an hour, and the full version matching the paper results.
 ```
 
 The commands will print progress as they execute the benchmarks.
-All results are written to `output/` and figures/tables to `output/results/plots/` 
-and `output/results/tables/` respectively.
+All results are written to `./output/` and figures/tables to 
+`./output/results/plots/` and `./output/results/tables/` respectively.
 
 For completeness we also include the output files from the smoke, short and 
 full run in the folder ref_output/.
@@ -300,7 +313,6 @@ by replacing `results` with `results_short`.
   - These contain the survival plots for the Alive and Hydra benchmarks, 
   showing cumulative solve counts as a function of time for parabit, 
   pbv, and VBS.
-
 
 (4) If the commands complete successfully then the verification succeeded, this
 is also confirmed by the presence of the `Proof verified by Isabelle!` string
