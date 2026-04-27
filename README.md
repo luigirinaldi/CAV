@@ -33,11 +33,12 @@ external connectivity: NO
 **                        ARTIFACT DIRECTORY STRUCTURE                       **
 -------------------------------------------------------------------------------
 
+```
   artifact/
   ├── Dockerfile                   -- Dockerfile to build the artifact image
   ├── README.md                    -- This file
   ├── benchmarks/                  -- Benchmark suites used in the evaluation
-  │   ├── Alive/                   -- Benchmark families (Cadence = Industry in the paper)
+  │   ├── Alive/                   -- Benchmark families
   │   ├── Hydra/
   │   ├── ROVER/
   │   ├── Cadence/
@@ -45,17 +46,12 @@ external connectivity: NO
   │   │   │                        --   (e.g., arithmetic.txt, multiwidth.txt)
   │   │   ├── bwlang/              -- Benchmarks in native bwlang format
   │   │   └── smt2/                -- Benchmarks in SMT-LIB-like syntax
-  │   └── tools/                   -- Utility scripts for benchmark processing
-  ├── parabit/                     -- Source code and proof infrastructure for parabit
+  ├── parabit/                     -- Source code for parabit
   │   ├── Cargo.toml               -- Rust project manifest
   │   ├── src/                     -- Rust source code
-  │   ├── proofs/                  -- Isabelle/HOL theory files for proof certificates
-  │   │   ├── rewrite_defs.thy     -- Definitions of the rewrite rules
-  │   │   ├── arith_lemmas.thy     -- Proofs of arithmetic lemmas
-  │   │   ├── bitwise_lemmas.thy   -- Proofs of bitwise lemmas
-  │   │   └── mixed_lemmas.thy     -- Proofs of mixed lemmas
+  │   ├── proofs/                  -- Isabelle/HOL proof files
   │   └── tests/                   -- Unit and integration tests
-  ├── pbv/                         -- The pbv comparison tool (pre-built artifact)
+  ├── pbv/                         -- The pbv comparison tool [CITE]
   ├── scripts/                     -- Scripts for running the evaluation
   │   ├── run_smoke.sh             -- Entry point for the smoke test
   │   ├── run_short.sh             -- Entry point for the short evaluation
@@ -64,12 +60,10 @@ external connectivity: NO
   │   ├── pbv_runner.py            -- Invokes pbv on a benchmark suite
   │   ├── collect_parabit.py       -- Aggregates parabit results into CSV
   │   ├── collect_pbv.py           -- Aggregates pbv results into CSV
-  │   ├── mirabelle_runner.py      -- Invokes Isabelle to verify proof certificates
-  │   ├── parse_mirabelle.py       -- Parses Isabelle output
   │   └── plots/
-  │       └── eval_graphs.ipynb    -- Notebook that produces all tables and figures
-  └── output/                      -- Created at runtime (mounted from host via -v)
-      ├── smoke_test/              -- Written by run_smoke.sh (Alive + Hydra only)
+  │       └── eval_graphs.ipynb    -- Notebook producing tables and figures
+  └── output/                      -- Contains generated results
+      ├── results/                 -- Written by run_full.sh 
       │   ├── parabit/{bench}/     -- parabit raw results per benchmark family
       │   │   ├── results.csv
       │   │   └── logs/            -- per-benchmark stdout/stderr and stats JSON
@@ -89,10 +83,11 @@ external connectivity: NO
       │       └── table3/
       │           ├── table3.md
       │           └── table3.tex
-      ├── results/                 -- Written by run_full.sh (all four benchmarks)
-      │   └── (same layout as smoke_test/; {bench} = Alive, Hydra, ROVER, Cadence)
-      └── results_short/           -- Written by run_short.sh (all four benchmarks)
-          └── (same layout as smoke_test/; {bench} = Alive, Hydra, ROVER, Cadence)
+      ├── results_short/            -- Written by run_short.sh
+      │   └── (same layout as results/; {bench} = Alive, Hydra, ROVER, Cadence)
+      └── smoke_test/               -- Written by run_smoke.sh
+          └── (same layout as results/; {bench} = Alive, Hydra)
+```
 
 -------------------------------------------------------------------------------
 **                                SMOKE TEST                                 **
@@ -128,19 +123,7 @@ with Isabelle.
 
 If everything runs successfully you will see progress output from each stage,
 ending with the Jupyter notebook executing without errors. All results are
-written to the `/output/smoke_test/` directory:
-
-```
-  smoke_test/
-    parabit/Alive/results.csv       -- parabit results on Alive
-    parabit/Hydra/results.csv       -- parabit results on Hydra
-    parabit_verif/Alive/results.csv -- Isabelle-verified proofs for Alive
-    pbv/Alive/results.csv           -- pbv results on Alive
-    pbv/Hydra/results.csv           -- pbv results on Hydra
-    plots/Figure7.pdf               -- survival plots (Alive + Hydra only)
-    tables/table2/combined.md       -- Table 2 (restricted to Alive + Hydra)
-    tables/table3/table3.md         -- Table 3 (restricted to Alive + Hydra)
-```
+written to the `/output/smoke_test/` directory.
 
 (1) To check that Table 2 generation worked, inspect:
 ```
