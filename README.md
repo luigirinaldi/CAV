@@ -94,7 +94,8 @@ The artifact directory structure is as follows:
 **                              DEPENDENCIES                                 **
 -------------------------------------------------------------------------------
 
-All dependencies are bundled in the Docker image. The following tools are used:
+All dependencies are included in the pre-built Docker image. The following
+tools are used:
 
   * **parabit** — the tool presented in the paper. Source code is included in
     `parabit/` and is built from source during the image build (`cargo build
