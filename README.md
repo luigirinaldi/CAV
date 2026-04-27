@@ -137,7 +137,7 @@ loading the pre-built `parabit-artifact.tar` does not.
 Run the following to load the Docker image:
 
 ```
-docker load < parabit-artifact.tar
+docker load < parabit-artifact.tar                [~ runtime : 10 seconds]
 ```
 
 After that, start an interactive session with:
