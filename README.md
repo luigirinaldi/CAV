@@ -322,4 +322,19 @@ in the standard output.
     ```
     The exit code should be zero.
 
-**Note** Both `run_short` and `run_full` accept command-line arguments to provide the number of available cpus, the amount of available memory, and a timeout, by providing extra cpus or memory the results can be obtained more rapidly and should be identical.
+
+**Note**
+Both `run_short.sh` and `run_full.sh` accept optional arguments to tune resource
+usage to the available hardware:
+
+```
+  -c, --cpus    <n>         Number of CPU cores available (default: 12)
+  -m, --memory  <GB>        Total memory available in GB (default: 16)
+  -t, --timeout <seconds>   Per-benchmark solving timeout
+```
+
+The number of parallel benchmark processes is derived as
+`min(cpus, memory / mem_per_process)`, where `mem_per_process` is fixed at
+2 GB for the short run and 8 GB for the full run. Providing more CPUs or
+memory will increase parallelism and reduce wall-clock time; the results
+should be identical regardless of the resource settings for a given timeout setting.
