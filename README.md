@@ -108,12 +108,12 @@ All dependencies are bundled in the Docker image. The following tools are used:
     al. [TODO: add citation] used as the comparison tool. The pre-built binary
     is downloaded from its artifact at https://doi.org/10.5281/zenodo.15143242
     during the image build. 
-    **Note:** rebuilding the Docker image from scratch
-    requires internet access for this step; loading the pre-built
-    `parabit-artifact.tar` does not.
 
   * **Python 3.13 / uv** — the evaluation scripts and Jupyter notebook
     (`scripts/`) use Python 3.13 with dependencies locked in `scripts/uv.lock`.
+
+**Note:** rebuilding the Docker image from scratch requires internet access;
+loading the pre-built `parabit-artifact.tar` does not.
 
 -------------------------------------------------------------------------------
 **                                SMOKE TEST                                 **
