@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 
 BENCHMARKS_BASE = Path('../benchmarks')
-BENCHMARKS = ['ROVER', 'Alive', 'Hydra', 'Cadence']
+BENCHMARKS = ['ROVER', 'Alive', 'Hydra', 'Industry']
 RESULT_BASE = Path('../results/')
 
 if __name__ == "__main__":

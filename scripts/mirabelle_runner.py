@@ -43,7 +43,7 @@ LEMMA_IMPORTS = ["arith_lemmas", "bitwise_lemmas", "mixed_lemmas", "signed_lemma
 
 BENCHMARK_DIRS = [
     Path("../benchmarks/Alive/bwlang"),
-    Path("../benchmarks/Cadence/bwlang"),
+    Path("../benchmarks/Industry/bwlang"),
     Path("../benchmarks/Hydra/bwlang"),
     Path("../benchmarks/ROVER/bwlang"),
 ]

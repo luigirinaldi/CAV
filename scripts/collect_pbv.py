@@ -84,7 +84,7 @@ BENCHMARKS_BASE = Path('../benchmarks')
 RESULT_BASE = Path('../results/')
 
 FLAT_BENCHMARKS = ['Alive', 'Hydra']
-NESTED_BENCHMARKS = ['ROVER', 'Cadence']
+NESTED_BENCHMARKS = ['ROVER', 'Industry']
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(

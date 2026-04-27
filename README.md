@@ -40,10 +40,10 @@ The artifact directory structure is as follows:
   ├── Dockerfile                   -- Dockerfile to build the artifact image
   ├── README.md                    -- This file
   ├── benchmarks/                  -- Benchmark suites used in the evaluation
-  │   ├── Alive/                   -- Benchmark families
+  │   ├── Alive/
   │   ├── Hydra/
+  │   ├── Industry/
   │   ├── ROVER/
-  │   ├── Cadence/
   │   │   ├── *.txt                -- Lists of benchmark paths by category
   │   │   │                        --   (e.g., arithmetic.txt, multiwidth.txt)
   │   │   ├── bwlang/              -- Benchmarks in native bwlang format
@@ -53,7 +53,6 @@ The artifact directory structure is as follows:
   │   ├── src/                     -- Rust source code
   │   ├── proofs/                  -- Isabelle/HOL proof files
   │   └── tests/                   -- Unit and integration tests
-  ├── pbv/                         -- The pbv tool [CITE]
   ├── scripts/                     -- Scripts for running the evaluation
   │   ├── run_smoke.sh             -- Entry point for the smoke test
   │   ├── run_short.sh             -- Entry point for the short evaluation
@@ -86,7 +85,7 @@ The artifact directory structure is as follows:
       │           ├── table3.md
       │           └── table3.tex
       ├── results_short/            -- Written by run_short.sh
-      │   └── (same layout as results/; {bench} = Alive, Hydra, ROVER, Cadence)
+      │   └── (same layout as results/; {bench} = Alive, Hydra, ROVER, Industry)
       └── smoke_test/               -- Written by run_smoke.sh
           └── (same layout as results/; {bench} = Alive, Hydra)
 ```
