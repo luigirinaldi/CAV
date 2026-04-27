@@ -16,4 +16,4 @@ uv run parabit_runner.py ../benchmarks/Alive/bwlang $OUTDIR/parabit_verif/Alive 
 uv run parabit_runner.py ../benchmarks/Hydra/bwlang $OUTDIR/parabit_verif/Hydra -j 8 -m 1 -t 2 --check-isabelle --quiet
 
 # Generate Tables and Plots
-TIMEOUT=1000 SMOKE_TEST=1 RESULTS_DIR=$OUTDIR uv run jupyter nbconvert --to notebook --execute --inplace ./plots/eval_graphs.ipynb
+TIMEOUT=2000 SMOKE_TEST=1 RESULTS_DIR=$OUTDIR uv run jupyter nbconvert --to notebook --execute --inplace ./plots/eval_graphs.ipynb
