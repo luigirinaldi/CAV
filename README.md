@@ -43,7 +43,7 @@ The artifact directory structure is as follows:
   │   ├── Alive/
   │   ├── Hydra/
   │   ├── Industry/
-  │   ├── ROVER/
+  │   ├── ROVER/                   -- (same structure for all families)
   │   │   ├── *.txt                -- Lists of benchmark paths by category
   │   │   │                        --   (e.g., arithmetic.txt, multiwidth.txt)
   │   │   ├── bwlang/              -- Benchmarks in native bwlang format
@@ -107,17 +107,15 @@ tools are used:
     `makarius/isabelle:Isabelle2025-2` Docker image.
 
   * **pbv** — the state-of-the-art parametric bit-vector solver from Berger et
-    al. [4] used as the comparison tool. The pre-built binary
-    is downloaded from its artifact at https://doi.org/10.5281/zenodo.15143242
-    during the image build. 
+    al. [4](https://doi.org/10.4230/LIPIcs.SAT.2025.4) used as the comparison 
+    tool. The pre-built binary is downloaded from its artifact at
+    https://doi.org/10.5281/zenodo.15143242 during the image build.
 
   * **Python 3.13 / uv** — the evaluation scripts and Jupyter notebook
     (`scripts/`) use Python 3.13 with dependencies locked in `scripts/uv.lock`.
 
 **Note:** rebuilding the Docker image from scratch requires internet access;
 loading the pre-built `parabit-artifact.tar` does not.
-
-[4](https://doi.org/10.4230/LIPIcs.SAT.2025.4)
 
 -------------------------------------------------------------------------------
 **                                SMOKE TEST                                 **
@@ -148,7 +146,7 @@ Run the smoke test with:
   ./scripts/run_smoke.sh                           [ ~ runtime: 5 minutes]
 ```
 The smoke test runs parabit and pbv on the Alive and Hydra benchmarks with a
-1-second timeout and 1 GB memory limit, then verifies a selection of proofs
+2-second timeout and 1 GB memory limit, then verifies the generated proofs
 with Isabelle.
 
 If everything runs successfully you will see progress output from each stage,
@@ -275,29 +273,29 @@ for the full results, the same instructions can be applied to the short version
 by replacing `results` with `results_short`.
 
 (1) To obtain the results in Table 2:
-  - Inspect /output/results/tables/table2/combined.md:
-```
+  - Run the following to inspect the generated files:
+    ```
     cd /artifact/output/results/tables/table2
     cat combined.md
-```
+    ```
   - This will print the table to the standard output.
   - These contain the per-benchmark breakdown of solved problems for parabit,
     pbv (full and restricted), and the virtual best solver.
 
 (2) To obtain the results in Table 3:
-  - Inspect /output/results/tables/table3/table3.md:
-```
+  - Run the following to inspect the generated files:
+    ```
     cd /artifact/output/results/tables/table3
     cat table3.md
-```
+    ```
   - This will print the table to the standard output.
   - This contains per-benchmark averages for e-graph nodes, classes,
     iterations, solve time, proof length, and proof verification time.
 
 (3) To obtain Figure 7, inspect:
-```
+    ```
     cd /artifact/output/results/plots/
-```
+    ```
   - The directory should contain `Figure7.pdf`.
   - These contain the survival plots for the Alive and Hydra benchmarks, 
   showing cumulative solve counts as a function of time for parabit, 
@@ -330,11 +328,13 @@ usage to the available hardware:
 ```
   -c, --cpus    <n>         Number of CPU cores available (default: 12)
   -m, --memory  <GB>        Total memory available in GB (default: 16)
-  -t, --timeout <seconds>   Per-benchmark solving timeout
+  -t, --timeout <seconds>   Per-benchmark solving timeout 
+                                (default: 5 - short / 60 - full)
 ```
 
 The number of parallel benchmark processes is derived as
 `min(cpus, memory / mem_per_process)`, where `mem_per_process` is fixed at
 2 GB for the short run and 8 GB for the full run. Providing more CPUs or
 memory will increase parallelism and reduce wall-clock time; the results
-should be identical regardless of the resource settings for a given timeout setting.
+should be identical regardless of the resource settings for a given timeout 
+setting.
