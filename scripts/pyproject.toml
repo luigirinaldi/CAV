@@ -14,3 +14,8 @@ dependencies = [
     "tabulate>=0.10.0",
     "tqdm>=4.67.1",
 ]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+]
