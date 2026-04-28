@@ -1,0 +1,6 @@
+file,status,time_taken,max_memory_mb,timed_out,exit_reason,last_err_line,problem_name,verified,theorem_size
+unsigned_rounding_v0_to_v2.bwlang,SUCCESS,0.235400474,56.69140625,False,,"[2026-04-27T23:12:32Z INFO  parabit] Iteration 7: 14522 nodes, 3588 classes",unsigned_rounding_v0_to_v2,,
+unsigned_rounding_v1_to_v2.bwlang,SUCCESS,0.236041055,56.84765625,False,,"[2026-04-27T23:12:32Z INFO  parabit] Iteration 7: 14812 nodes, 3651 classes",unsigned_rounding_v1_to_v2,,
+abs_diff_shared_sub.bwlang,SUCCESS,0.263495268,65.76171875,False,,"[2026-04-27T23:12:32Z INFO  parabit] Iteration 7: 13918 nodes, 5509 classes",abs_diff_shared_sub,,
+equation_abc.bwlang,SUCCESS,0.299346116,74.5859375,False,,"[2026-04-27T23:12:32Z INFO  parabit] Iteration 5: 17015 nodes, 7022 classes",equation_abc,,
+abs_diff_shared_sub_signed.bwlang,FAILED,5,1632.90234375,True,timeout,Command exited with non-zero status 124,abs_diff_shared_sub_signed,,

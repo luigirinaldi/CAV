@@ -1,0 +1,10 @@
+[2026-04-27T23:35:02Z INFO  parabit] Running parabit on file: hydra_opt_1099
+[2026-04-27T23:35:02Z INFO  parabit] Iteration 0: 19 nodes, 19 classes
+[2026-04-27T23:35:02Z INFO  parabit] Iteration 1: 69 nodes, 49 classes
+[2026-04-27T23:35:02Z INFO  parabit] Iteration 2: 99 nodes, 53 classes
+[2026-04-27T23:35:02Z INFO  parabit] Iteration 3: 157 nodes, 63 classes
+[2026-04-27T23:35:02Z INFO  parabit] Iteration 4: 248 nodes, 98 classes
+[2026-04-27T23:35:02Z INFO  parabit] Iteration 5: 572 nodes, 210 classes
+[2026-04-27T23:35:02Z INFO  parabit] Iteration 6: 7176 nodes, 2781 classes
+Command exited with non-zero status 124
+{"elapsed":5.16, "maxrss":1503888}

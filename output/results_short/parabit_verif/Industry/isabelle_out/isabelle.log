@@ -1,0 +1,130 @@
+Started at Mon Apr 27 23:36:00 GMT 2026 (polyml-5.9.2_x86_64_32-linux on f6521e4676da)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-linux"
+ML_HOME="/home/isabelle/Isabelle/contrib/polyml-5.9.2-2/x86_64_32-linux"
+ML_SYSTEM="polyml-5.9.2"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/CheckProofs
+Cleaned CheckProofs
+Running CheckProofs ...
+CheckProofs: theory CheckProofs.rewrite_defs
+CheckProofs: theory CheckProofs.arith_lemmas
+CheckProofs: theory CheckProofs.bitwise_lemmas
+CheckProofs: theory CheckProofs.signed_lemmas
+CheckProofs: theory CheckProofs.equation_abc
+CheckProofs: theory CheckProofs.mixed_lemmas
+CheckProofs: theory CheckProofs.abs_diff_shared_sub
+CheckProofs: theory CheckProofs.unsigned_rounding_v1_to_v2
+CheckProofs: theory CheckProofs.unsigned_rounding_v0_to_v2
+CheckProofs: theory CheckProofs.rewrite_defs 100% (0.152s cumulated time)
+CheckProofs: theory CheckProofs.arith_lemmas 100% (6.135s cumulated time)
+CheckProofs: theory CheckProofs.bitwise_lemmas 100% (0.828s cumulated time)
+CheckProofs: theory CheckProofs.equation_abc 100% (0.713s cumulated time)
+CheckProofs: theory CheckProofs.abs_diff_shared_sub 100% (0.507s cumulated time)
+CheckProofs: theory CheckProofs.signed_lemmas 100% (4.332s cumulated time)
+CheckProofs: theory CheckProofs.unsigned_rounding_v1_to_v2 100% (6.179s cumulated time)
+CheckProofs: command "by" running for 21.808s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: command "by" running for 23.814s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: command "by" running for 25.817s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: theory CheckProofs.mixed_lemmas 100% (28.193s cumulated time)
+CheckProofs: command "by" running for 21.399s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 23.400s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 25.402s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 27.404s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 29.405s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 31.407s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 33.408s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 35.410s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 37.412s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 39.414s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 41.416s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 43.418s (line 64 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 20.254s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 22.256s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 24.258s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 26.260s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 28.262s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 30.263s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 32.264s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 34.265s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 36.267s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 38.268s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 40.270s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 42.272s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 44.273s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 46.275s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 48.276s (line 68 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 20.095s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 22.097s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 24.097s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 26.099s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 28.100s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 30.101s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 32.103s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 34.104s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 36.106s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 38.108s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 40.110s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 42.110s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 44.112s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 46.113s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 48.115s (line 70 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 20.100s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 22.101s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 24.103s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 26.104s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 28.106s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 30.108s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 32.109s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 34.110s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 36.112s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 38.114s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 40.115s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 42.116s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 44.118s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 46.119s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 48.120s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 50.122s (line 74 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 20.314s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 22.315s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 24.317s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 26.318s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 28.320s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 30.321s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 32.322s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 34.324s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 36.325s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 38.327s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 40.328s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 42.330s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 44.331s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 46.333s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 48.334s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 50.336s (line 76 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 21.964s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 23.966s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 25.967s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 27.969s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 29.971s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 31.973s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 33.975s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 35.976s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 37.977s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 39.979s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 41.981s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 43.982s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 45.984s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 47.985s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: command "by" running for 49.987s (line 80 of theory "CheckProofs.unsigned_rounding_v0_to_v2")
+CheckProofs: theory CheckProofs.unsigned_rounding_v0_to_v2 100% (511.317s cumulated time)
+Timing CheckProofs (6 threads, 514.566s elapsed time, 540.360s cpu time, 7.932s GC time, factor 1.05)
+Finished CheckProofs (0:08:36 elapsed time, 0:09:01 cpu time, factor 1.05)
+
+Finished at Mon Apr 27 23:44:42 GMT 2026
+0:08:41 elapsed time, 0:09:01 cpu time, factor 1.04

@@ -1,0 +1,145 @@
+Started at Mon Apr 27 23:35:14 GMT 2026 (polyml-5.9.2_x86_64_32-linux on f6521e4676da)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-linux"
+ML_HOME="/home/isabelle/Isabelle/contrib/polyml-5.9.2-2/x86_64_32-linux"
+ML_SYSTEM="polyml-5.9.2"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/CheckProofs
+Cleaned CheckProofs
+Running CheckProofs ...
+CheckProofs: theory CheckProofs.rewrite_defs
+CheckProofs: theory CheckProofs.arith_lemmas
+CheckProofs: theory CheckProofs.hydra_opt_1677
+CheckProofs: theory CheckProofs.hydra_opt_252
+CheckProofs: theory CheckProofs.hydra_opt_2626
+CheckProofs: theory CheckProofs.hydra_opt_263
+CheckProofs: theory CheckProofs.hydra_opt_2712
+CheckProofs: theory CheckProofs.hydra_opt_2731
+CheckProofs: theory CheckProofs.hydra_opt_2743
+CheckProofs: theory CheckProofs.hydra_opt_2744
+CheckProofs: theory CheckProofs.hydra_opt_2748
+CheckProofs: theory CheckProofs.hydra_opt_2750
+CheckProofs: theory CheckProofs.hydra_opt_2751
+CheckProofs: theory CheckProofs.hydra_opt_2761
+CheckProofs: theory CheckProofs.hydra_opt_2763
+CheckProofs: theory CheckProofs.hydra_opt_2789
+CheckProofs: theory CheckProofs.hydra_opt_2793
+CheckProofs: theory CheckProofs.hydra_opt_2806
+CheckProofs: theory CheckProofs.hydra_opt_2816
+CheckProofs: theory CheckProofs.hydra_opt_2817
+CheckProofs: theory CheckProofs.hydra_opt_2824
+CheckProofs: theory CheckProofs.hydra_opt_2840
+CheckProofs: theory CheckProofs.hydra_opt_2837
+CheckProofs: theory CheckProofs.hydra_opt_2852
+CheckProofs: theory CheckProofs.hydra_opt_288
+CheckProofs: theory CheckProofs.hydra_opt_2889
+CheckProofs: theory CheckProofs.hydra_opt_2895
+CheckProofs: theory CheckProofs.hydra_opt_36
+CheckProofs: theory CheckProofs.hydra_opt_386
+CheckProofs: theory CheckProofs.hydra_opt_391
+CheckProofs: theory CheckProofs.hydra_opt_392
+CheckProofs: theory CheckProofs.hydra_opt_54
+CheckProofs: theory CheckProofs.hydra_opt_57
+CheckProofs: theory CheckProofs.bitwise_lemmas
+CheckProofs: theory CheckProofs.signed_lemmas
+CheckProofs: theory CheckProofs.hydra_opt_2695
+CheckProofs: theory CheckProofs.hydra_opt_2746
+CheckProofs: theory CheckProofs.hydra_opt_1003
+CheckProofs: theory CheckProofs.hydra_opt_1097
+CheckProofs: theory CheckProofs.hydra_opt_1106
+CheckProofs: theory CheckProofs.hydra_opt_1116
+CheckProofs: theory CheckProofs.hydra_opt_1247
+CheckProofs: theory CheckProofs.hydra_opt_2430
+CheckProofs: theory CheckProofs.hydra_opt_250
+CheckProofs: theory CheckProofs.hydra_opt_251
+CheckProofs: theory CheckProofs.hydra_opt_2784
+CheckProofs: theory CheckProofs.hydra_opt_2873
+CheckProofs: theory CheckProofs.hydra_opt_37
+CheckProofs: theory CheckProofs.hydra_opt_625
+CheckProofs: theory CheckProofs.mixed_lemmas
+CheckProofs: theory CheckProofs.hydra_opt_2777
+CheckProofs: theory CheckProofs.hydra_opt_2778
+CheckProofs: theory CheckProofs.hydra_opt_2801
+CheckProofs: theory CheckProofs.hydra_opt_2862
+CheckProofs: theory CheckProofs.rewrite_defs 100% (0.179s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1295
+CheckProofs: theory CheckProofs.hydra_opt_256
+CheckProofs: theory CheckProofs.hydra_opt_293
+CheckProofs: theory CheckProofs.hydra_opt_30
+CheckProofs: theory CheckProofs.hydra_opt_64
+CheckProofs: theory CheckProofs.hydra_opt_2770
+CheckProofs: theory CheckProofs.hydra_opt_2825
+CheckProofs: theory CheckProofs.hydra_opt_2743 100% (0.063s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_252 100% (0.191s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1677 100% (0.134s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2626 100% (0.060s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2751 100% (0.093s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2712 100% (0.094s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2744 100% (0.058s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2731 100% (0.117s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2761 100% (0.081s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2750 100% (0.112s cumulated time)
+CheckProofs: theory CheckProofs.arith_lemmas 100% (5.323s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2840 100% (0.127s cumulated time)
+CheckProofs: theory CheckProofs.bitwise_lemmas 100% (0.773s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1247 100% (0.067s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2895 100% (0.071s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_288 100% (0.095s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1003 100% (0.081s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_392 100% (0.056s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1106 100% (0.332s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2777 100% (0.142s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_625 100% (0.067s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2695 100% (0.113s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_251 100% (0.246s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2817 100% (0.164s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2837 100% (0.147s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_386 100% (0.086s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_36 100% (0.119s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2784 100% (0.235s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1097 100% (0.069s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1116 100% (0.116s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2793 100% (0.119s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2748 100% (0.211s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2746 100% (0.071s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2889 100% (0.226s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2430 100% (0.147s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2778 100% (0.124s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_250 100% (0.290s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2816 100% (0.065s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2806 100% (0.170s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2852 100% (0.131s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2789 100% (0.116s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2763 100% (0.088s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_37 100% (0.055s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2824 100% (0.045s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_54 100% (0.276s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_263 100% (0.245s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_57 100% (0.205s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2873 100% (0.155s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2801 100% (0.132s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_391 100% (0.151s cumulated time)
+CheckProofs: theory CheckProofs.signed_lemmas 100% (4.080s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_1295 100% (0.195s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_30 100% (0.395s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_64 100% (0.260s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_256 100% (1.658s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2825 100% (0.517s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2862 100% (0.335s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_293 100% (0.209s cumulated time)
+CheckProofs: theory CheckProofs.hydra_opt_2770 100% (0.889s cumulated time)
+CheckProofs: command "by" running for 20.483s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: command "by" running for 22.493s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: command "by" running for 24.493s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: theory CheckProofs.mixed_lemmas 100% (27.841s cumulated time)
+Timing CheckProofs (6 threads, 32.062s elapsed time, 29.775s cpu time, 1.257s GC time, factor 0.93)
+Finished CheckProofs (0:00:33 elapsed time, 0:00:30 cpu time, factor 0.93)
+
+Finished at Mon Apr 27 23:35:52 GMT 2026
+0:00:37 elapsed time, 0:00:30 cpu time, factor 0.83

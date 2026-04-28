@@ -1,0 +1,134 @@
+Started at Mon Apr 27 23:32:07 GMT 2026 (polyml-5.9.2_x86_64_32-linux on f6521e4676da)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-linux"
+ML_HOME="/home/isabelle/Isabelle/contrib/polyml-5.9.2-2/x86_64_32-linux"
+ML_SYSTEM="polyml-5.9.2"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/CheckProofs
+Cleaned CheckProofs
+Running CheckProofs ...
+CheckProofs: theory CheckProofs.rewrite_defs
+CheckProofs: theory CheckProofs.Select_1100_values_0
+CheckProofs: theory CheckProofs.Select_1105_values_0
+CheckProofs: theory CheckProofs.arith_lemmas
+CheckProofs: theory CheckProofs.AddSub_1164_values_0
+CheckProofs: theory CheckProofs.AddSub_1165_values_0
+CheckProofs: theory CheckProofs.AddSub_1176_values_0
+CheckProofs: theory CheckProofs.AddSub_1539_2_values_0
+CheckProofs: theory CheckProofs.AddSub_1574_values_0
+CheckProofs: theory CheckProofs.muldivrem_152_values_0
+CheckProofs: theory CheckProofs.muldivrem_229_values_0
+CheckProofs: theory CheckProofs.bitwise_lemmas
+CheckProofs: theory CheckProofs.AddSub_1614_values_0
+CheckProofs: theory CheckProofs.AddSub_1619_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1207_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1230_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1241_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1247_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1280_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1346b_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1253_values_0
+CheckProofs: theory CheckProofs.AndOrXor_144_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2052_values_0
+CheckProofs: theory CheckProofs.AndOrXor_135_values_0
+CheckProofs: theory CheckProofs.rewrite_defs 100% (0.182s cumulated time)
+CheckProofs: theory CheckProofs.Select_1105_values_0 100% (0.051s cumulated time)
+CheckProofs: theory CheckProofs.Select_1100_values_0 100% (0.060s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2113_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2063_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2118_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2123_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2188_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2243_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2247_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2284_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2264_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2297_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2367_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2263_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2416_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2417_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2429_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2430_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2581_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2587_values_0
+CheckProofs: theory CheckProofs.mixed_lemmas
+CheckProofs: theory CheckProofs.AddSub_1202_values_0
+CheckProofs: theory CheckProofs.AddSub_1295_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2617_values_0
+CheckProofs: theory CheckProofs.AddSub_1560_values_0
+CheckProofs: theory CheckProofs.AddSub_1564_values_0
+CheckProofs: theory CheckProofs.AddSub_1043_values_0
+CheckProofs: theory CheckProofs.AddSub_1624_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2486_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2595_values_0
+CheckProofs: theory CheckProofs.AndOrXor_1294_values_0
+CheckProofs: theory CheckProofs.AndOrXor_2658_values_0
+CheckProofs: theory CheckProofs.AddSub_1176_values_0 100% (0.078s cumulated time)
+CheckProofs: theory CheckProofs.muldivrem_152_values_0 100% (0.119s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1165_values_0 100% (0.210s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1539_2_values_0 100% (0.062s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1164_values_0 100% (0.096s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2607_values_0
+CheckProofs: theory CheckProofs.bitwise_lemmas 100% (0.848s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1574_values_0 100% (0.151s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1230_values_0 100% (0.173s cumulated time)
+CheckProofs: theory CheckProofs.muldivrem_229_values_0 100% (0.122s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1614_values_0 100% (0.362s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1247_values_0 100% (0.198s cumulated time)
+CheckProofs: theory CheckProofs.arith_lemmas 100% (7.849s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1619_values_0 100% (0.480s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1241_values_0 100% (0.231s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1346b_values_0 100% (0.116s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_144_values_0 100% (0.414s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1280_values_0 100% (0.096s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2052_values_0 100% (0.583s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2118_values_0 100% (0.705s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2113_values_0 100% (0.862s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2123_values_0 100% (0.992s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2188_values_0 100% (1.088s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2247_values_0 100% (0.165s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2367_values_0 100% (0.117s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2243_values_0 100% (0.735s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2284_values_0 100% (0.864s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2416_values_0 100% (0.210s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2417_values_0 100% (0.192s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2264_values_0 100% (2.293s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2297_values_0 100% (0.964s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2429_values_0 100% (0.183s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2063_values_0 100% (4.048s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2581_values_0 100% (0.707s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2430_values_0 100% (0.231s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2587_values_0 100% (0.680s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1202_values_0 100% (0.226s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1253_values_0 100% (6.122s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2486_values_0 100% (0.701s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_135_values_0 100% (7.222s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1564_values_0 100% (0.591s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1624_values_0 100% (0.861s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1295_values_0 100% (1.506s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1560_values_0 100% (0.689s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2263_values_0 100% (15.811s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2595_values_0 100% (4.454s cumulated time)
+CheckProofs: command "by" running for 21.590s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: command "by" running for 23.594s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: command "by" running for 25.598s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: theory CheckProofs.AndOrXor_2617_values_0 100% (23.058s cumulated time)
+CheckProofs: command "by" running for 27.601s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: theory CheckProofs.mixed_lemmas 100% (30.579s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2658_values_0 100% (1.444s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1207_values_0 100% (35.125s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_1294_values_0 100% (33.191s cumulated time)
+CheckProofs: theory CheckProofs.AddSub_1043_values_0 100% (121.567s cumulated time)
+CheckProofs: theory CheckProofs.AndOrXor_2607_values_0 100% (107.036s cumulated time)
+Timing CheckProofs (6 threads, 150.767s elapsed time, 426.305s cpu time, 51.918s GC time, factor 2.83)
+Finished CheckProofs (0:02:33 elapsed time, 0:07:10 cpu time, factor 2.80)
+
+Finished at Mon Apr 27 23:35:00 GMT 2026
+0:02:52 elapsed time, 0:07:10 cpu time, factor 2.49

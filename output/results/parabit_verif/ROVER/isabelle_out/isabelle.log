@@ -1,0 +1,83 @@
+Started at Mon Apr 27 22:05:09 GMT 2026 (polyml-5.9.2_x86_64_32-linux on f6521e4676da)
+ISABELLE_TOOL_JAVA_OPTIONS="-Djava.awt.headless=true -Xms512m -Xmx4g -Xss16m"
+ISABELLE_BUILD_OPTIONS=""
+
+ML_PLATFORM="x86_64_32-linux"
+ML_HOME="/home/isabelle/Isabelle/contrib/polyml-5.9.2-2/x86_64_32-linux"
+ML_SYSTEM="polyml-5.9.2"
+ML_OPTIONS="--minheap 500"
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session Unsorted/CheckProofs
+Running CheckProofs ...
+CheckProofs: theory CheckProofs.rewrite_defs
+CheckProofs: theory CheckProofs.commutativity_add
+CheckProofs: theory CheckProofs.commutativity_mult
+CheckProofs: theory CheckProofs.mul_two
+CheckProofs: theory CheckProofs.arith_lemmas
+CheckProofs: theory CheckProofs.add_assoc_1
+CheckProofs: theory CheckProofs.add_assoc_2
+CheckProofs: theory CheckProofs.add_assoc_3
+CheckProofs: theory CheckProofs.add_assoc_4
+CheckProofs: theory CheckProofs.add_zero
+CheckProofs: theory CheckProofs.dist_over_add
+CheckProofs: theory CheckProofs.left_shift_add_1
+CheckProofs: theory CheckProofs.left_shift_add_2
+CheckProofs: theory CheckProofs.left_shift_mult
+CheckProofs: theory CheckProofs.merge_left_shift
+CheckProofs: theory CheckProofs.merge_right_shift
+CheckProofs: theory CheckProofs.move_sel_zero
+CheckProofs: theory CheckProofs.mul_one
+CheckProofs: theory CheckProofs.mult_assoc_1
+CheckProofs: theory CheckProofs.mult_assoc_2
+CheckProofs: theory CheckProofs.mult_assoc_3
+CheckProofs: theory CheckProofs.mult_assoc_4
+CheckProofs: theory CheckProofs.mult_sum_same
+CheckProofs: theory CheckProofs.sub_to_neg
+CheckProofs: theory CheckProofs.one_to_two_mult
+CheckProofs: theory CheckProofs.sum_same
+CheckProofs: theory CheckProofs.bitwise_lemmas
+CheckProofs: theory CheckProofs.sel_add
+CheckProofs: theory CheckProofs.sel_add_zero
+CheckProofs: theory CheckProofs.mixed_lemmas
+CheckProofs: theory CheckProofs.add_right_shift
+CheckProofs: theory CheckProofs.rewrite_defs 100% (0.165s cumulated time)
+CheckProofs: theory CheckProofs.mul_two 100% (0.301s cumulated time)
+CheckProofs: theory CheckProofs.add_zero 100% (0.077s cumulated time)
+CheckProofs: theory CheckProofs.commutativity_add 100% (0.060s cumulated time)
+CheckProofs: theory CheckProofs.add_assoc_3 100% (0.139s cumulated time)
+CheckProofs: theory CheckProofs.add_assoc_1 100% (0.132s cumulated time)
+CheckProofs: theory CheckProofs.commutativity_mult 100% (0.063s cumulated time)
+CheckProofs: theory CheckProofs.move_sel_zero 100% (0.334s cumulated time)
+CheckProofs: theory CheckProofs.dist_over_add 100% (0.279s cumulated time)
+CheckProofs: theory CheckProofs.add_assoc_4 100% (0.165s cumulated time)
+CheckProofs: theory CheckProofs.left_shift_add_2 100% (0.342s cumulated time)
+CheckProofs: theory CheckProofs.sum_same 100% (0.127s cumulated time)
+CheckProofs: theory CheckProofs.merge_left_shift 100% (0.266s cumulated time)
+CheckProofs: theory CheckProofs.left_shift_add_1 100% (0.280s cumulated time)
+CheckProofs: theory CheckProofs.mul_one 100% (0.072s cumulated time)
+CheckProofs: theory CheckProofs.sub_to_neg 100% (0.081s cumulated time)
+CheckProofs: theory CheckProofs.mult_assoc_1 100% (0.186s cumulated time)
+CheckProofs: theory CheckProofs.merge_right_shift 100% (0.291s cumulated time)
+CheckProofs: theory CheckProofs.mult_assoc_2 100% (0.246s cumulated time)
+CheckProofs: theory CheckProofs.mult_assoc_3 100% (0.150s cumulated time)
+CheckProofs: theory CheckProofs.left_shift_mult 100% (0.207s cumulated time)
+CheckProofs: theory CheckProofs.add_assoc_2 100% (0.117s cumulated time)
+CheckProofs: theory CheckProofs.mult_assoc_4 100% (0.263s cumulated time)
+CheckProofs: theory CheckProofs.arith_lemmas 100% (5.225s cumulated time)
+CheckProofs: theory CheckProofs.mult_sum_same 100% (0.353s cumulated time)
+CheckProofs: theory CheckProofs.one_to_two_mult 100% (1.521s cumulated time)
+CheckProofs: theory CheckProofs.bitwise_lemmas 100% (0.824s cumulated time)
+CheckProofs: theory CheckProofs.sel_add 100% (0.609s cumulated time)
+CheckProofs: theory CheckProofs.add_right_shift 100% (2.201s cumulated time)
+CheckProofs: theory CheckProofs.sel_add_zero 100% (0.548s cumulated time)
+CheckProofs: command "by" running for 21.954s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: command "by" running for 23.964s (line 7 of theory "CheckProofs.mixed_lemmas")
+CheckProofs: theory CheckProofs.mixed_lemmas 100% (28.334s cumulated time)
+Timing CheckProofs (6 threads, 30.770s elapsed time, 23.897s cpu time, 1.266s GC time, factor 0.78)
+Finished CheckProofs (0:00:32 elapsed time, 0:00:25 cpu time, factor 0.78)
+
+Finished at Mon Apr 27 22:05:46 GMT 2026
+0:00:36 elapsed time, 0:00:25 cpu time, factor 0.68
