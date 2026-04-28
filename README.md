@@ -98,7 +98,7 @@ loading the pre-built `parabit-artifact.tar` does not.
 Run the following to load the Docker image:
 
 ```
-docker load < parabit-artifact.tar                [ ~ runtime : 10 seconds]
+docker load < parabit-artifact.tar                [~ runtime: 10 seconds]
 ```
 
 After that, start an interactive session with:
@@ -117,7 +117,7 @@ disposable container that will be deleted upon exit.
 
 Run the smoke test with:
 ```
-  ./scripts/run_smoke.sh                           [ ~ runtime: 5 minutes]
+  ./scripts/run_smoke.sh                           [~ runtime: 5 minutes]
 ```
 The smoke test runs parabit and pbv on the Alive and Hydra benchmarks with a
 2-second timeout and 1 GB memory limit, then verifies the generated proofs
@@ -173,7 +173,7 @@ cat ./output/smoke_test/tables/table3/table3.md
 - Benchmark file `AndOrXor_2285_values_0` was found to be equivalent in 20.63ms, but a proof certificate could not be generated after 2000ms because of `timeout`.
 ```
 
-  - **Note** the full table will be generated in later sections. 
+  - **Note**: the full table will be generated in later sections. 
 
 (3) To check that Figure 7 generation worked, inspect:
 ```
@@ -184,8 +184,8 @@ in the paper with a smaller timeout and hence fewer solved problems.
 There is also a variant `Figure7_variant.pdf` containing a version of the
 survival plots with the union of all problems as opposed to the intersection.
 
-(4) If the process completed without errors then the verification succeeded, and
-the following should be present in the output:
+(4) If the process completed without errors, then the verification succeeded, 
+and the following should be present in the output:
 ```
 Timing CheckProofs (6 threads, 173.955s elapsed time, 447.134s cpu time, 60.019s GC time, factor 2.57)
 Finished CheckProofs (0:02:56 elapsed time, 0:07:30 cpu time, factor 2.56)
@@ -228,7 +228,7 @@ For completeness we also include the result of our evaluation in
       │   └── logs/             -- per-benchmark stdout/stderr and stats JSON
       ├── parabit_verif/{bench}/ -- Isabelle verification results
       │   ├── results.csv
-          ├── logs/             -- per-benchmark stdout/stderr
+      │   ├── logs/             -- per-benchmark stdout/stderr
       │   └── isabelle_out/     -- Isabelle session directory and logs
       ├── pbv/{bench}/          -- pbv results per benchmark family
       │   └── results.csv
@@ -276,15 +276,14 @@ All results are written to `./output/` and figures/tables to
 For completeness we also include the output files from the smoke, short and 
 full run in the folder ref_output/.
 
-Both scripts run `parabit` and `pbv` on all four benchmark suites (Rover, Alive,
-Hydra, Industry), verify proofs with Isabelle, and generate all tables and
-figures. Concrete timing values will differ from the paper on different
+Both scripts run `parabit` and `pbv` on all four benchmark suites (Rover, 
+Alive, Hydra, Industry), verify proofs with Isabelle, and generate all tables 
+and figures. Concrete timing values will differ from the paper on different
 hardware, but the overall trends (relative solve rates, ranking of tools)
 should remain consistent.
 
-In the following, we present the instructions for obtaining tables and plots
-for the full results, the same instructions can be applied to the short version
-by replacing `results` with `results_short`.
+The following instructions can be applied to the short version by replacing 
+`results` with `results_short`.
 
 (1) To obtain the results in Table 2:
   - Run the following to inspect the generated files:
@@ -293,7 +292,7 @@ by replacing `results` with `results_short`.
     cat combined.md
     ```
   - This will print the table to the standard output.
-  - These contain the per-benchmark breakdown of solved problems for parabit,
+  - This contains the per-benchmark breakdown of solved problems for parabit,
     pbv (full and restricted), and the virtual best solver.
 
 (2) To obtain the results in Table 3:
@@ -311,7 +310,7 @@ by replacing `results` with `results_short`.
     cd /artifact/output/results/plots/
     ```
   - The directory should contain `Figure7.pdf`.
-  - These contain the survival plots for the Alive and Hydra benchmarks, 
+  - It contains the survival plots for the Alive and Hydra benchmarks, 
   showing cumulative solve counts as a function of time for parabit, 
   pbv, and VBS.
 
@@ -341,8 +340,8 @@ in the standard output.
 
 ### Parallelism
 
-Both `run_short.sh` and `run_full.sh` accept optional arguments to tune resource
-usage to the available hardware:
+Both `run_short.sh` and `run_full.sh` accept optional arguments to tune 
+resource usage to the available hardware:
 
 ```
   -c, --cpus    <n>         Number of CPU cores available (default: 12)
@@ -360,13 +359,20 @@ setting.
 
 ### Re-running individual benchmarks suites
 
-Individual benchmark suites can be run by navigating to `./scipts` and invoking the `parabit_runner.py` script. For example, to re-run the Alive benchmark suite using a 3 GiB memory limit, 5 second timeout and 4 parallel processes the following commands can be run:
+Individual benchmark suites can be run by navigating to `./scripts` and 
+invoking the `parabit_runner.py` script. For example, to re-run the Alive 
+benchmark suite using a 3 GiB memory limit, 5 second timeout and 4 parallel 
+processes, the following commands can be run:
 ```
 cd ./scripts
 uv run parabit_runner.py ../benchmarks/Alive/bwlang ../output/custom_alive_run -j 4 -m 3 -t 5
 ```
 
-This will save the results in `/artifact/output/custom_alive_run`. Passing the `--check-isabelle` flag will also invoke proof-certificate generation and verification. **Note** this command should not be run on an existing output directory. 
+This will save the results in `/artifact/output/custom_alive_run`. Passing the 
+`--check-isabelle` flag will also invoke proof-certificate generation and 
+verification. **Note** this command should not be run on an existing output 
+directory.
+
 Refer to the `--help` for further options and details.
 
 ### Running individual benchmark files
