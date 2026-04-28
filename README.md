@@ -51,57 +51,18 @@ The artifact directory structure is as follows:
   │   │   ├── bwlang/              -- Benchmarks in native bwlang format
   │   │   └── smt2/                -- Benchmarks in SMT-LIB-like syntax
   ├── parabit/                     -- Source code for parabit
-  │   ├── Cargo.toml               -- Rust project manifest
-  │   ├── src/                     -- Rust source code
-  │   ├── proofs/                  -- Isabelle/HOL proof files
-  │   └── tests/                   -- Unit and integration tests
-  └── scripts/                     -- Scripts for running the evaluation
-      ├── run_smoke.sh             -- Entry point for the smoke test
-      ├── run_short.sh             -- Entry point for the short evaluation
-      ├── run_full.sh              -- Entry point for the full evaluation
-      ├── parabit_runner.py        -- Invokes parabit on a benchmark suite
-      ├── pbv_runner.py            -- Invokes pbv on a benchmark suite
-      ├── collect_parabit.py       -- Runs parabit on all benchmark suites
-      ├── collect_pbv.py           -- Runs pbv on all benchmark suites
-      └── plots/
-          └── eval_graphs.ipynb    -- Notebook producing tables and figures
+  ├── scripts/                     -- Scripts for running the evaluation
+  │   ├── run_smoke.sh             -- Entry point for the smoke test
+  │   ├── run_short.sh             -- Entry point for the short evaluation
+  │   ├── run_full.sh              -- Entry point for the full evaluation
+  │   ├── parabit_runner.py        -- Invokes parabit on a benchmark suite
+  │   ├── pbv_runner.py            -- Invokes pbv on a benchmark suite
+  │   ├── collect_parabit.py       -- Runs parabit on all benchmark suites
+  │   ├── collect_pbv.py           -- Runs pbv on all benchmark suites
+  │   └── plots/
+  │       └── eval_graphs.ipynb    -- Notebook producing tables and figures
+  └── ref_output.zip               -- Reference output (more details below)
 ```
-
-When the evaluation scripts are run (inside the Docker container with the
-`output/` directory mounted from the host), results are written to the
-following structure:
-
-```
-  output/
-  ├── smoke_test/               -- Written by run_smoke.sh
-  │   │                         --   {bench} = Alive, Hydra
-  ├── results_short/            -- Written by run_short.sh
-  │   │                         --   {bench} = Alive, Hydra, ROVER, Industry
-  └── results/                  -- Written by run_full.sh
-      │                         --   {bench} = Alive, Hydra, ROVER, Industry
-      ├── parabit/{bench}/      -- parabit raw results per benchmark family
-      │   ├── results.csv
-      │   └── logs/             -- per-benchmark stdout/stderr and stats JSON
-      ├── parabit_verif/{bench}/ -- Isabelle verification results
-      │   ├── results.csv
-          ├── logs/             -- per-benchmark stdout/stderr
-      │   └── isabelle_out/     -- Isabelle session directory and logs
-      ├── pbv/{bench}/          -- pbv results per benchmark family
-      │   └── results.csv
-      ├── plots/
-      │   ├── Figure7.pdf
-      │   └── Figure7_variant.pdf
-      └── tables/
-          ├── table2/
-          │   ├── combined.md
-          │   ├── single.tex
-          │   └── multiple.tex
-          └── table3/
-              ├── table3.md
-              └── table3.tex
-```
-
-`smoke_test/` and `results_short/` follow the same layout as `results/`.
 
 -------------------------------------------------------------------------------
 **                              DEPENDENCIES                                 **
@@ -137,7 +98,7 @@ loading the pre-built `parabit-artifact.tar` does not.
 Run the following to load the Docker image:
 
 ```
-docker load < parabit-artifact.tar                [~ runtime : 10 seconds]
+docker load < parabit-artifact.tar                [ ~ runtime : 10 seconds]
 ```
 
 After that, start an interactive session with:
@@ -247,6 +208,46 @@ Proof verified by Isabelle!
     The exit code should be zero.
 
 -------------------------------------------------------------------------------
+**                         OUTPUT FOLDER STRUCTURE                           **
+-------------------------------------------------------------------------------
+
+Running the evaluation scripts will produce the file structure described below.
+For completeness we also include the result of our evaluation in 
+`ref_output.zip`. Unzipping the folder will reveal the same file structure. 
+
+```
+  {"output" | "ref_output"}/
+  ├── smoke_test/               -- Written by run_smoke.sh
+  │   │                         --   {bench} = Alive, Hydra
+  ├── results_short/            -- Written by run_short.sh
+  │   │                         --   {bench} = Alive, Hydra, ROVER, Industry
+  └── results/                  -- Written by run_full.sh
+      │                         --   {bench} = Alive, Hydra, ROVER, Industry
+      ├── parabit/{bench}/      -- parabit raw results per benchmark family
+      │   ├── results.csv
+      │   └── logs/             -- per-benchmark stdout/stderr and stats JSON
+      ├── parabit_verif/{bench}/ -- Isabelle verification results
+      │   ├── results.csv
+          ├── logs/             -- per-benchmark stdout/stderr
+      │   └── isabelle_out/     -- Isabelle session directory and logs
+      ├── pbv/{bench}/          -- pbv results per benchmark family
+      │   └── results.csv
+      ├── plots/
+      │   ├── Figure7.pdf
+      │   └── Figure7_variant.pdf
+      └── tables/
+          ├── table2/
+          │   ├── combined.md
+          │   ├── single.tex
+          │   └── multiple.tex
+          └── table3/
+              ├── table3.md
+              └── table3.tex
+```
+
+`smoke_test/` and `results_short/` follow the same layout as `results/`.
+
+-------------------------------------------------------------------------------
 **                               FULL REVIEW                                 **
 -------------------------------------------------------------------------------
 
@@ -261,7 +262,7 @@ completes in half an hour, and the full version matching the paper results.
 
 **Short version** (5-second timeout, 2 GB memory per process):
 ```
-  ./scripts/run_short.sh                     [~ runtime: 25 minutes ]
+  ./scripts/run_short.sh                     [~ runtime: 30 minutes ]
 ```
 **Full version** (60-second timeout, 8 GB memory per process):
 ```
@@ -327,13 +328,19 @@ in the standard output.
     first navigating to the directory and then building the theories:
     ```
     cd /artifact/output/results/parabit_verif/{benchmark}/isabelle_out
-    isabelle build -v -d ./ -c CheckProofs
+    isabelle build -v -o timeout_scale=2.0 -d ./ -c CheckProofs
     echo "exit code = $?"
     ```
     The exit code should be zero.
+  - **Note** Running the above command can take up to 10 minutes, and 
+  can use up to 24 GiB of RAM. 
 
+-------------------------------------------------------------------------------
+**                          SCRIPTS AND PARALLELISM                         **
+-------------------------------------------------------------------------------
 
-**Note**
+### Parallelism
+
 Both `run_short.sh` and `run_full.sh` accept optional arguments to tune resource
 usage to the available hardware:
 
@@ -350,3 +357,42 @@ The number of parallel benchmark processes is derived as
 memory will increase parallelism and reduce wall-clock time; the results
 should be identical regardless of the resource settings for a given timeout 
 setting.
+
+### Re-running individual benchmarks suites
+
+Individual benchmark suites can be run by navigating to `./scipts` and invoking the `parabit_runner.py` script. For example, to re-run the Alive benchmark suite using a 3 GiB memory limit, 5 second timeout and 4 parallel processes the following commands can be run:
+```
+cd ./scripts
+uv run parabit_runner.py ../benchmarks/Alive/bwlang ../output/custom_alive_run -j 4 -m 3 -t 5
+```
+
+This will save the results in `/artifact/output/custom_alive_run`. Passing the `--check-isabelle` flag will also invoke proof-certificate generation and verification. **Note** this command should not be run on an existing output directory. 
+Refer to the `--help` for further options and details.
+
+### Running individual benchmark files
+
+The parabit binary is located at `/artifact/parabit/target/release/parabit`.
+For example, the following commands run the tool on the associativity example 
+from the paper:
+```
+./parabit/target/release/parabit ./benchmarks/ROVER/bwlang/add_assoc_1.bwlang
+```
+
+Producing the following output:
+```
+[... INFO  parabit] Running parabit on file: add_assoc_1
+[... INFO  parabit] Iteration 0: 23 nodes, 21 classes
+[... INFO  parabit] Iteration 1: 90 nodes, 65 classes
+[... INFO  parabit] Iteration 2: 213 nodes, 123 classes
+[... INFO  parabit] Reducing size
+lhs:(bw t (+ (bw u (+ (bw p a) (bw r b))) (bw s c)))
+rhs:(bw t (+ (bw p a) (bw q (+ (bw r b) (bw s c)))))
+conditions:"(q >= t)" and "(u >= t)" and "(s > 0)" and "(u > 0)" and "(p > 0)" and "(r > 0)" and "(t > 0)" and "(q > 0)"
+add_assoc_1 LHS and RHS are equivalent!
+(bw t (+ (bw u (+ (bw p a) (bw r b))) (bw s c)))
+(Rewrite=> add_remove_prec_left (bw t (+ (+ (bw p a) (bw r b)) (bw s c))))
+(bw t (Rewrite=> isabelle-add.assoc (+ (bw p a) (+ (bw r b) (bw s c)))))
+(Rewrite<= add_remove_prec_right (bw t (+ (bw p a) (bw q (+ (bw r b) (bw s c))))))
+```
+
+Refer to the `./parabit/target/release/parabit --help` for further commands.
