@@ -1,0 +1,8 @@
+{
+    "name": "add_assoc_1",
+    "preconditions": [
+        "(>= q r)"
+    ],
+    "lhs": "(bw r ( + (bw q (+ (bw p a) (bw p b))) (bw p c)))",
+    "rhs": "(bw r ( + (bw p a) (bw q (+ (bw p b) (bw p c)))))"
+}

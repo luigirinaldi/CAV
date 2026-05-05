@@ -1,0 +1,1 @@
+Slightly modified the output theorem for readability purposes of the camera ready version of the paper. The double "commute" with the use of the "left" instead of "right" version of the "remove_prec" rule is unnecessary.

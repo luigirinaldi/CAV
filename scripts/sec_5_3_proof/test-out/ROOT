@@ -1,0 +1,4 @@
+session ProofCheck = HOL + 
+theories
+  arith_lemmas
+  add_assoc_1
