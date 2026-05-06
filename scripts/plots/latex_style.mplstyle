@@ -8,9 +8,9 @@ font.family : serif
 font.serif : Computer Modern Roman
 # Font size
 font.size : 12
-axes.labelsize : 12
-xtick.labelsize : 10
-ytick.labelsize : 10
+axes.labelsize : 14
+xtick.labelsize : 12
+ytick.labelsize : 12
 legend.fontsize : 10
 figure.titlesize : 14
 
