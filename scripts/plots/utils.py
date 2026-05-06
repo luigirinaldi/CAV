@@ -103,14 +103,13 @@ def plot_cactus(ax, dataframe, timeout=None, pltopts=None):
 
     ax.axhline(
         num_problems,
-        label=f"Number of problems: {num_problems}",
         color="black",
         linestyle="dotted",
     )
     if timeout:
         ax.axvline(
             timeout,
-            label=f"Timeout: {timeout / 1000:.3g} Seconds",
+            # label="Timeout",
             color="grey",
             linestyle="--",
         )
@@ -138,15 +137,6 @@ def plot_cactus(ax, dataframe, timeout=None, pltopts=None):
     ax.set_xlabel("Runtime (ms)")
     ax.set_ylabel("Number of solved problems")
     ax.set_xscale("log")
-
-    y_ticks = ax.get_yticks()
-    y_ticks = [*y_ticks, num_problems] if num_problems not in y_ticks else y_ticks
-    ax.set_yticks(sorted(y_ticks))
-
-    ax2 = ax.twinx()
-    ax2.set_ylim(ax.get_ylim())
-    ax2.set_yticks(sorted(set(solved_counts)))
-    ax2.set_ylabel("Solved instances")
 
 
 def plot_survival(ax, dataframe, timeout=None, pltopts=None):
